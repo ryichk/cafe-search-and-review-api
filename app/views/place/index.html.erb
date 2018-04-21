@@ -3,12 +3,12 @@
   <h1>Cafe Shaker! </h1>
   <p>訪れたカフェを検索して気軽にshareしよう</p>
 </div><!-- /.jumbotron -->
-<h2>訪れたカフェを検索してみよう</h1>
+<h2>カフェを検索</h1>
 <div class="col-md-6">
   <%= form_tag place_list_path, :role => "form", :method => :get do %>
     <div class="">
       <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default" } ) do %>
+      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
         <span class="glyphicon glyphicon-search">キーワード検索</span>
       <% end %>
     </div>
