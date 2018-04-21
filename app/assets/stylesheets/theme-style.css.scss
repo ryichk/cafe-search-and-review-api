@@ -1,0 +1,34 @@
+body {
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+h1 {
+  width: 100%;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+tbody tr td .cafePhoto {
+  width: 300px;
+}
+@media screen and (min-width: 480px) {
+  .cafePhoto2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  
+}

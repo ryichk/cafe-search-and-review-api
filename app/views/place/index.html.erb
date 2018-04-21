@@ -1,0 +1,39 @@
+<!-- Main jumbotron -->
+<div class="jumbotron">
+  <h1>Cafe Shaker! </h1>
+  <p>訪れたカフェを検索して気軽にshareしよう</p>
+</div><!-- /.jumbotron -->
+<h2>訪れたカフェを検索してみよう</h1>
+<div class="col-md-6">
+  <%= form_tag place_list_path, :role => "form", :method => :get do %>
+    <div class="">
+      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true} %>
+      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default" } ) do %>
+        <span class="glyphicon glyphicon-search">キーワード検索</span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="col-md-12">
+  <table class="table table-striped table-hover">
+    <% @places.each do |place| %>
+      <tr>
+        <th>店名</th>
+        <td><%= place.name %>
+          <p><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats" aria-hidden="true"></span><% end %><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          <% end %></p>
+        </td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td><%= place.address %></td>
+      </tr>
+      <tr>
+        <th>写真</th>
+        <td><img src="<%= place.photos %>" class="cafePhoto"></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
