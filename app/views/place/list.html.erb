@@ -1,4 +1,4 @@
-<h1>検索したお店はこちら！</h1>
+<h2>検索したお店はこちら！</h2>
 <div class="col-md-12">
   <table class="table table-striped table-hover">
     <% @places.each do |place| %>
@@ -31,38 +31,6 @@
         <td></td>
       </tr>
     <% end %>
-  </table>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>店名</th>
-        <th>住所</th>
-        <th>写真</th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @places.each do |place| %>
-        <tr>
-          <td><%= place.name %></td>
-            <% place.lat %>
-            <% place.lng %>
-          <td><%= place.formatted_address %></td>
-          <% if place.photos[0] %>
-            <td><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto" ></td>
-          <td><%= link_to( '登録', place_index_path( :place => { :name => place.name,
-                :latitude => place.lat,
-                :longitude => place.lng,
-                :address => place.formatted_address,
-                :photos => place.photos[0].fetch_url(800),
-                 } ),:method => 'post' ) %></td>
-          <% else %>
-            <td><img src="" width="300"></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
   </table>
 
   <button type="button" class="btn pull-right btn-lg btn-default">
