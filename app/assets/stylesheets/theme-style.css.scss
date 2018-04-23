@@ -16,6 +16,12 @@ h1 {
   padding: 0 1.5em;
 }
 
+body {
+  max-width: 680px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 
 /* place index */
 
@@ -52,12 +58,26 @@ h1 {
 }
 
 tbody tr td .cafePhoto {
-  width: 300px;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+@media screen and (min-width: 480px){
+  tbody tr td .cafePhoto{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  }
 }
 
 .col-md-12 {
   margin-top: 40px;
 }
+
+.placeIndexBtn {
+  margin-top: 40px;
+}
+
 
 
 
