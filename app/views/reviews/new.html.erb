@@ -1,11 +1,10 @@
 <div class="contents row">
-  <%= form_tag('/reviews', method: :post) do %>
-    <h3>
-      投稿する
-    </h3>
-    <textarea cols="30" rows="10" placeholder="Review" type="text" name="review"></textarea>
-    <input placeholder="Photos" type="" name="photos">
-    <input type="submit" value="SENT">
-    <input type="hidden"
+  <h2>投稿</h2>
+  <h3><%= @place.name %></h3>
+  <%= form_for [@place, @review] do |f| %>
+    <%= f.number_field :rank, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query" } %>
+    <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 300px;' %>
+    <%= button_tag type: "submit", class: "btn btn-default" do %>投稿する
+    <% end %>
   <% end %>
 </div>

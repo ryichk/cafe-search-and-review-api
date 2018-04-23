@@ -15,8 +15,11 @@ Rails.application.routes.draw do
     get 'list'
   end
 
-  resources :places, :only => [ :index, :show, :create, :destroy ]
-  resources :reviews, :only => [ :index, :show, :new, :create, :destroy ]
-
+  resources :places, :only => [ :index, :show, :create, :destroy ] do
+    resources :reviews, :only => [ :index, :show, :new, :create, :destroy ]
+    collection do
+      get 'search'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

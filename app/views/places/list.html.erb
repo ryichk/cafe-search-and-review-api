@@ -4,15 +4,19 @@
     <% @places.each do |place| %>
       <tr>
         <th>店名</th>
-        <td><%= place.name %>
-          <%= link_to( '登録', places_path( :place => { 
-            :name => place.name,
-            :latitude => place.lat,
-            :longitude => place.lng,
-            :address => place.formatted_address,
-            :photos => place.photos[0].fetch_url(800),
-             } ),:method => 'post', :class=>'btn btn-default' ) %>
-          <%= link_to "投稿", { :controller => "reviews", :action => "new" }, { :class => "btn btn-default"} %>
+        <td>
+          <% if @place.find_by(address: place.formatted_address) == nil %>
+            <%= place.name %>
+            <%= link_to( '登録', places_path( :place => {
+              :name => place.name,
+              :latitude => place.lat,
+              :longitude => place.lng,
+              :address => place.formatted_address,
+              :photos => place.photos[0].fetch_url(800),
+               } ),:method => 'post', :class=>'btn btn-default' ) %>
+          <% else %>
+            <%= place.name %>
+          <% end %>
         </td>
       </tr>
       <tr>

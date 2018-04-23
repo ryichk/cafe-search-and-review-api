@@ -6,20 +6,22 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @place = Place.find(params[:place_id])
+    @review = Review.new
   end
 
   def create
-    @place = Place.find_by(id: )
-    Review.create(review: review_params[:review], rank: review_params[:rank], photos: review_params[:photos], user_id: current_user.id, place_id: )
+    Review.create(create_params)
+    redirect_to controller: :places, action: :index
   end
 
 
     private
-      def review_params
-        params.permit(:review, :rank, :photos)
+      def create_params
+        params.require(:review).permit(:review, :rank, :photos).merge(place_id: params[:place_id])
       end
 
       def move_to_users_session
-      redirect_to new_user_session_path unless user_signed_in?
-    end
+        redirect_to new_user_session_path unless user_signed_in?
+      end
 end

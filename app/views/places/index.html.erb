@@ -3,10 +3,10 @@
   <h1>Cafe Shaker! </h1>
   <p>訪れたカフェを検索してshareしよう</p>
 </div><!-- /.jumbotron -->
-<h3 class="cafeSearch">カフェを検索</h3>
+
 <div class="col-md-6">
   <%= form_tag places_list_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true} %>
+    <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"まだ登録されていないカフェを検索する"} %>
     <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
       <span class="glyphicon glyphicon-search">検索</span>
     <% end %>
@@ -14,19 +14,26 @@
 </div>
 
 <div class="col-md-12">
-  <table class="table table-striped table-hover">
+  <table class="table">
     <% @places.each do |place| %>
       <tr>
-        <td><h3><%= place.name %></h3></td>
+        <td class="topLeft"><h3><%= place.name %></h3></td>
+        <td>
+          <% if place.reviews.present? %>
+            <i class="star-actived rate-<%= place.reviews.average(:rank).round %>0"></i>
+          <% else %>
+            <i class="star-actived rate-0"></i>
+          <% end %>
+        </td>
         <td><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true"></span><% end %></td>
         <td><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td>
-        <td><%= link_to "投稿", { :controller => "reviews", :action => "new", :name=>"" }, { :class => "btn btn-default placeIndexBtn"} %></td>
+        <td class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿</a></td>
       </tr>
       <tr>
-        <td colspan="4"><img src="<%= place.photos %>" class="cafePhoto"></td>
+        <td colspan="5" class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto"></td>
       </tr>
       <tr>
-        <td colspan="4"></td>
+        <td colspan="5" class="block"></td>
       </tr>
     <% end %>
   </table>

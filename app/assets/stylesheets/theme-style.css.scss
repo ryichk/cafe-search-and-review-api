@@ -9,6 +9,9 @@ url(http://weloveiconfonts.com/api/?family=fontawesome);
   font-family: 'FontAwesome', sans-serif;
 }
 
+.jumbotron {
+  border-radius: 5px;
+}
 
 h1 {
   width: 100%;
@@ -25,16 +28,15 @@ body {
 
 /* place index */
 
+
 .jumbotron p {
   text-align: center;
 }
 
-.cafeSearch {
-  padding-left: 30px;
-}
 
 #search {
   float:left;
+  min-width: 276px;
 }
 .search {
   float: left;
@@ -76,6 +78,24 @@ tbody tr td .cafePhoto {
 
 .placeIndexBtn {
   margin-top: 40px;
+}
+
+.topRight {
+  border-radius: 0 10px 0 0;
+}
+.topLeft {
+  border-radius: 10px 0 0 0;
+}
+boxBottom {
+  
+}
+td {
+  background-color: #eee;
+}
+
+.block {
+  height: 40px;
+  background-color: #fefefe;
 }
 
 

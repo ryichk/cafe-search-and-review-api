@@ -12,7 +12,8 @@ class PlacesController < ApplicationController
   def list
     keyword = params[:search]
     @client = GooglePlaces::Client.new( ENV['GOOGLE_API_KEY'] )
-    @places = @client.spots_by_query( keyword, :types => 'cafe' )
+    @places = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
+    @place = Place.all
   end
 
   def show
@@ -22,6 +23,11 @@ class PlacesController < ApplicationController
       marker.infowindow place.name
     end
   end
+
+  def search
+    @places = Place.where('name LIKE(?', "%#{params[:keyword]}%").limit(12)
+  end
+
 
   def create
     @place = Place.new(place_params)

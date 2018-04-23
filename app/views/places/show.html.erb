@@ -27,9 +27,18 @@
       handler.map.centerOn(markers);
     });
   </script>
+  <ul>
+    <% @place.reviews.each do |review| %>
+    <li>
+      <i class="star-actived rate-<%= review.rank %>0"></i>
+      <p>
+        <%= review.review %>
+      </p>
+    </li>
+    <% end %>
 
 
   <button type="button" class="btn pull-right btn-lg btn-default">
-    <%= link_to 'Back', place_index_path %>
+    <%= link_to 'Back', places_path %>
   </button>
 
