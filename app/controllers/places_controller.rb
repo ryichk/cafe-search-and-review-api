@@ -1,4 +1,4 @@
-class PlaceController < ApplicationController
+class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :destroy]
 
   before_action :move_to_users_session, only: [:create, :destroy]
@@ -6,7 +6,7 @@ class PlaceController < ApplicationController
 
 
   def index
-    @places = Place.all
+    @places = Place.order("created_at DESC").page(params[:page]).per(20)
   end
 
   def list
@@ -28,9 +28,9 @@ class PlaceController < ApplicationController
 
     respond_to do |format|
       if @place.save
-        format.html { redirect_to place_index_path, notice: "#{@place.name} を登録しました" }
+        format.html { redirect_to places_path, notice: "#{@place.name} を登録しました" }
       else
-        format.html { render :index, notice: "#{@place.name} を登録できませんでした" }
+        format.html { render :index, notice: "すでに登録されているため登録できませんでした" }
       end
     end
   end
@@ -39,7 +39,7 @@ class PlaceController < ApplicationController
     @place.destroy
 
     respond_to do |format|
-      format.html { redirect_to place_index_path, notice: "#{@place.name} を削除しました。"}
+      format.html { redirect_to places_path, notice: "#{@place.name} を削除しました。"}
     end
   end
 

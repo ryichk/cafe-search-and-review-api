@@ -149,3 +149,12 @@ tbody tr td .cafePhoto {
     border-bottom: 1px dotted #8c8c8c;
   }
 }
+
+/* Chromeでのstyle */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  #user_remember_me {
+    height: 60px;
+    float: right;
+  }
+}

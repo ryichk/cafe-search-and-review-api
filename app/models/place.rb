@@ -4,4 +4,5 @@ class Place < ApplicationRecord
 
   has_many :users
   has_many :reviews
+  validates :address, uniqueness: true
 end

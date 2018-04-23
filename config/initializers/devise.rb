@@ -18,7 +18,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'ryichikio@gmail.com'
+
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -289,7 +289,7 @@ Devise.setup do |config|
     config.omniauth :twitter, ENV['TW_API_KEY'], ENV['TW_API_SECRET']
   end
   # mail setting
-  config.mailer_sender = "ryichikio@gmail.com"
+  config.mailer_sender = "tohodaiichiki@gmail.com"
   # lock sessings
   config.unlock_strategy = :email
   config.maximum_attempts = 4
