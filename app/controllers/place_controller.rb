@@ -1,6 +1,8 @@
 class PlaceController < ApplicationController
   before_action :set_place, only: [:show, :destroy]
 
+  before_action :move_to_users_session, only: [:create, :destroy]
+
 
 
   def index
@@ -50,6 +52,10 @@ class PlaceController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
       params.require(:place).permit(:name, :latitude, :longitude, :address, :photos)
+    end
+
+    def move_to_users_session
+      redirect_to new_user_session_path unless user_signed_in?
     end
 
 end

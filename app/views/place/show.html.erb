@@ -1,29 +1,22 @@
 <!-- Main jumbotron -->
 <div class="jumbotron">
-  <h1>Cafe shaker!</h1>
-  <h2><%= @place.name %></h2>
+  <h1><%= @place.name %></h1>
 </div><!-- /.jumbotron -->
 <div class="col-md-12">
   <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>店名</th>
-        <th>住所</th>
-        <th>写真</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @place.name %></td>
-        <td><%= @place.address %></td>
-        <td><img src="<%= @place.photos %>" class="cafePhoto"></td>
-      </tr>
-    </tbody>
+    <tr>
+      <th>住所</th>
+      <td><%= @place.address %></td>
+    </tr>
+    <tr>
+      <th>写真</th>
+      <td><img src="<%= @place.photos %>" class="cafePhoto"></td>
+    </tr>
   </table>
-  </div>
-  <div class="map_container">
-    <div id="map" class="map_canvas"></div>
-  </div>
+</div>
+<div class="map_container">
+  <div id="map" class="map_canvas"></div>
+</div>
   <script type="text/javascript">
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
