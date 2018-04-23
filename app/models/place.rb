@@ -4,4 +4,8 @@ class Place < ApplicationRecord
 
   has_many :reviews
   validates :address, uniqueness: true
+
+  def review_average
+    self.reviews.average(:rank).round
+  end
 end

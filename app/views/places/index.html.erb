@@ -20,7 +20,7 @@
         <td class="topLeft"><h3><%= place.name %></h3></td>
         <td>
           <% if place.reviews.present? %>
-            <i class="star-actived rate-<%= place.reviews.average(:rank).round %>0"></i>
+            <i class="star-actived rate-<%= place.review_average %>0"></i>
           <% else %>
             <i class="star-actived rate-0"></i>
           <% end %>
