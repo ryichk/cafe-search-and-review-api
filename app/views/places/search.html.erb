@@ -1,14 +1,18 @@
-<h2>検索結果</h2>
-<ul>
-  <% @places.each do |place| %>
-  <li>
-    <a class="" href="/places/<%= place.id %>/reviews/new" title="<%= place.name %>">
-      <div class="" style="background-image: ulr(<%= place.photos %>);" title="<%= place.name %>"></div>
-      <h3>
-        <%= place.name %>
-      </h3>
-      <p><%= place.address %></p>
-    </a>
-  </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h2 class="searchResult">検索結果</h2>
+  <ul style="list-style: none">
+    <% @places.each do |place| %>
+    <div class="searchContents">
+      <li>
+        <a class="" href="/places/<%= place.id %>/reviews/new" title="<%= place.name %>">
+          <h3>
+            <%= place.name %>
+          </h3>
+          <img src="<%= place.photos %>" class="cafePhoto">
+          <p><%= place.address %></p>
+        </a>
+      </li>
+    </div>
+    <% end %>
+  </ul>
+</div>
