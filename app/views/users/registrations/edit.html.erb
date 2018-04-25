@@ -26,6 +26,9 @@
     <div class="field">
       <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password" %>
     </div>
+    <div class="field">
+      <%= f.file_field :avatar %>
+    </div>
 
     <div class="actions">
       <%= f.submit "Update", :class=>"button" %>

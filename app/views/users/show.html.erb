@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="user_image"><%= image_tag current_user.avatar %></div>
   <p><%= @username %>さんの投稿一覧</p>
   <% @reviews.each do |review| %>
     <div class="content_post" style="background-image: url(<%= review.photos %>);">
@@ -6,5 +7,5 @@
       <span class="name"><%= review.rank %></span>
     </div>
   <% end %>
-  <%= paginate(@reviews) %>
+
 </div>

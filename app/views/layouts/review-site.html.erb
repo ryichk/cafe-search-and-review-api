@@ -30,6 +30,7 @@
             <li class="active"><a href="/">HOME</a></li>
             <% if user_signed_in? %>
               <li><%= link_to current_user.username, user_path(current_user.id) %></li>
+              <li><%= link_to '投稿する' search_places_path %></li>
               <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>

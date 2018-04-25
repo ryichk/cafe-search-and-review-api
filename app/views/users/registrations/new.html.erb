@@ -22,6 +22,9 @@
     <div class="field">
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
     </div>
+    <div class="field">
+      <%= f.file_field :avatar %>
+    </div>
 
     <div class="actions">
       <%= f.submit "Sign Up", :class=>"button" %>

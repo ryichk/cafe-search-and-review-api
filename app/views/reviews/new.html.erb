@@ -4,6 +4,9 @@
   <%= form_for [@place, @review] do |f| %>
     <%= f.number_field :rank, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query" } %>
     <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;' %>
+    <div class="field">
+      <%= f.file_field :picture %>
+    </div>
     <%= button_tag type: "submit", class: "btn btn-default" do %>投稿する
     <% end %>
   <% end %>
