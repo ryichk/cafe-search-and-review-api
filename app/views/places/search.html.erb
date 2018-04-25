@@ -1,0 +1,14 @@
+<h2>検索結果</h2>
+<ul>
+  <% @places.each do |place| %>
+  <li>
+    <a class="" href="/places/<%= place.id %>/reviews/new" title="<%= place.name %>">
+      <div class="" style="background-image: ulr(<%= place.photos %>);" title="<%= place.name %>"></div>
+      <h3>
+        <%= place.name %>
+      </h3>
+      <p><%= place.address %></p>
+    </a>
+  </li>
+  <% end %>
+</ul>
