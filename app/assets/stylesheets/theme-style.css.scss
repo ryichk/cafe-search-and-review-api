@@ -243,6 +243,7 @@ $rate5: $starFull * 5;//星5
   width: $starFull * 5;
   height: $starFull;
   font-size: $starFull;
+  margin-left: 20px;
   &:before,&:after{
     position: absolute;
     top: 0;
@@ -296,4 +297,5 @@ $rate5: $starFull * 5;//星5
 .star-rating{
   width: 80px;
   margin: 0 auto;
+  float: left;
 }
