@@ -216,8 +216,84 @@ td {
 .searchResult {
   margin: 0 0 30px 20px;
 }
+
 .searchContents {
   margin: 0 10px 25px 0;
   padding: 5px 20px;
   background-color: #eee;
+}
+
+
+/* Star Rate */
+$starFull: 16px;
+$starHalf: $starFull / 2;
+$rate1: $starFull;
+$rate1-5: $starFull + $starHalf;
+$rate2: $starFull * 2;//星2
+$rate2-5: ($starFull * 2) + $starHalf;//星2.5
+$rate3: $starFull * 3;//星3
+$rate3-5: ($starFull * 3) + $starHalf;//星3.5
+$rate4: $starFull * 4;//星4
+$rate4-5: ($starFull * 4) + $starHalf;//星4.5
+$rate5: $starFull * 5;//星5
+
+.rate {
+  position: relative;
+  display: inline-block;
+  width: $starFull * 5;
+  height: $starFull;
+  font-size: $starFull;
+  &:before,&:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '⭐️⭐️⭐️⭐️⭐️';
+    display: inline-block;
+    height: $starFull;
+    line-height: $starFull;
+  }
+  &:before{
+    color: #ddd;
+  }
+  &:after{
+    color: #ffa500;
+    overflow: hidden;
+    white-space: nowrap; //これがないと改行されて星の半分が表現できない
+  }
+}
+.rate0:after{
+  width: 0;
+}
+.rate1:after{
+  width: $rate1;
+}
+.rate1-5:after{
+  width: $rate1-5;
+}
+.rate2:after{
+  width: $rate2;
+}
+.rate2-5:after{
+  width: $rate2-5;
+}
+.rate3:after{
+  width: $rate3;
+}
+.rate3-5:after{
+  width: $rate3-5;
+}
+.rate4:after{
+  width: $rate4;
+}
+.rate4-5:after{
+  width: $rate4-5;
+}
+.rate5:after{
+  width: $rate5;
+}
+
+
+.star-rating{
+  width: 80px;
+  margin: 0 auto;
 }
