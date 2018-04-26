@@ -88,4 +88,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Setup the mailer config
+  # Use SendGrid - Add-ons - Heroku
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'cafeshaker.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    user_name: ENV['SENDGRID_USER'],
+    password: ENV['SENDGRID_PASS'],
+    domain: 'herokuapp.com',
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
