@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: cafeshaker_production
-  username: cafeshaker
+  database: <%= ENV['DB_SCHEMA'] %>
+  username: <%= ENV['DB_USER'] %>
   password: <%= ENV['CAFESHAKER_DATABASE_PASSWORD'] %>
