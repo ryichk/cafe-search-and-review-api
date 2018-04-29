@@ -39,7 +39,7 @@
               <li><%= link_to "Twitterログイン", user_twitter_omniauth_authorize_path, :class => 'navbar-link' %></li>
             <% end %>
             <li><a href="">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to "Contact", inquiry_path, :class => 'navbar-link' %></li>
           </ul>
           <!-- <form class="navbar-form navbar-left">
             <input type="text" class="form-control col-lg-8" placeholder="Search">

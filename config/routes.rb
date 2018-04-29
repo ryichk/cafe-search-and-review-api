@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'policy/index'
+
+  get 'terms/index'
+
+  # 問い合わせフォーム
+  get 'inquiry' => 'inquiry#index'
+  get 'inquiry/confirm' => redirect("/inquiry")
+  get 'inquiry/thanks' => redirect("/inquiry")
+  # 問い合わせ確認画面
+  post 'inquiry/confirm' => 'inquiry#confirm'
+  # 問い合わせ完了画面
+  post 'inquiry/thanks' => 'inquiry#thanks'
+
   devise_for :users, :controllers => {
     :sessions => "users/sessions",
     :registrations => "users/registrations",
@@ -8,12 +21,14 @@ Rails.application.routes.draw do
   }
   resources :users, :only => [:index, :show]
 
+
   root 'places#index'
 
   namespace :places do
     #get 'place/list' request
     get 'list'
   end
+
 
   resources :places, :only => [ :index, :show, :create, :destroy ] do
     resources :reviews, :only => [ :index, :show, :new, :create, :destroy ]

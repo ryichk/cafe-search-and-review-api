@@ -5,16 +5,16 @@
 </div><!-- /.jumbotron -->
 
 <div class="col-md-6">
-  <%= form_tag places_list_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"まだ登録されていないカフェを探そう！"} %>
+  <%= form_tag search_places_path, :role => "form", :method => :get do %>
+    <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shakerでカフェを探す"} %>
     <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
       <span class="glyphicon glyphicon-search">検索</span>
     <% end %>
   <% end %>
 </div>
 <div class="col-md-6">
-  <%= form_tag search_places_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shakerに登録済みのカフェを探して投稿"} %>
+  <%= form_tag places_list_path, :role => "form", :method => :get do %>
+    <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"まだ登録されていないカフェを探そう！"} %>
     <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
       <span class="glyphicon glyphicon-search">検索</span>
     <% end %>

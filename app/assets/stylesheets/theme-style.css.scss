@@ -191,6 +191,18 @@ td {
   }
 }
 
+.terms_and_policy {
+  margin: 20px 0;
+  width: 70%;
+  float: left;
+}
+#user_agreement {
+  margin: 15px 0;
+  width: 30%;
+  float: left;
+}
+
+
 /* Chromeでのstyle */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 

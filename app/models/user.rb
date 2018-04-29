@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
   validates :username, presence: true
+  validates :agreement, presence: true
+  validates_acceptance_of :agreement, allow_nil: false, message: "＊ユーザー登録には利用規約への同意が必要です。", on: :create
   has_attached_file :avatar, styles: { medium: "300x300#", thumb: "100x100#" }
   validates_attachment_content_type :avatar, content_type: ["image/jpg","image/jpeg","image/png"]
   has_many :reviews

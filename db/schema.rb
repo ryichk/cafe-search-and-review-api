@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180425170957) do
     t.string "provider"
     t.string "uid"
     t.string "username"
+    t.boolean "agreement"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"

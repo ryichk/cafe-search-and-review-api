@@ -23,6 +23,13 @@
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
     </div>
     <div class="field">
+      <div class="terms_and_policy">
+        <%= link_to "利用規約", terms_index_path, { target: "blank" } %>と<%= link_to "プライバシーポリシー", policy_index_path, { target: "blank" } %>に同意する
+      </div>
+      <%= f.check_box :agreement, :as => :boolean, checked:false %>
+    </div>
+
+    <div class="field">
       <%= f.file_field :avatar %>
     </div>
 
