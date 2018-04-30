@@ -1,2 +1,2 @@
 #!/bin/bash
-su -l deploy -c 'kill -KILL -s QUIT `cat /var/www/cafeshares/tmp/pids/unicorn.pid`'
+su -l deploy -c 'kill -KILL -s QUIT `cat /home/ec2-user/cafeshares/tmp/pids/unicorn.pid`'
