@@ -70,4 +70,7 @@ gem 'omniauth-twitter'
 gem 'dotenv-rails'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'kaminari'
+gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2.x.x'
 gem 'paperclip'
+

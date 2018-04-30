@@ -72,8 +72,7 @@ Devise.setup do |config|
   # :database      = Support basic authentication with authentication key + password
   # config.http_authenticatable = false
 
-  # If 401 status code should be returned for AJAX requests. True by default.
-  # config.http_authenticatable_on_xhr = true
+   # config.http_authenticatable_on_xhr = true
 
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'
@@ -293,4 +292,5 @@ Devise.setup do |config|
   # lock sessings
   config.unlock_strategy = :email
   config.maximum_attempts = 4
+  config.secret_key = 'secret_key'
 end
