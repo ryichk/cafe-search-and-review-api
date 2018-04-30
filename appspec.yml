@@ -9,7 +9,7 @@ files:
     destination: /home/ec2-user/cafeshares
   - source: /Rakefile
     destination: /home/ec2-user/cafeshares
-  - source: /READEME.md
+  - source: /README.md
     destination: /home/ec2-user/cafeshares
   - source: /app/
     destination: /home/ec2-user/cafeshares
