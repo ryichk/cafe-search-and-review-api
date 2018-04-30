@@ -1,12 +1,28 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/www/cafeshares
-permissions:
-  - object: /var/www/
-    pattern: "**"
-    mode: 775
+  - source: /config.ru
+    destination: /home/ec2-user/cafeshares
+  - source: /Gemfile
+    destination: /home/ec2-user/cafeshares
+  - source: /Gemfile.lock
+    destination: /home/ec2-user/cafeshares
+  - source: /Rakefile
+    destination: /home/ec2-user/cafeshares
+  - source: /READEME.mode
+    destination: /home/ec2-user/cafeshares
+  - source: /app/
+    destination: /home/ec2-user/cafeshares
+  - source: /config/
+    destination: /home/ec2-user/cafeshares
+  - source: /lib/
+    destination: /home/ec2-user/cafeshares
+  - source: /log/
+    destination: /home/ec2-user/cafeshares
+  - source: /vendor/
+    destination: /home/ec2-user/cafeshares
+  - source: /public/
+    destination: /home/ec2-user/cafeshares
 hooks:
   ApplicationStop:
     - location: scripts/stop_server.sh
@@ -17,7 +33,7 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/bundle_install.sh
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   ApplicationStart: 
