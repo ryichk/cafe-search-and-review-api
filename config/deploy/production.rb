@@ -1,12 +1,13 @@
 set :production
 set :branch, 'master'
+
 server "198.13.36.130",
-  user: "root",
-  roles: %w{web app},
+  user: "deploy",
+  roles: %w{web app db},
   ssh_options: {
     user: "deploy", # overrides user setting above
     keys: %w(~/.ssh/id_rsa),
-    forward_agent: false,
+    forward_agent: true,
     auth_methods: %w(publickey)
     # password: "please use keys"
   }

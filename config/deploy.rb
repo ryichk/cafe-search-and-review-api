@@ -46,7 +46,7 @@ set :linked_files, fetch(:linked_files, []).push(
     task :make_dirs do
       on roles(:app) do
         execute "mkdir #{shared_path}/tmp/sockets -p"
-        execute 'mkdir #{shared/path}/tmp/pids -p'
+        execute 'mkdir #{shared_path}/tmp/pids -p'
       end
     end
     before :start, :make_dirs
@@ -64,11 +64,21 @@ set :linked_files, fetch(:linked_files, []).push(
       end
     end
 
+    desc 'Upload database.yml'
+    task :upload do
+      on roles(:app) do |host|
+        if test "[ ! -d #{release_path}/config ]"
+          execute "mkdir -p #{release_path}/config"
+        end
+        upload!('config/database.yml', "#{release_path}/config/database.yml")
+      end
+    end
+
     desc 'Initial Deploy'
     task :initial do
       on roles(:app) do
         before 'deploy:restart', 'puma:start'
-        invoke 'deploy'
+        invoke!('deploy')
       end
     end
 
@@ -79,6 +89,7 @@ set :linked_files, fetch(:linked_files, []).push(
       end
     end
 
+    after 'git:create_release', 'deploy:upload'
     before :starting, :check_revision
     after :finishing, :compile_assets
     after :finishing, :cleanup
