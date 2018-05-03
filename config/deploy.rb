@@ -41,6 +41,8 @@ set :linked_files, fetch(:linked_files, []).push(
   'config/secrets.yml'
 )
 
+set :keep_releases, 3
+
   namespace :puma do
     desc 'Create Directories for Puma pids and Socket'
     task :make_dirs do
@@ -78,7 +80,7 @@ set :linked_files, fetch(:linked_files, []).push(
     task :initial do
       on roles(:app) do
         before 'deploy:restart', 'puma:start'
-        invoke!('deploy')
+        invoke 'deploy'
       end
     end
 

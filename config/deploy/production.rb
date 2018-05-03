@@ -12,6 +12,13 @@ server "198.13.36.130",
     # password: "please use keys"
   }
 
+set :bundle_path, -> { shared_path.join('vendor/bundle')}
+set :bundle_flags, '--deployment'
+set :bundle_without, %w(development test).join(' ')
+
+before 'deploy:starting', 'deploy:cleanup'
+set :keep_releases, 3
+set :puma_workers, 2
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
