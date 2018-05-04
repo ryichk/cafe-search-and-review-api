@@ -36,10 +36,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('vendor/bundle')
 set :linked_dirs, fetch(:linked_dirs, []).push('public/system')
 set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
 # デプロイ対象としたくないファイルを記載
-set :linked_files, fetch(:linked_files, []).push(
-  'config/database.yml',
-  'config/secrets.yml'
-)
+# set :linked_files, fetch(:linked_files, []).push(
+#   'config/database.yml',
+#   'config/secrets.yml'
+# )
 
 set :keep_releases, 3
 
@@ -75,6 +75,37 @@ set :keep_releases, 3
         upload!('config/database.yml', "#{release_path}/config/database.yml")
       end
     end
+
+    # desc 'Symlink linked files'
+    # task :linked_files do
+    #   naxt unless any? :linked_files
+    #   on roles :app do
+    #     execute :mkdir, '-pv', linked_files_dirs(release_path)
+
+    #     fetch(:linked_files).each do |file|
+    #       target = release_path.join(file)
+    #       source = shared_path.join(file)
+    #       unless test "[ -L #{target} ]"
+    #         if test "[ -f #{target} ]"
+    #           execute :rm, target
+    #         end
+    #         execute :ln, '-s', source, target
+    #       end
+    #     end
+    #   end
+    # end
+    # desc 'Check files to be linked exist in shared'
+    # task :linked_files do
+    #   next unless any? :linked_files
+    #   on roles :app do |host|
+    #     linked_files(shared_path).each do |file|
+    #       unless test "[ -f #{file} ]"
+    #         error t(:linked_files_does_not_exist, file: file, host: host)
+    #         exit 1
+    #       end
+    #     end
+    #   end
+    # end
 
     desc 'Initial Deploy'
     task :initial do
