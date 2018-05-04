@@ -28,13 +28,13 @@ set :rbenv_type, :system
 set :rbenv_ruby, '2.3.1'
 
 # デプロイ対象としたくないディレクトリを記載
-set :linked_dirs, fetch(:linked_dirs, []).push('log')
-set :linked_dirs, fetch(:linked_dirs, []).push('tmp/pids')
-set :linked_dirs, fetch(:linked_dirs, []).push('tmp/cache')
-set :linked_dirs, fetch(:linke_dirs, []).push('tmp/sockets')
-set :linked_dirs, fetch(:linked_dirs, []).push('vendor/bundle')
-set :linked_dirs, fetch(:linked_dirs, []).push('public/system')
-set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+# set :linked_dirs, fetch(:linked_dirs, []).push('tmp/pids')
+# set :linked_dirs, fetch(:linked_dirs, []).push('tmp/cache')
+# set :linked_dirs, fetch(:linke_dirs, []).push('tmp/sockets')
+# set :linked_dirs, fetch(:linked_dirs, []).push('vendor/bundle')
+# set :linked_dirs, fetch(:linked_dirs, []).push('public/system')
+# set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
 # デプロイ対象としたくないファイルを記載
 # set :linked_files, fetch(:linked_files, []).push(
 #   'config/database.yml',
@@ -55,6 +55,13 @@ set :keep_releases, 3
   end
 
   namespace :deploy do
+
+    # task :cleanup, :except => {:no_release => true} do
+    #   count = fetch(:keep_releases, 5).to_i
+    #   run "ls -1dt #{release_path}/* | tail -n +#{count + 1} | #{sudo :as => 'root'} xargs rm -rf"
+    # end
+
+
     desc "Make sure local git is sync with remote."
     task :check_revision do
       on roles(:app) do
@@ -76,36 +83,36 @@ set :keep_releases, 3
       end
     end
 
-    # desc 'Symlink linked files'
-    # task :linked_files do
-    #   naxt unless any? :linked_files
-    #   on roles :app do
-    #     execute :mkdir, '-pv', linked_files_dirs(release_path)
+    desc 'Symlink linked files'
+    task :linked_files do
+      naxt unless any? :linked_files
+      on roles :app do
+        execute :mkdir, '-pv', linked_files_dirs(release_path)
 
-    #     fetch(:linked_files).each do |file|
-    #       target = release_path.join(file)
-    #       source = shared_path.join(file)
-    #       unless test "[ -L #{target} ]"
-    #         if test "[ -f #{target} ]"
-    #           execute :rm, target
-    #         end
-    #         execute :ln, '-s', source, target
-    #       end
-    #     end
-    #   end
-    # end
-    # desc 'Check files to be linked exist in shared'
-    # task :linked_files do
-    #   next unless any? :linked_files
-    #   on roles :app do |host|
-    #     linked_files(shared_path).each do |file|
-    #       unless test "[ -f #{file} ]"
-    #         error t(:linked_files_does_not_exist, file: file, host: host)
-    #         exit 1
-    #       end
-    #     end
-    #   end
-    # end
+        fetch(:linked_files).each do |file|
+          target = release_path.join(file)
+          source = shared_path.join(file)
+          unless test "[ -L #{target} ]"
+            if test "[ -f #{target} ]"
+              execute :rm, target
+            end
+            execute :ln, '-s', source, target
+          end
+        end
+      end
+    end
+    desc 'Check files to be linked exist in shared'
+    task :linked_files do
+      next unless any? :linked_files
+      on roles :app do |host|
+        linked_files(shared_path).each do |file|
+          unless test "[ -f #{file} ]"
+            error t(:linked_files_does_not_exist, file: file, host: host)
+            exit 1
+          end
+        end
+      end
+    end
 
     desc 'Initial Deploy'
     task :initial do
@@ -122,10 +129,13 @@ set :keep_releases, 3
       end
     end
 
-    after 'git:create_release', 'deploy:upload'
     before :starting, :check_revision
+    after 'git:create_release', 'deploy:upload'
+    # after 'deploy:set_linked_dirs', :override_linked_dirs
     after :finishing, :compile_assets
+    # before 'deploy', 'deploy:cleanup'
     after :finishing, :cleanup
+    after :finishing, :restart
   end
 
 

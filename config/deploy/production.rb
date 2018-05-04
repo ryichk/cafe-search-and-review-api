@@ -11,9 +11,10 @@ server "198.13.36.130",
     auth_methods: %w(publickey)
     # password: "please use keys"
   }
-role :app, %w{deploy@198.13.36.130}
-role :web, %w{deploy@198.13.36.130}
-role :db, %w{deploy@198.13.36.130}
+# role :app, %w{deploy@198.13.36.130}
+# role :web, %w{deploy@198.13.36.130}
+# role :db, %w{deploy@198.13.36.130}
+
 # set :bundle_path, -> { shared_path.join('vendor/bundle')}
 # set :bundle_flags, '--deployment'
 # set :bundle_without, %w(development test).join(' ')
