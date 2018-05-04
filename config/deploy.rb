@@ -41,7 +41,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
 #   'config/secrets.yml'
 # )
 
-# set :keep_releases, 3
+set :keep_releases, 3
 
   namespace :puma do
     desc 'Create Directories for Puma pids and Socket'
@@ -52,25 +52,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
       end
     end
     before :start, :make_dirs
-  end
-
-  namespace :git do
-    desc "Prune remote git cached copy (fixes errors with deleted branches)"
-    task prune: :'git:clone' do
-      on release_roles :all do
-        within repo_path do
-          with fetch(:git_environmental_variables) do
-            strategy.git :remote, :prune, :origin
-          end
-        end
-      end
-    end
-    desc 'Clear Capistrano Git cached-copy'
-    task :clear_cache do
-      on release_roles :all do
-        execute "rm -rf #{repo_path}"
-      end
-    end
   end
 
   namespace :deploy do
@@ -95,36 +76,36 @@ set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
       end
     end
 
-    desc 'Symlink linked files'
-    task :linked_files do
-      naxt unless any? :linked_files
-      on roles :app do
-        execute :mkdir, '-pv', linked_files_dirs(release_path)
+    # desc 'Symlink linked files'
+    # task :linked_files do
+    #   naxt unless any? :linked_files
+    #   on roles :app do
+    #     execute :mkdir, '-pv', linked_files_dirs(release_path)
 
-        fetch(:linked_files).each do |file|
-          target = release_path.join(file)
-          source = shared_path.join(file)
-          unless test "[ -L #{target} ]"
-            if test "[ -f #{target} ]"
-              execute :rm, target
-            end
-            execute :ln, '-s', source, target
-          end
-        end
-      end
-    end
-    desc 'Check files to be linked exist in shared'
-    task :linked_files do
-      next unless any? :linked_files
-      on roles :app do |host|
-        linked_files(shared_path).each do |file|
-          unless test "[ -f #{file} ]"
-            error t(:linked_files_does_not_exist, file: file, host: host)
-            exit 1
-          end
-        end
-      end
-    end
+    #     fetch(:linked_files).each do |file|
+    #       target = release_path.join(file)
+    #       source = shared_path.join(file)
+    #       unless test "[ -L #{target} ]"
+    #         if test "[ -f #{target} ]"
+    #           execute :rm, target
+    #         end
+    #         execute :ln, '-s', source, target
+    #       end
+    #     end
+    #   end
+    # end
+    # desc 'Check files to be linked exist in shared'
+    # task :linked_files do
+    #   next unless any? :linked_files
+    #   on roles :app do |host|
+    #     linked_files(shared_path).each do |file|
+    #       unless test "[ -f #{file} ]"
+    #         error t(:linked_files_does_not_exist, file: file, host: host)
+    #         exit 1
+    #       end
+    #     end
+    #   end
+    # end
 
     desc 'Initial Deploy'
     task :initial do
