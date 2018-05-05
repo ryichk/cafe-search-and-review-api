@@ -13,13 +13,15 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # username: root
-  # password: ENV['RDS_PASS']
+
   socket: /tmp/mysql.sock
 
 development:
   <<: *default
+  host: localhost
   database: cafeshaker_development
+  username: root
+  password: passw0rd
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -54,7 +56,8 @@ production:
   # password: <%= ENV['RDS_PASS'] %>
 
   # VULTR CentOS7
-  host: 198.13.36.130
+  # host: 198.13.36.130
   database: cafeshares
   username: ryooppyy
-  password: <%= ENV['RDS_PASS'] %>
+  password: cde3$RFV
+  socket: /var/lib/mysql/mysql.sock

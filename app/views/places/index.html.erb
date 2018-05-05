@@ -1,12 +1,12 @@
 <!-- Main jumbotron -->
-<div class="jumbotron">
-  <h1>Cafe Shaker! </h1>
+<div class="jumbotron animated tada">
+  <h1>Cafe Shares</h1>
   <p>訪れたカフェを検索してshareしよう</p>
 </div><!-- /.jumbotron -->
 
 <div class="col-md-6">
   <%= form_tag search_places_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shakerでカフェを探す"} %>
+    <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Sharesでカフェを探す"} %>
     <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
       <span class="glyphicon glyphicon-search">検索</span>
     <% end %>
@@ -28,7 +28,7 @@
         <td class="topLeft"><h4><%= place.name %></h4></td>
         <td rowspan="2"><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true"></span><% end %></td>
         <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
-        <td class="topRight" rowspan="2"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿</a></td>
+        <td class="topRight" rowspan="2"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></td>
       </tr>
       <tr>
         <td>

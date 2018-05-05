@@ -83,36 +83,44 @@ set :keep_releases, 3
       end
     end
 
-    desc 'Symlink linked files'
-    task :linked_files do
-      naxt unless any? :linked_files
-      on roles :app do
-        execute :mkdir, '-pv', linked_files_dirs(release_path)
+    # desc 'Symlink linked files'
+    # task :linked_files do
+    #   naxt unless any? :linked_files
+    #   on roles :app do
+    #     execute :mkdir, '-pv', linked_files_dirs(release_path)
 
-        fetch(:linked_files).each do |file|
-          target = release_path.join(file)
-          source = shared_path.join(file)
-          unless test "[ -L #{target} ]"
-            if test "[ -f #{target} ]"
-              execute :rm, target
-            end
-            execute :ln, '-s', source, target
-          end
-        end
+    #     fetch(:linked_files).each do |file|
+    #       target = release_path.join(file)
+    #       source = shared_path.join(file)
+    #       unless test "[ -L #{target} ]"
+    #         if test "[ -f #{target} ]"
+    #           execute :rm, target
+    #         end
+    #         execute :ln, '-s', source, target
+    #       end
+    #     end
+    #   end
+    # end
+    # desc 'Check files to be linked exist in shared'
+    # task :linked_files do
+    #   next unless any? :linked_files
+    #   on roles :app do |host|
+    #     linked_files(shared_path).each do |file|
+    #       unless test "[ -f #{file} ]"
+    #         error t(:linked_files_does_not_exist, file: file, host: host)
+    #         exit 1
+    #       end
+    #     end
+    #   end
+    # end
+
+    desc 'Symlink release to current'
+    task :release do
+      on release_path :all do
+        execute :ln, '-s', release_path, current_path
+        execute :mv, current_path, current_path.parent
       end
-    end
-    desc 'Check files to be linked exist in shared'
-    task :linked_files do
-      next unless any? :linked_files
-      on roles :app do |host|
-        linked_files(shared_path).each do |file|
-          unless test "[ -f #{file} ]"
-            error t(:linked_files_does_not_exist, file: file, host: host)
-            exit 1
-          end
-        end
-      end
-    end
+
 
     desc 'Initial Deploy'
     task :initial do
@@ -137,6 +145,7 @@ set :keep_releases, 3
     after :finishing, :cleanup
     after :finishing, :restart
   end
+
 
 
 
