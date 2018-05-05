@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   def show
     @username = current_user.username
     @reviews = current_user.reviews
+    @reviews.each do |review|
+      @places = Place.where(id: review.place_id)
+    end
   end
 
 end

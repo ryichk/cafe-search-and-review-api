@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'google_places'
 gem 'gmaps4rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'less-rails'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'geocoder'

@@ -1,11 +1,30 @@
-<div class="container">
-  <div class="user_image"><%= image_tag current_user.avatar %></div>
-  <p><%= @username %>さんの投稿一覧</p>
-  <% @reviews.each do |review| %>
-    <div class="content_post" style="background-image: url(<%= review.photos %>);">
-      <%= simple_format(review.review) %>
-      <span class="name"><%= review.rank %></span>
-    </div>
-  <% end %>
+<div class="containerUserShow">
+  <div class="jumbotron">
+    <h1><%= @username %></h1>
+  </div>
+    <% if current_user.avatar.present? %>
+      <div class="user_image"><%= image_tag current_user.avatar %></div>
+    <% else %>
+      <div class="user_image"><%= image_tag 'coffeetime_mini.jpg' %></div>
+    <% end %>
 
+  <div class="userReviews">
+    <h2><%= @username %>さんの投稿一覧</h2>
+    <% @places.each do |place| %>
+      <% @reviews.each do |review| %>
+        <div class="content_post" style="background-image: url(<%= review.photos %>);">
+          <h3><%= place.name %></h3>
+          <div class="star-rating">
+            <span class="rate rate<%= review.rank %>"></span>
+          </div>
+          <p class="review"><%= simple_format(review.review) %></p>
+          <% unless review.photos.blank? %>
+            <img src="review.photos">
+          <% end %>
+
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

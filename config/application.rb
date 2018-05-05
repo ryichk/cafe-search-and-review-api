@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module Cafeshaker
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.load_defaults 5.1
     config.i18n.default_locale = :ja
 

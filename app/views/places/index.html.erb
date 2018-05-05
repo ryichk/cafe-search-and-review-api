@@ -26,7 +26,7 @@
     <% @places.each do |place| %>
       <tr>
         <td class="topLeft"><h4><%= place.name %></h4></td>
-        <td rowspan="2"><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true"></span><% end %></td>
+        <td rowspan="2"><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true">詳細</span><% end %></td>
         <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
         <td class="topRight" rowspan="2"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></td>
       </tr>

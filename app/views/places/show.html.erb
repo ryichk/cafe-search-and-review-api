@@ -13,20 +13,20 @@
       <td><img src="<%= @place.photos %>" class="cafePhoto"></td>
     </tr>
   </table>
+  <div class="map_container">
+    <div id="map" class="map_canvas"></div>
+     <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          handler.getMap().setZoom(12);
+          handler.map.centerOn(markers);
+        });
+      </script>
+  </div>
 </div>
-<div class="map_container">
-  <div id="map" class="map_canvas"></div>
-</div>
- <!--  <script type="text/javascript">
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(12);
-      handler.map.centerOn(markers);
-    });
-  </script> -->
 <div class="showReview">
   <h2>みんなの投稿</h2>
   <ul>
@@ -39,7 +39,7 @@
         <span class="rate rate<%= review.rank %>"></span>
       </div>
       <p class="review">
-        <%= review.review %>
+        <%= simple_format(review.review) %>
       </p>
       <% unless review.photos.blank? %>
         <img src="review.photos">

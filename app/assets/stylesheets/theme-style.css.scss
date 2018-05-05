@@ -510,6 +510,8 @@ $rate5: $starFull * 5;//星5
   margin-top: 17px;
 }
 
+
+
 /* レビュー投稿画面 */
 
 .reviewNew {
@@ -568,6 +570,30 @@ $rate5: $starFull * 5;//星5
   margin: 30px 0 25px 20px;
 }
 
+
+
+
+/* User Show */
+.containerUserShow {
+  color: #fff;
+}
+.user_image img {
+  width: 200px;
+  height: auto;
+  float: right;
+  margin-top: 20px;
+  margin-right: 38%;
+  border-radius: 7px 7px 7px 7px;
+}
+.userReviews {
+  float: right;
+  margin-top: 70px;
+  margin-right: 30%;
+}
+
+
+
+
 /* 利用規約とプライバシーポリシー */
 .hh7 {
   mrgin-top: 0 auto;
@@ -595,11 +621,9 @@ td {
 .inquiry {
   width: 100px;
   background-color: #a97;
-  opacity: 0.7;
 }
 .inquiryMessage {
   background-color: #a97;
-  opacity: 0.7;
 }
 
 .btn-inquiry {
@@ -614,4 +638,16 @@ td {
   padding: 7px 10px;
   border: solid #fff;
   margin-top: 17px;
+}
+
+
+/* copyright */
+.copyright {
+  color: #bfbfbf;
+  text-align: center;
+  padding: 13px 0 0;
+  font-size: 17px;
+  float: right;
+  margin-top: 100px;
+  margin-right: 27%;
 }
