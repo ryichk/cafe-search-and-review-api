@@ -155,7 +155,6 @@ html, body {
 }
 
 
-
 .jumbotron {
   border-radius: 5px;
   background-color: #444;
@@ -199,16 +198,20 @@ body {
 }
 .notice {
   text-align: center;
-  color: #ff0;
+  color: #9f5;
+  font-size: 20px;
 }
 .alert {
   text-align: center;
-  color: red;
+  color: #f43;
+  font-size: 20px;
 
 }
 
-/* place index */
 
+
+
+/* place index */
 
 .jumbotron p {
   text-align: center;
@@ -253,30 +256,20 @@ body {
   }
 }
 
-.col-md-12 {
-  margin-top: 150px;
-}
 
 .placeIndexBtn {
   margin-top: 40px;
 }
 
-.topRight {
-  border-radius: 0 10px 0 0;
-}
-.topLeft {
-  border-radius: 10px 0 0 0;
-}
-boxBottom {
-  
-}
+
+
 td {
-  background-color: #eee;
+  background-color: #efefef;
 }
 
 .block {
   height: 40px;
-  background-color: #fefefe;
+  opacity: 0;
 }
 
 
@@ -418,16 +411,16 @@ td {
 
 
 /* Star Rate */
-$starFull: 16px;
+$starFull: 20px;
 $starHalf: $starFull / 2;
 $rate1: $starFull;
-$rate1-5: $starFull + $starHalf;
+$rate1\.5: $starFull + $starHalf;
 $rate2: $starFull * 2;//星2
-$rate2-5: ($starFull * 2) + $starHalf;//星2.5
+$rate2\.5: ($starFull * 2) + $starHalf;//星2.5
 $rate3: $starFull * 3;//星3
-$rate3-5: ($starFull * 3) + $starHalf;//星3.5
+$rate3\.5: ($starFull * 3) + $starHalf;//星3.5
 $rate4: $starFull * 4;//星4
-$rate4-5: ($starFull * 4) + $starHalf;//星4.5
+$rate4\.5: ($starFull * 4) + $starHalf;//星4.5
 $rate5: $starFull * 5;//星5
 
 .rate {
@@ -441,7 +434,7 @@ $rate5: $starFull * 5;//星5
     position: absolute;
     top: 0;
     left: 0;
-    content: '⭐️⭐️⭐️⭐️⭐️';
+    content: '★★★★★';
     display: inline-block;
     height: $starFull;
     line-height: $starFull;
@@ -450,7 +443,7 @@ $rate5: $starFull * 5;//星5
     color: #ddd;
   }
   &:after{
-    color: #ffa500;
+    color: #ffca00;
     overflow: hidden;
     white-space: nowrap; //これがないと改行されて星の半分が表現できない
   }
@@ -461,26 +454,26 @@ $rate5: $starFull * 5;//星5
 .rate1:after{
   width: $rate1;
 }
-.rate1-5:after{
-  width: $rate1-5;
+.rate1\.5:after{
+  width: $rate1\.5;
 }
 .rate2:after{
   width: $rate2;
 }
-.rate2-5:after{
-  width: $rate2-5;
+.rate2\.5:after{
+  width: $rate2\.5;
 }
 .rate3:after{
   width: $rate3;
 }
-.rate3-5:after{
-  width: $rate3-5;
+.rate3\.5:after{
+  width: $rate3\.5;
 }
 .rate4:after{
   width: $rate4;
 }
-.rate4-5:after{
-  width: $rate4-5;
+.rate4\.5:after{
+  width: $rate4\.5;
 }
 .rate5:after{
   width: $rate5;
@@ -494,7 +487,131 @@ $rate5: $starFull * 5;//星5
 }
 
 
+/* Place Show */
+.showReview {
+  color: #fff;
+  margin-top: 100px;
+}
+.review {
+  margin-top: 50px;
+}
+.btn-placeShow {
+  color: #fafafa;
+  float: right;
+  margin-top: 20px;
+  margin-right: 46%;
+  width: 100px;
+  background-color: #666;
+}
+.btn-placeShow:hover {
+  background-color: #ddd;
+  padding: 7px 10px;
+  border: solid #fff;
+  margin-top: 17px;
+}
+
+/* レビュー投稿画面 */
+
+.reviewNew {
+  color: #fff;
+}
+
+#review_rank, #review_review {
+  color: #000;
+}
+
+.evaluation {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 60px 0 20px 0;
+}
+.evaluation input[type='radio']{
+  display: none;
+}
+.evaluation label {
+  position: relative;
+  padding: 10px 10px 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 47px;
+  margin: 1%;
+}
+.evaluation label .text {
+  position: absolute;
+  left: 0;
+  top: -7px;
+  right: 0;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+}
+.evaluation label:hover,
+.evaluation label:hover ~ label,
+.evaluation input[type='radio']:checked ~ label{
+  color: #ffcc00;
+}
+
+.btn-review {
+  float: right;
+  margin-top: 20px;
+  margin-right: 47%;
+  background-color: #9ab;
+}
+.btn-review:hover {
+  background-color: #ddd;
+  width: 90px;
+  margin-right: 46%;
+}
+
+.fieldPicuture {
+  margin: 30px 0 25px 20px;
+}
+
 /* 利用規約とプライバシーポリシー */
 .hh7 {
   mrgin-top: 0 auto;
+}
+
+.col-md-12 {
+  margin-top: 150px;
+}
+
+.terms, .policy {
+  color: #fff;
+}
+
+.terms a, .plicy a {
+  color: #4df;
+}
+
+/* inquiry */
+.containerInquiry {
+  color: #fff;
+}
+td {
+  color: #000;
+}
+.inquiry {
+  width: 100px;
+  background-color: #a97;
+  opacity: 0.7;
+}
+.inquiryMessage {
+  background-color: #a97;
+  opacity: 0.7;
+}
+
+.btn-inquiry {
+  float: right;
+  margin-top: 20px;
+  margin-right: 47%;
+  width: 100px;
+  background-color: #9ab;
+}
+.btn-inquiry:hover {
+  background-color: #ddd;
+  padding: 7px 10px;
+  border: solid #fff;
+  margin-top: 17px;
 }

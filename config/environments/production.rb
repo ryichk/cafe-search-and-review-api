@@ -94,7 +94,7 @@ Rails.application.configure do
   # Use SendGrid - Add-ons - Heroku
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  host = 'cafeshaker.herokuapp.com'
+  host = 'https://cafeshaker.com'
   config.action_mailer.default_url_options = { :host => host }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -102,7 +102,7 @@ Rails.application.configure do
     :port => 587,
     :user_name => ENV['GMAIL_USER'],
     :password => ENV['MAIL_PASS'],
-    :authentication => :plain,
+    :authentication => 'login',
     :enable_starttls_auto => true
   }
 end
