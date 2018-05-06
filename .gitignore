@@ -17,6 +17,7 @@
 /yarn-error.log
 .env
 .byebug_history
+.bash_profile
 
 .envconfig/database.yml
 config/database.yml

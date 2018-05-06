@@ -78,8 +78,4 @@ gem 'kaminari'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2.x.x'
 gem 'paperclip'
-gem 'carrierwave'
-gem 'fog-aws'
-gem 'mini_magick'
-
 
