@@ -571,6 +571,16 @@ $rate5: $starFull * 5;//星5
 }
 
 
+/* Review Delete */
+.success .reviewDelete {
+  color: #fff;
+  margin-left: 70px;
+}
+.btn-DeleteSuccess {
+  margin-right: 70px;
+}
+
+
 
 
 /* User Show */
@@ -588,7 +598,36 @@ $rate5: $starFull * 5;//星5
 .userReviews {
   float: right;
   margin-top: 70px;
-  margin-right: 30%;
+  margin-right: 5%;
+  width: 95%;
+}
+.userReviews h2 {
+  margin: 8px 15px 0 25px;
+}
+.userReview {
+  margin: 15px 0 20px 0;
+  padding: 10px 0 5px 20px;
+}
+
+.btn-reviewDelete {
+  float: right;
+  margin-top: 0px;
+  background-color: #ddd;
+}
+.btn-reviewDelete:hover {
+  background-color: #d54;
+  width: 60px;
+  margin-right: -4px;
+}
+.btn-reviewEdit {
+  margin: -60px 0px 0 0;
+  background-color: #ddd;
+  float: right;
+}
+.btn-reviewEdit:hover {
+  background-color: #5d4;
+  width: 60px;
+  margin-right: -4px;
 }
 
 

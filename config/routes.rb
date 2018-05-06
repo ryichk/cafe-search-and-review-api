@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
   resources :users, :only => [:index, :show]
-
+  resources :reviews, :only => [:index, :destroy]
 
   root 'places#index'
 
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
 
   resources :places, :only => [ :index, :show, :create, :destroy ] do
-    resources :reviews, :only => [ :index, :show, :new, :create, :destroy ]
+    resources :reviews, :only => [ :index, :show, :new, :create, :edit, :update ]
     collection do
       get 'search'
     end

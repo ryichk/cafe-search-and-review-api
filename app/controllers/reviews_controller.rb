@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :move_to_users_session, only: [:new, :destroy]
+  before_action :move_to_users_session, only: [:new, :destroy, :edit]
 
   def index
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(10)
@@ -13,6 +13,21 @@ class ReviewsController < ApplicationController
   def create
     Review.create(create_params)
     redirect_to controller: :places, action: :index
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy if review.user_id == current_user.id
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+    @place = Place.find(@review.place_id)
+  end
+
+  def update
+    review = Review.find(params[:id])
+    review.update(create_params) if review.user_id == current_user.id
   end
 
 
