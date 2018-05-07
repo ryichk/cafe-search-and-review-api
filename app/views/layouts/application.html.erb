@@ -50,18 +50,9 @@
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     <div class="contents">
-      <p class="notice"><%= notice %></p>
+      <span class="notice"><%= notice %></span>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-      <% if (notice) %>
-        <div class="alert" role="alert">
-          <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-            <span class="sr-only">閉じる</span>
-          </button>
-          <strong><%= notice %></strong>
-        </div>
-      <% end %>
     </div>
   <div class="copyright">
       Copyright (C) 2018 Ichiki Ryo. All Rights Reserved

@@ -1,13 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.10.2"
-server '198.13.36.130', port: 22, roles: [:app, :web, :db], primary:true
+server '149.28.18.198', port: 22, roles: [:app, :web, :db], primary:true
 set :repo_url, "git@github.com:IchikiRyo/CafeShaker.git"
 set :application, "cafeshares"
 set :user, 'deploy'
 set :ssh_options, {
   forward_agent: true,
   user: fetch(:user),
-  keys: %w(~/.ssh/id_rsa)
+  keys: %w(~/.ssh/id_rsa_cafeshares)
 }
 set :puma_threads, [4, 16]
 set :puma_workers, 0
@@ -76,10 +76,10 @@ set :keep_releases, 3
     desc 'Upload database.yml'
     task :upload do
       on roles(:app) do |host|
-        if test "[ ! -d #{release_path}/config ]"
-          execute "mkdir -p #{release_path}/config"
+        if test "[ ! -d #{shared_path}/config ]"
+          execute "mkdir -p #{shared_path}/config"
         end
-        upload!('config/database.yml', "#{release_path}/config/database.yml")
+        upload!('config/database.yml', "#{shared_path}/config/database.yml")
       end
     end
 
@@ -114,13 +114,6 @@ set :keep_releases, 3
     #   end
     # end
 
-    desc 'Symlink release to current'
-    task :release do
-      on release_path :all do
-        execute :ln, '-s', release_path, current_path
-        execute :mv, current_path, current_path.parent
-      end
-
 
     desc 'Initial Deploy'
     task :initial do
@@ -138,8 +131,7 @@ set :keep_releases, 3
     end
 
     before :starting, :check_revision
-    after 'git:create_release', 'deploy:upload'
-    # after 'deploy:set_linked_dirs', :override_linked_dirs
+    before :starting, 'deploy:upload'
     after :finishing, :compile_assets
     # before 'deploy', 'deploy:cleanup'
     after :finishing, :cleanup

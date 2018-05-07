@@ -1,7 +1,9 @@
 <div class="reviewNew">
   <div class="contents row">
     <%= form_for [@place, @review] do |f| %>
-    <h1>編集する</h1>
+    <div class="jumbotron">
+      <h1>レビューの編集</h1>
+    </div>
     <h2 class="review"><%= @place.name %></h2>
     <br>
     <img src="<%= @place.photos %>" class="cafePhoto">

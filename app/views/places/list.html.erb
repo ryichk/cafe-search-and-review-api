@@ -1,36 +1,30 @@
 <div class="showReview">
-  <h1>検索したお店はこちら！</h1>
+  <div class="jumbotron animated bounceIn">
+    <h1>検索したお店はこちら！</h1>
+  </div>
+  <h3 style="text-align: center;">登録ボタンを押したらCafe Sharesで<br>シェアできるようになるよ</h3>
   <div class="col-md-12">
     <table class="table">
       <% @places.each do |place| %>
+        <% if @place.find_by(address: place.formatted_address) == nil %>
         <tr>
           <% if place.photos[0] %>
-            <% if @place.find_by(address: place.formatted_address) == nil %>
-              <td class="topLeft"><h4><%= place.name %></h4></td>
-              <td class="topRight" rowspan="2"><%= link_to( '登録', places_path( :place => {
-                :name => place.name,
-                :latitude => place.lat,
-                :longitude => place.lng,
-                :address => place.formatted_address,
-                :photos => place.photos[0].fetch_url(800),
-                 } ),:method => 'post', :class=>'btn btn-default' ) %></td>
-            <% else %>
-              <td class="topLeft"><h4><%= place.name %></h4></td>
-              <td class="topRight" rowspan="2"></td>
-            <% end %>
+            <td class="topLeft"><h4><%= place.name %></h4></td>
+            <td class="topRight" rowspan="2"><%= link_to( '登録', places_path( :place => {
+              :name => place.name,
+              :latitude => place.lat,
+              :longitude => place.lng,
+              :address => place.formatted_address,
+              :photos => place.photos[0].fetch_url(800),
+               } ),:method => 'post', :class=>'btn btn-default' ) %></td>
           <% else %>
-            <% if @place.find_by(address: place.formatted_address) == nil %>
-              <td class="topLeft"><h4><%= place.name %></h4></td>
-              <td class="topRight" rowspan="2"><%= link_to( '登録', places_path( :place => {
-                :name => place.name,
-                :latitude => place.lat,
-                :longitude => place.lng,
-                :address => place.formatted_address,
-                 } ),:method => 'post', :class=>'btn btn-default' ) %></td>
-            <% else %>
-              <td class="topLeft"><h4><%= place.name %></h4></td>
-              <td class="topRight" rowspan="2"></td>
-            <% end %>
+            <td class="topLeft"><h4><%= place.name %></h4></td>
+            <td class="topRight" rowspan="2"><%= link_to( '登録', places_path( :place => {
+              :name => place.name,
+              :latitude => place.lat,
+              :longitude => place.lng,
+              :address => place.formatted_address,
+               } ),:method => 'post', :class=>'btn btn-default' ) %></td>
           <% end %>
         </tr>
         <tr>
@@ -38,14 +32,15 @@
         </tr>
         <tr>
           <% if place.photos[0] %>
-              <td colspan="2" class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto" ></td>
-            <% else %>
-              <td colspan="2" class="boxBottom"><img src="" width="300"></td>
-            <% end %>
+            <td colspan="2" class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto" ></td>
+          <% else %>
+            <td colspan="2" class="boxBottom"><img src="" width="300"></td>
+          <% end %>
         </tr>
         <tr>
           <td colspan="2" class="block"></td>
         </tr>
+        <% end %>
       <% end %>
     </table>
 

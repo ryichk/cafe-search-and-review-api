@@ -11,8 +11,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    Review.create(create_params)
-    redirect_to controller: :places, action: :index
+    @place = Place.find(params[:place_id])
+    respond_to do |format|
+      if Review.create(create_params)
+        format.html { redirect_to places_path, notice: "#{@place.name}のレビューを投稿しました" }
+      else
+        format.html { redirect_to new_place_review_path, alert: "登録できませんでした。レビューがきちんと書かれているか確認してください" }
+      end
+    end
   end
 
   def destroy
@@ -26,8 +32,21 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @place = Place.find(params[:place_id])
     review = Review.find(params[:id])
-    review.update(create_params) if review.user_id == current_user.id
+    if review.user_id == current_user.id
+      respond_to do |format|
+        if review.update(create_params)
+          format.html { redirect_to user_path, notice: "#{@place.name} のレビューを更新しました" }
+        else
+          format.html { redirect_to edit_place_review_path, alert: "更新できませんでした。レビューがきちんと書かれているか確認してください" }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to edit_place_review_path, alert: "更新できませんでした。" }
+      end
+    end
   end
 
 
