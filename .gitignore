@@ -20,8 +20,8 @@
 .bash_profile
 
 .envconfig/database.yml
-config/database.yml
-
+/config/database.yml
+/config/database.yml.example
 /vendor/bundler/
 /vendor/bundle
 /log/*.log

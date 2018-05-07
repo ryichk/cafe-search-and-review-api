@@ -58,6 +58,6 @@ production:
   # VULTR CentOS7
   # host: 198.13.36.130
   database: cafeshares
-  username: ENV['P_DB_USER']
-  password: ENV['P_DB_PASS']
+  username: <%= ENV['P_DB_USER'] %>
+  password: <%= ENV['P_DB_PASS'] %>
   socket: /var/lib/mysql/mysql.sock
