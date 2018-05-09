@@ -192,7 +192,10 @@ html {
 }
 
 h2.placeIndex {
-  margin-top: 90px;
+  clear: both;
+  margin-top: 190px;
+  margin-left: 9%;
+  margin-bottom: 17px;
   color: #fff;
 }
 .col-md-12 .placeIndex {
@@ -282,11 +285,12 @@ h2.placeIndex {
 
 #search {
   float: left;
-  width: 67%;
+  width: 70%;
+  margin: 15px 0;
 }
 .search {
   float: right;
-  margin-bottom: 20px;
+  margin: 15px 0;
   margin-left: 15px;
   top: 0;
 }
