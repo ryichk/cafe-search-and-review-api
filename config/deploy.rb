@@ -48,20 +48,17 @@ set :keep_releases, 3
     task :make_dirs do
       on roles(:app) do
         execute "mkdir #{shared_path}/tmp/sockets -p"
-        execute 'mkdir #{shared_path}/tmp/pids -p'
+        execute "mkdir #{shared_path}/tmp/pids -p"
       end
     end
     before :start, :make_dirs
   end
 
   namespace :deploy do
-
     # task :cleanup, :except => {:no_release => true} do
     #   count = fetch(:keep_releases, 5).to_i
     #   run "ls -1dt #{release_path}/* | tail -n +#{count + 1} | #{sudo :as => 'root'} xargs rm -rf"
     # end
-
-
     desc "Make sure local git is sync with remote."
     task :check_revision do
       on roles(:app) do
@@ -72,7 +69,6 @@ set :keep_releases, 3
         end
       end
     end
-
     desc 'Upload database.yml'
     task :upload do
       on roles(:app) do |host|
@@ -82,7 +78,6 @@ set :keep_releases, 3
         upload!('config/database.yml', "#{shared_path}/config/database.yml")
       end
     end
-
     # desc 'Symlink linked files'
     # task :linked_files do
     #   naxt unless any? :linked_files
@@ -122,10 +117,19 @@ set :keep_releases, 3
         invoke 'deploy'
       end
     end
-
+    Rake::Task["deploy:symlink:release"].clear
+    namespace :symlink do
+      desc 'Symlink release to current'
+      task :release do
+        on release_roles :all do
+          execute :ln, '-s', release_path, current_path
+        end
+      end
+    end
     desc 'Restart application'
     task :restart do
       on roles(:app), in: :sequence, wait: 5 do
+        Rake::Task["puma:restart"].reenable
         invoke 'puma:restart'
       end
     end
@@ -135,7 +139,7 @@ set :keep_releases, 3
     after :finishing, :compile_assets
     # before 'deploy', 'deploy:cleanup'
     after :finishing, :cleanup
-    after :finishing, :restart
+    # after :finishing, :restart
   end
 
 

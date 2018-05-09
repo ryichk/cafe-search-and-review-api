@@ -1,49 +1,51 @@
-<div class="reviewNew">
-  <div class="contents row">
-    <h1 class="review"><%= @place.name %></h1>
-    <br>
-    <img src="<%= @place.photos %>" class="cafePhoto">
-    <%= form_for [@place, @review] do |f| %>
-      <div class="evaluation">
-        <%= f.radio_button 'rank', 5 %>
-        <label for="review_rank_5"><span class="text">最高</span>★</label>
-        <%= f.radio_button 'rank', 4 %>
-        <label for="review_rank_4"><span class="text">良い</span>★</label>
-        <%= f.radio_button 'rank', 3 %>
-        <label for="review_rank_3"><span class="text">普通</span>★</label>
-        <%= f.radio_button 'rank', 2 %>
-        <label for="review_rank_2"><span class="text">悪い</span>★</label>
-        <%= f.radio_button 'rank', 1 %>
-        <label for="review_rank_1"><span class="text">最低</span>★</label>
-      </div>
-      <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;' %>
-      <div class="fieldPicuture">
-        <%= f.file_field :picture %>
-      </div>
-      <%= button_tag type: "submit", class: "btn btn-review" do %>投稿する
-      <% end %>
-    <% end %>
-  </div>
-  <div class="showReview">
-    <h2>みんなの投稿</h2>
-    <ul>
-      <% @place.reviews.each do |review| %>
-      <li>
-        <h3 title="<%= review.user.username %>">
-          <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
-        </h3>
-        <div class="star-rating">
-          <span class="rate rate<%= review.rank %>"></span>
-        </div>
-        <p class="review">
-          <%= review.review %>
-        </p>
-        <% unless review.photos.blank? %>
-          <img src="review.photos">
-        <% end %>
-      </li>
+<div class="Main">
+  <div class="reviewNew">
+    <div class="contents row">
+      <h1 class="review"><%= @place.name %></h1>
       <br>
+      <img src="<%= @place.photos %>" class="cafePhoto">
+      <%= form_for [@place, @review] do |f| %>
+        <div class="evaluation">
+          <%= f.radio_button 'rank', 5 %>
+          <label for="review_rank_5"><span class="text">最高</span>★</label>
+          <%= f.radio_button 'rank', 4 %>
+          <label for="review_rank_4"><span class="text">良い</span>★</label>
+          <%= f.radio_button 'rank', 3 %>
+          <label for="review_rank_3"><span class="text">普通</span>★</label>
+          <%= f.radio_button 'rank', 2 %>
+          <label for="review_rank_2"><span class="text">悪い</span>★</label>
+          <%= f.radio_button 'rank', 1 %>
+          <label for="review_rank_1"><span class="text">最低</span>★</label>
+        </div>
+        <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;' %>
+        <div class="fieldPicuture">
+          <%= f.file_field :picture %>
+        </div>
+        <%= button_tag type: "submit", class: "btn btn-review" do %>投稿する
+        <% end %>
       <% end %>
-    </ul>
+    </div>
+    <div class="showReview">
+      <h2>みんなの投稿</h2>
+      <ul>
+        <% @place.reviews.each do |review| %>
+        <li>
+          <h3 title="<%= review.user.username %>">
+            <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
+          </h3>
+          <div class="star-rating">
+            <span class="rate rate<%= review.rank %>"></span>
+          </div>
+          <p class="review">
+            <%= review.review %>
+          </p>
+          <% unless review.photos.blank? %>
+            <img src="review.photos">
+          <% end %>
+        </li>
+        <br>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

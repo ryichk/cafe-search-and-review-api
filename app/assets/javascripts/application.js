@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require gmaps/google
+//= require skippr
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

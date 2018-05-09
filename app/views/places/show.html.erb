@@ -1,56 +1,57 @@
-<!-- Main jumbotron -->
-<div class="jumbotron">
-  <h1><%= @place.name %></h1>
-</div><!-- /.jumbotron -->
-<a href="/places/<%= @place.id %>/reviews/new" class="btn btn-placeShow" >投稿する</a>
+<div class="Main">
+  <!-- Main jumbotron -->
+  <div class="jumbotron">
+    <h1><%= @place.name %></h1>
+  </div><!-- /.jumbotron -->
+  <a href="/places/<%= @place.id %>/reviews/new" class="btn btn-placeShow" >投稿する</a>
 
-<div class="col-md-12">
-  <table class="table table-striped table-hover">
-    <tr>
-      <td><%= @place.address %></td>
-    </tr>
-    <tr>
-      <td><img src="<%= @place.photos %>" class="cafePhoto"></td>
-    </tr>
-  </table>
-  <div class="map_container">
-    <div id="map" class="map_canvas"></div>
-     <script type="text/javascript">
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          handler.getMap().setZoom(12);
-          handler.map.centerOn(markers);
-        });
-      </script>
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <td><%= @place.address %></td>
+      </tr>
+      <tr>
+        <td><img src="<%= @place.photos %>" class="cafePhoto"></td>
+      </tr>
+    </table>
+    <div class="map_container">
+      <div id="map" class="map_canvas"></div>
+       <script type="text/javascript">
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+            markers = handler.addMarkers(<%= raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+            handler.getMap().setZoom(12);
+            handler.map.centerOn(markers);
+          });
+        </script>
+    </div>
   </div>
-</div>
-<div class="showReview">
-  <h2>みんなの投稿</h2>
-  <ul>
-    <% @place.reviews.each do |review| %>
-    <li>
-      <h3 title="<%= review.user.username %>">
-        <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
-      </h3>
-      <div class="star-rating">
-        <span class="rate rate<%= review.rank %>"></span>
-      </div>
-      <p class="review">
-        <%= simple_format(review.review) %>
-      </p>
-      <% unless review.photos.blank? %>
-        <img src="review.photos">
+  <div class="showReview">
+    <h2>みんなの投稿</h2>
+    <ul>
+      <% @place.reviews.each do |review| %>
+      <li>
+        <h3 title="<%= review.user.username %>">
+          <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
+        </h3>
+        <div class="star-rating">
+          <span class="rate rate<%= review.rank %>"></span>
+        </div>
+        <p class="review">
+          <%= simple_format(review.review) %>
+        </p>
+        <% unless review.photos.blank? %>
+          <img src="review.photos">
+        <% end %>
+      </li>
+      <br>
       <% end %>
-    </li>
-    <br>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+
+    <span class="btn pull-right btn-lg btn-default">
+      <%= link_to 'Back', root_path %>
+    </span>
 </div>
-
-  <span class="btn pull-right btn-lg btn-default">
-    <%= link_to 'Back', root_path %>
-  </span>
-

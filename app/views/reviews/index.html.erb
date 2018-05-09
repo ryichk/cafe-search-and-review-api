@@ -1,13 +1,15 @@
-<div class="container">
-  <% @reviews.each do |review| %>
-    <div class="content_post" style="background-image: url(<%= review.photos %>);">
-      <%= simple_format(review.review) %>
-      <span class="name">
-        <a href="">
-          <span>投稿者</span><%= review.user.username %>
-        </a>
-      </span>
-    </div>
-  <% end %>
-  <%= paginate(@reviews) %>
+<div class="Main">
+  <div class="container">
+    <% @reviews.each do |review| %>
+      <div class="content_post" style="background-image: url(<%= review.photos %>);">
+        <%= simple_format(review.review) %>
+        <span class="name">
+          <a href="">
+            <span>投稿者</span><%= review.user.username %>
+          </a>
+        </span>
+      </div>
+    <% end %>
+    <%= paginate(@reviews) %>
+  </div>
 </div>

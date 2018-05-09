@@ -8,144 +8,6 @@ url(http://weloveiconfonts.com/api/?family=fontawesome);
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@keyframes tada {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  10%,
-  20% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
-  }
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
-  40%,
-  60%,
-  80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-  to {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-.tada {
-  -webkit-animation-name: tada;
-  animation-name: tada;
-}
-
-@keyframes jello {
-  from,
-  11.1%,
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-
-  22.2% {
-    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
-    transform: skewX(-12.5deg) skewY(-12.5deg);
-  }
-
-  33.3% {
-    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
-    transform: skewX(6.25deg) skewY(6.25deg);
-  }
-
-  44.4% {
-    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
-    transform: skewX(-3.125deg) skewY(-3.125deg);
-  }
-
-  55.5% {
-    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
-    transform: skewX(1.5625deg) skewY(1.5625deg);
-  }
-
-  66.6% {
-    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
-    transform: skewX(-0.78125deg) skewY(-0.78125deg);
-  }
-
-  77.7% {
-    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
-    transform: skewX(0.390625deg) skewY(0.390625deg);
-  }
-
-  88.8% {
-    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-  }
-}
-.jello {
-   -webkit-animation-name: jello;
-  animation-name: jello;
-  -webkit-transform-origin: center;
-  transform-origin: center;
-}
-
-@keyframes bounceIn {
-  from,
-  20%,
-  40%,
-  60%,
-  80%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-  80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
-  }
-  to {
-   opacity: 1;
-   -webkit-transform: scale3d(1, 1, 1);
-   transform: scale3d(1, 1, 1);
-  }
-}
-.bounceIn {
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
-}
 
 html, body, .copyright {
   background-image: url(coffeebreak_mini.jpg);
@@ -161,6 +23,12 @@ html, body, .copyright {
   color: #f1faf1;
   opacity: 0.8;
 }
+
+.jumbotron h2 {
+  text-align: center;
+  color: #fff;
+}
+
 .navbar {
   background-color: #222;
 }
@@ -187,14 +55,12 @@ html, body, .copyright {
 h1 {
   width: 100%;
   text-align: center;
-  padding: 0 1.5em;
 }
 
 body {
-  max-width: 680px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 80px;
+  margin-top: 70px;
 }
 .notice {
   text-align: center;
@@ -205,27 +71,223 @@ body {
   text-align: center;
   color: #f43;
   font-size: 20px;
+}
 
+html {
+  position: relative;
+}
+.copyright {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+  display: inline-block;
+}
+.Cafe {
+  margin-bottom: 50px;
+}
+
+.SlideShow {
+  height: 300px;
+}
+
+/* BackImageSlide */
+
+.backimages {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+}
+.backimages li {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeate: none;
+  opacity: 0;
+  -webkit-animation: anime 40s linear 0s infinite ;
+  animation: anime 40s linear 0s infinite ;
+}
+.backimages li:nth-child(1) {
+  background-image: url(coffeebreak_mini.jpg) /*背景画像*/
+}
+.backimages li:nth-child(2) {
+  background-image: url(osha_mini.jpg);
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
+}
+.backimages li:nth-child(3) {
+  background-image: url(cafetable_mini.jpg);
+  -webkit-animation-delay: 20s;
+  animation-delay: 20s;
+}
+.backimages li:nth-child(4) {
+  background-image: url(coffeetime_mini.jpg);
+  -webkit-animation-delay: 30s;
+  animation-delay: 30s;
+}
+.backimages li:nth-child(5) {
+  background-image: url(cafeterasu_mini.jpg);
+  -webkit-animation-delay: 40s;
+  animation-delay: 40s;
+}
+@-webkit-keyframes anime {
+  0% {
+    -webkit-animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: scale(1.1);
+    opacity: 1;
+  }
+  40% {
+    -webkit-transform: scale(1.2);
+      -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+    opacity: 0;
+  }
+  100% { opacity: 0 }
+}
+@keyframes anime {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  10% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.2);
+      animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% { opacity: 0 }
 }
 
 
-
-
 /* place index */
+
+.jumbotron {
+  margin-top: -27px;
+}
 
 .jumbotron p {
   text-align: center;
 }
 
+h2.placeIndex {
+  margin-top: 90px;
+  color: #fff;
+}
+.col-md-12 .placeIndex {
+  margin-top: -30px;
+}
+
+.table {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-bottom: 10;
+  padding: 10px;
+  background: rgba(50,50,50,0.7);
+  h4 {
+    height: 40px;
+    color: #f3f3f3;
+    font-size: 22px;
+  }
+  .cafePhoto {
+    height: 200px;
+    margin-top: 18px;
+  }
+}
+
+.cafePhotoTop {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.topLeft {
+  width: 45%;
+  float: left;
+  padding: 0 5px;
+  span {
+    margin-left: 10px;
+  }
+}
+.Gapi {
+  width: 65%;
+  padding-top: 5px;
+}
+.topRight {
+  widht: 30%;
+  .btn {
+    float: right;
+  }
+}
+
+.star-rating-top {
+  position: relative; /*相対位置*/
+}
+.star-rating-top .cafePhoto {
+  margin-top: 20px;
+}
+.star-rating-top .name {
+  display: inline-block;
+  position: absolute; /*絶対位置*/
+  top: 0;
+  left: 0;
+  border-radius: 8px 5px 5px 0;
+  margin-top: 0;
+  padding: 3px 6px 4px 8px;
+  background-color: #000;
+  opacity: 0.8;
+  color: #fff;
+}
+.star-rating-top p {
+  position: absolute;
+  bottom: 44px;
+  left: 10px;
+  width: 58%;
+  color: #fafafa;
+}
+.star-rating-top span {
+  position: absolute;
+  top: 75%;
+  right: 5%;
+  display: block;
+  padding: 10px;
+  background-color: #000;
+}
+
+
 
 #search {
-  float:left;
-  min-width: 276px;
+  float: left;
+  width: 67%;
 }
 .search {
-  float: left;
+  float: right;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 15px;
   top: 0;
 }
 
@@ -245,8 +307,8 @@ body {
 
 .cafePhoto {
   width: 100%;
-  height: 250px;
   object-fit: cover;
+  border-radius: 10px;
 }
 @media screen and (min-width: 480px){
   .cafePhoto{
@@ -258,21 +320,8 @@ body {
 
 
 .placeIndexBtn {
-  margin-top: 40px;
+  
 }
-
-
-
-td {
-  background-color: #efefef;
-}
-
-.block {
-  height: 40px;
-  opacity: 0;
-}
-
-
 
 
 
@@ -286,7 +335,9 @@ td {
   padding: 0 1em;
   max-width: 370px;
   opacity: 0.95;
-
+  h1 {
+    color: #fff;
+  }
   body {
     background: #e9e9e9;
     color: #5e5e5e;
@@ -481,10 +532,12 @@ $rate5: $starFull * 5;//星5
 
 
 .star-rating{
-  width: 80px;
-  margin: 0 auto;
+  width: 280px;
+  margin: 0 0 5px 0;
   float: left;
 }
+
+
 
 
 /* Place Show */
@@ -493,7 +546,7 @@ $rate5: $starFull * 5;//星5
   margin-top: 100px;
 }
 .review {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .btn-placeShow {
   color: #fafafa;

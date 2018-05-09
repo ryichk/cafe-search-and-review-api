@@ -7,6 +7,8 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.order("created_at DESC").page(params[:page]).per(20)
+    place_ids = Review.group(:place_id).order('count_place_id DESC').limit(7).count(:place_id).keys
+    @ranking = place_ids.map { |id| Place.find(id) }
   end
 
   def list
