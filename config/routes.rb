@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   }
   resources :users, :only => [:index, :show]
   resources :reviews, :only => [:index, :destroy]
+  resources :likes, :only => [:create, :destroy]
+  resources :like_places, :only => [:create, :destroy]
 
   root 'places#index'
 

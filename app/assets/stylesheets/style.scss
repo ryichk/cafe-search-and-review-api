@@ -62,7 +62,42 @@
       height: 190px;
     }
   }
+  /* Place Show */
+  .tableShow {
+    width: 90%;
+    margin-left: 5%;
+    .cafePhoto {
+      height: 210px;
+    }
+  }
 }
+
+@media screen and (min-width: 465px) and (max-width: 580px){
+  .tableShow {
+    height: 370px;
+    .cafePhoto {
+      height: 250px;
+    }
+    .placeShowBtn {
+      margin-bottom: -40px;
+    }
+  }
+}
+
+@media screen and (min-width: 581px) and (max-width: 739px){
+  .tableShow {
+    height: 405px;
+    .cafePhoto {
+      height: 280px;
+    }
+    .placeShowBtn {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
 @media screen and (min-width: 740px) and (max-width: 779px){
   .cafePhotoTop {
     height: 345px;
@@ -95,6 +130,13 @@
     display: block;
     padding: 10px;
     background-color: #000;
+  }
+  /* Place Show*/
+  .tableShow {
+    height: 460px;
+    .cafePhoto {
+      height: 350px;
+    }
   }
 }
 
@@ -157,6 +199,28 @@
   }
   .table cafename {
     height: 40px;
+  }
+  /* Place Show*/
+  .tableShow {
+    height: 485px;
+    width: 85%;
+    margin-left: 8%;
+    .showAddress {
+      font-size: 18px;
+    }
+    .star-rating {
+      margin-top: 10px;
+    }
+    .placeShowBtn {
+      margin-top: 2px;
+      margin-bottom: 5px;
+    }
+    .cafePhoto {
+      height: 370px;
+    }
+  }
+  .showReview {
+    clear: both;
   }
 }
 

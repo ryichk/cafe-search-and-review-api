@@ -23,16 +23,17 @@
   <h2 class="placeIndex">人気のカフェ</h2>
   <div class="SlideShow">
     <div class="star-rating-top">
-      <% @ranking.each.with_index(1) do |rank, i| %>
+      <% @ranking.each.with_index(1) do |place, i| %>
         <div class="CafePhotos">
-          <a href="/places/<%= rank.id %>"><%= image_tag(rank.photos, :class=>"cafePhotoTop") %>
-          <h3 class=name><%= rank.name %></h3>
-          <p><%= rank.address %></p>
-          <% if rank.reviews.present? %>
-            <span class="rate rate<%= rank.review_average %>"></span>
+          <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop") %></a>
+          <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
+          <div class="haert"><%= render "like_places/like_place", place: place %></div>
+          <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>
+          <% if place.reviews.present? %>
+            <span class="rate rate<%= place.review_average %>"></span>
           <% else %>
             <span class="rate rate0"></span>
-          <% end %></a>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -42,8 +43,9 @@
     <h2 class="placeIndex">登録されているお店</h2>
     <div class="Cafe">
       <% @places.each do |place| %>
-      <div class="table">
-        <div class="cafename"><h4><%= place.name %></h4></div>
+      <div class="table table-<%= place.id %>">
+        <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div></a>
+        <div class="heartIndex"><%= render "like_places/like_place", place: place %></div>
         <div class="star-rating">
           <% if place.reviews.present? %>
             <span class="rate rate<%= place.review_average %>"></span>
@@ -51,10 +53,9 @@
             <span class="rate rate0"></span>
         <% end %>
         </div>
-        <div class="topLeft"><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true">詳細</span><% end %></div>
         <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
         <div class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></div>
-        <div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto"></div>
+        <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto"></div></a>
       </div>
       <% end %>
     </div>

@@ -17,7 +17,8 @@
             <% if current_user.id == review.user_id %>
             <div class="userReview">
               <h3><%= place.name %></h3>
-              <p><%= place.address %></p>
+              <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
+              <p class="address"><%= place.address %></p>
               <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
               <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", method: :delete %></p>
               <div class="star-rating">

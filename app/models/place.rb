@@ -4,6 +4,23 @@ class Place < ApplicationRecord
 
   has_many :reviews
   validates :address, uniqueness: true
+  has_many :like_places, dependent: :destroy
+  has_many :good_users, through: :like_places, source: :user
+
+  #placeをいいねする
+  def good(user)
+    like_places.create(user_id: user.id)
+  end
+
+  #placeのいいねを解除する
+  def ungood(user)
+    like_places.find_by(user_id: user.id).destroy
+  end
+
+  #現在のユーザーがいいねしていたらtrueを返す
+  def good?(user)
+    good_users.include?(user)
+  end
 
   def review_average
     average = self.reviews.average(:rank).round(1)

@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_attached_file :avatar, styles: { medium: "300x300#", thumb: "100x100#" }
   validates_attachment_content_type :avatar, content_type: ["image/jpg","image/jpeg","image/png"]
   has_many :reviews
+  has_many :likes, dependent: :destroy
+  has_many :like_places, dependent: :destroy
   # belongs_to :place
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

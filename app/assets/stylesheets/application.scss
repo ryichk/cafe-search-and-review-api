@@ -1,7 +1,9 @@
+$icon-font-path: 'bootstrap/';
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 @import "gmap4rails";
 @import "animation";
 @import "skippr";
 @import "theme-style";
-@import "style"
+@import "style";

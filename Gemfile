@@ -63,10 +63,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'google_places'
 gem 'gmaps4rails'
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'less-rails'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 gem 'geocoder'
 gem 'devise'
 gem 'omniauth'
@@ -78,4 +78,6 @@ gem 'kaminari'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2.x.x'
 gem 'paperclip'
+gem 'counter_culture', '~>1.8'
+
 

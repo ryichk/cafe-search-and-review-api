@@ -16,7 +16,6 @@ html, body, .copyright {
   background-position: 0% 0%;
 }
 
-
 .jumbotron {
   border-radius: 5px;
   background-color: #444;
@@ -88,9 +87,27 @@ html {
   margin-bottom: 50px;
 }
 
+.placeIndex {
+  position: relative;
+}
 .SlideShow {
   height: 300px;
+  .btn-heart {
+    position: absolute;
+    bottom: 70px;
+    right: -19px;
+    width: 50px;
+    border: none;
+  }
 }
+.heartIndex {
+  .btn-heart {
+    border: none;
+    margin-left: 10px;
+  }
+}
+
+
 
 /* BackImageSlide */
 
@@ -191,6 +208,10 @@ html {
   text-align: center;
 }
 
+.Main {
+  color: #fff;
+}
+
 h2.placeIndex {
   clear: both;
   margin-top: 190px;
@@ -244,6 +265,8 @@ h2.placeIndex {
   widht: 30%;
   .btn {
     float: right;
+    margin-top: -32px;
+    margin-left: 100px;
   }
 }
 
@@ -278,20 +301,17 @@ h2.placeIndex {
   right: 5%;
   display: block;
   padding: 10px;
-  background-color: #000;
 }
-
 
 
 #search {
   float: left;
-  width: 70%;
+  width: 75%;
   margin: 15px 0;
 }
 .search {
   float: right;
   margin: 15px 0;
-  margin-left: 15px;
   top: 0;
 }
 
@@ -323,8 +343,10 @@ h2.placeIndex {
 }
 
 
-.placeIndexBtn {
-  
+.placeShowBtn {
+  float: right;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 
@@ -542,6 +564,15 @@ $rate5: $starFull * 5;//星5
 }
 
 
+.good {
+  float: right;
+  margin-top: -32px;
+}
+.btn-good {
+  width: 50px;
+  background: rgba(0,0,0,0);
+  border: none;
+}
 
 
 /* Place Show */
@@ -565,6 +596,13 @@ $rate5: $starFull * 5;//星5
   padding: 7px 10px;
   border: solid #fff;
   margin-top: 17px;
+}
+.showAddress {
+  color: #f8f8f8;
+  margin-bottom: 12px;
+}
+.tableShow .cafePhoto{
+  height: 210px;
 }
 
 
@@ -649,7 +687,7 @@ $rate5: $starFull * 5;//星5
   height: auto;
   float: right;
   margin-top: 20px;
-  margin-right: 38%;
+  margin-right: 20%;
   border-radius: 7px 7px 7px 7px;
 }
 .userReviews {
@@ -657,6 +695,9 @@ $rate5: $starFull * 5;//星5
   margin-top: 70px;
   margin-right: 5%;
   width: 95%;
+  .address, .star-rating {
+    width: 70%;
+  }
 }
 .userReviews h2 {
   margin: 8px 15px 0 25px;
@@ -668,7 +709,7 @@ $rate5: $starFull * 5;//星5
 
 .btn-reviewDelete {
   float: right;
-  margin-top: 0px;
+  margin-top: 10px;
   background-color: #ddd;
 }
 .btn-reviewDelete:hover {
@@ -677,7 +718,7 @@ $rate5: $starFull * 5;//星5
   margin-right: -4px;
 }
 .btn-reviewEdit {
-  margin: -60px 0px 0 0;
+  margin: -40px 0px 0 0;
   background-color: #ddd;
   float: right;
 }
@@ -746,4 +787,5 @@ td {
   float: right;
   margin-top: 100px;
   margin-right: 27%;
+  clear: both;
 }
