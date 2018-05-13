@@ -3,7 +3,7 @@ environment "production"
 
 # UNIX Socketへのバインド
 tmp_path = "#{File.expand_path("../../..", __FILE__)}/tmp"
-bind "unix://#{tmp_path}/sockets/puma.sock"
+bind "unix://#{tmp_path}/sockets/cafeshares-puma.sock"
 
 # スレッド数とWorker数の指定
 threads 3, 3
