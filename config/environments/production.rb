@@ -105,4 +105,16 @@ Rails.application.configure do
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'cafeshares.com'
   }
+
+  # Paperclip の設定
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => ENV['AWS_S3_BUCKET'],
+    :s3_region => ENV['AWS_REGION'],
+    :s3_host_name => ENV['AWS_S3_HOST'],
+    :s3_credentials => {
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end

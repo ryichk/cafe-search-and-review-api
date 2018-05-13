@@ -48,17 +48,17 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (8.4.1)
       execjs
-    aws-sdk (2.11.46)
-      aws-sdk-resources (= 2.11.46)
-    aws-sdk-core (2.11.46)
-      aws-sigv4 (~> 1.0)
+    aws-sdk (2.0.48)
+      aws-sdk-resources (= 2.0.48)
+    aws-sdk-core (2.0.48)
+      builder (~> 3.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.46)
-      aws-sdk-core (= 2.11.46)
+      multi_json (~> 1.0)
+    aws-sdk-resources (2.0.48)
+      aws-sdk-core (= 2.0.48)
     aws-sdk-v1 (1.67.0)
       json (~> 1.4)
       nokogiri (~> 1)
-    aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
@@ -128,6 +128,7 @@ GEM
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     geocoder (1.4.7)
+    get_process_mem (0.2.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
@@ -218,6 +219,9 @@ GEM
       terrapin (~> 0.6.0)
     public_suffix (3.0.2)
     puma (3.11.4)
+    puma_worker_killer (0.1.0)
+      get_process_mem (~> 0.2)
+      puma (>= 2.7, < 4)
     rack (2.0.5)
     rack-cors (1.0.2)
     rack-test (1.0.0)
@@ -322,7 +326,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  aws-sdk (~> 2.x.x)
+  aws-sdk (~> 2.0.0)
   aws-sdk-v1
   bootstrap-sass
   byebug
@@ -351,6 +355,7 @@ DEPENDENCIES
   omniauth-twitter
   paperclip
   puma (~> 3.7)
+  puma_worker_killer
   rack-cors
   rails (~> 5.1.4)
   rails_12factor
