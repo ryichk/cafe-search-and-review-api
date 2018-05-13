@@ -3,7 +3,7 @@ class LikePlacesController < ApplicationController
     @place = Place.find(params[:place_id])
     unless @place.good?(current_user)
       @place.good(current_user)
-      @place.reload
+      @place = Place.find(params[:place_id])
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }
         format.js
