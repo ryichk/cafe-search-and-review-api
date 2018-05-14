@@ -3,7 +3,7 @@ class InquiryMailer < ActionMailer::Base
   # 送信元アドレス
   default from: "example@example.com"
   # 送信先アドレス
-  default to: "tohodaiichiki@gmail.com"
+  default to: "ryichikio@gmail.com"
 
   def sendmail_confirm(inquiry)
     # メール件名

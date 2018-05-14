@@ -288,7 +288,7 @@ Devise.setup do |config|
     config.omniauth :twitter, ENV['TW_API_KEY'], ENV['TW_API_SECRET']
   end
   # mail setting
-  config.mailer_sender = "tohodaiichiki@gmail.com"
+  config.mailer_sender = "ryichikio@gmail.com"
   # lock sessings
   config.unlock_strategy = :email
   config.maximum_attempts = 4
