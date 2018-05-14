@@ -1,3 +1,4 @@
+gem 'dotenv-rails', :github => "bkeepers/dotenv", :require => 'dotenv/rails-now'
 source 'https://rubygems.org'
 ruby '2.3.1'
 
@@ -54,9 +55,11 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma', require: false
+  gem 'capistrano-secrets-yml'
   # gem 'capistrano3-unicorn', :git => 'git@github.com:noppefoxwolf/capistrano3-unicorn.git'
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-rbenv-vars'
+  gem 'capistrano-faster-assets'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -72,7 +75,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'dotenv-rails'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'kaminari'
 gem 'aws-sdk-v1'

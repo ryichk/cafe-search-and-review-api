@@ -27,8 +27,13 @@ set :puma_init_active_record, true
 set :rbenv_type, :system
 set :rbenv_ruby, '2.3.1'
 
+# It's skip migration if files in db/migrate not modified
+set :conditonally_migrate, true
+
 # デプロイ対象としたくないディレクトリを記載
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+
+
 # set :linked_dirs, fetch(:linked_dirs, []).push('tmp/pids')
 # set :linked_dirs, fetch(:linked_dirs, []).push('tmp/cache')
 # set :linked_dirs, fetch(:linke_dirs, []).push('tmp/sockets')
@@ -36,10 +41,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # set :linked_dirs, fetch(:linked_dirs, []).push('public/system')
 # set :linked_dirs, fetch(:linked_dirs, []).push('public/uploads')
 # デプロイ対象としたくないファイルを記載
-# set :linked_files, fetch(:linked_files, []).push(
-#   'config/database.yml',
-#   'config/secrets.yml'
-# )
+set :linked_files, fetch(:linked_files, []).push(
+  'config/database.yml',
+  'config/secrets.yml'
+)
 
 set :keep_releases, 3
 
@@ -76,6 +81,7 @@ set :keep_releases, 3
           execute "mkdir -p #{shared_path}/config"
         end
         upload!('config/database.yml', "#{shared_path}/config/database.yml")
+        # upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
       end
     end
     # desc 'Symlink linked files'
@@ -117,15 +123,15 @@ set :keep_releases, 3
         invoke 'deploy'
       end
     end
-    Rake::Task["deploy:symlink:release"].clear
-    namespace :symlink do
-      desc 'Symlink release to current'
-      task :release do
-        on release_roles :all do
-          execute :ln, '-s', release_path, current_path
-        end
-      end
-    end
+    # Rake::Task["deploy:symlink:release"].clear
+    # namespace :symlink do
+    #   desc 'Symlink release to current'
+    #   task :release do
+    #     on release_roles :all do
+    #       execute :ln, '-s', release_path, current_path
+    #     end
+    #   end
+    # end
     desc 'Restart application'
     task :restart do
       on roles(:app), in: :sequence, wait: 5 do

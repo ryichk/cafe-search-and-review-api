@@ -1,16 +1,16 @@
-set :production
-set :branch, 'master'
+# set :production
+# set :branch, 'master'
 
-server "149.28.18.198",
-  user: "deploy",
-  roles: %w{web app db},
-  ssh_options: {
-    user: "deploy", # overrides user setting above
-    keys: %w(~/.ssh/id_rsa_cafeshares),
-    forward_agent: true,
-    auth_methods: %w(publickey)
-    # password: "please use keys"
-  }
+# server "149.28.18.198",
+#   user: "deploy",
+#   roles: %w{web app db},
+#   ssh_options: {
+#     user: "deploy", # overrides user setting above
+#     keys: %w(~/.ssh/id_rsa_cafeshares),
+#     forward_agent: true,
+#     auth_methods: %w(publickey)
+#     # password: "please use keys"
+#   }
 # role :app, %w{deploy@198.13.36.130}
 # role :web, %w{deploy@198.13.36.130}
 # role :db, %w{deploy@198.13.36.130}
