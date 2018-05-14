@@ -137,25 +137,25 @@ html {
   animation: anime 40s linear 0s infinite ;
 }
 .backimages li:nth-child(1) {
-  background-image: image-url(coffeebreak_mini.jpg) /*背景画像*/
+  background-image: image-url("coffeebreak_mini.jpg") /*背景画像*/
 }
 .backimages li:nth-child(2) {
-  background-image: image-url(osha_mini.jpg);
+  background-image: image-url("osha_mini.jpg");
   -webkit-animation-delay: 10s;
   animation-delay: 10s;
 }
 .backimages li:nth-child(3) {
-  background-image: image-url(cafetable_mini.jpg);
+  background-image: image-url("cafetable_mini.jpg");
   -webkit-animation-delay: 20s;
   animation-delay: 20s;
 }
 .backimages li:nth-child(4) {
-  background-image: image-url(coffeetime_mini.jpg);
+  background-image: image-url("coffeetime_mini.jpg");
   -webkit-animation-delay: 30s;
   animation-delay: 30s;
 }
 .backimages li:nth-child(5) {
-  background-image: image-url(cafeterasu_mini.jpg);
+  background-image: image-url("cafeterasu_mini.jpg");
   -webkit-animation-delay: 40s;
   animation-delay: 40s;
 }
