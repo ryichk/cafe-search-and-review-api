@@ -104,8 +104,8 @@ Rails.application.configure do
     :user_name => ENV['GMAIL_USRE'],
     :password => ENV['GMAIL_PASS'],
     :domain => 'gmail.com'
-    authentication: 'login',
-    enable_starttls_auto: true
+    :authentication => 'login',
+    :enable_starttls_auto => true
   }
 
   # Paperclip の設定
