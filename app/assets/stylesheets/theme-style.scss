@@ -133,6 +133,7 @@ html {
   background-position: 50% 50%;
   background-repeate: none;
   opacity: 0;
+  transform: translate3d(0,0,0);
   -webkit-animation: anime 40s linear 0s infinite ;
   animation: anime 40s linear 0s infinite ;
 }
