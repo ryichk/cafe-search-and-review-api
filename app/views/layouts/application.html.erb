@@ -39,8 +39,9 @@
             <% else %>
               <li><%= link_to 'サインアップ', new_user_registration_path %></li>
               <li><%= link_to 'ログイン', new_user_session_path %></li>
-              <li><%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Twitterログイン", user_twitter_omniauth_authorize_path, :class => 'navbar-link' %></li>
+              <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
+              <li><%= link_to " Twitterログイン", user_twitter_omniauth_authorize_path, :class => 'navbar-link fa fa-twitter' %></li>
+              <li><%= link_to " Instagramログイン", user_instagram_omniauth_authorize_path, :class => 'navbar-link fa fa-instagram' %></li>
             <% end %>
             <li><a href="terms/index">About</a></li>
             <li><%= link_to "Contact", inquiry_path, :class => 'navbar-link' %></li>
@@ -58,7 +59,7 @@
     </div>
   </body>
   <footer class="footer copyright">
-    <div class="container">
+    <div class="containerCopyright">
       <small>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</small>
     </div>
   </footer>

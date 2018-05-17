@@ -39,6 +39,19 @@ class User < ApplicationRecord
     user
   end
 
+  def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(username: auth.info.nickname,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: User.create_unique_email,
+                         password: Devise.friendly_token[0,20]
+                         )
+    end
+    user
+  end
+
     private
     # 通常サインアップ時のuid用、Twitter OAuth認証時のemail用にuuidな文字列を生成
       def self.create_unique_string

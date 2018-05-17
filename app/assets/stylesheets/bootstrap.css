@@ -321,11 +321,28 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .thums-up {
   color: #fff;
   margin-bottom: 20px;
 }
+.fa-facebook {
+  background-color: #3b599f;
+  border-radius: 5px;
+  margin: 2px 0;
+}
+
+.fa-twitter {
+  background-color: #1da1f3;
+  border-radius: 5px;
+  margin: 2px 0;
+}
+
+.fa-instagram {
+  background-color: #cd486b;
+  border-radius: 5px;
+  margin: 2px 0;
+}
+
 .glyphicon-asterisk:before {
   content: "\002a";
 }
@@ -4264,7 +4281,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }*/
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 340px;
+  max-height: 100%;
 }
 @media (max-device-width: 30000px) and (orientation: landscape) {
   .navbar-fixed-top .navbar-collapse,
@@ -4368,6 +4385,62 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: none;
   }
 }*/
+
+/* Login と SIgnInの下の部分 */
+.form-wrapper ul {
+  padding-bottom: 50px;
+}
+.form-wrapper .navbar-nav {
+  margin: 3px -15px;
+}
+.form-wrapper .navbar-nav > li > a {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  color: #fff;
+}
+@media (max-width: 30000px) {
+  .form-wrapper .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .form-wrapper .navbar-nav .open .dropdown-menu > li > a,
+  .form-wrapper .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .form-wrapper .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .form-wrapper .navbar-nav .open .dropdown-menu > li > a:hover,
+  .form-wrapper .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (max-width: 30000px) {
+  .form-wrapper .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .form-wrapper .navbar-nav > li {
+    float: left;
+    width: 100%;
+  }
+  .form-wrapper .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+}
+
+
+/* global navbar */
+
 .navbar-nav {
   margin: 7.5px -15px;
 }
@@ -4643,7 +4716,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: #ddd;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4651,10 +4724,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #9d9d9d;
+  color: #ddd;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: #ddd;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {

@@ -77,6 +77,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-instagram'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'kaminari'
 gem 'aws-sdk-v1'
@@ -84,4 +85,6 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
+
+
 

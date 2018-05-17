@@ -23,6 +23,10 @@ html, body {
   opacity: 0.8;
 }
 
+.containerCopyright {
+  margin-top: 20px;
+}
+
 .jumbotron h2 {
   text-align: center;
   color: #fff;
@@ -46,7 +50,6 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  widht: 100%;
   height: auto;
 }
 
@@ -262,7 +265,6 @@ h2.placeIndex {
   padding-top: 5px;
 }
 .topRight {
-  widht: 30%;
   .btn {
     float: right;
     margin-top: -32px;
@@ -356,7 +358,7 @@ h2.placeIndex {
   margin-top: 50px;
 }
 .form-wrapper {
-  background: #fafafa;
+  color: #fff;
   margin: 3em auto;
   padding: 0 1em;
   max-width: 370px;
@@ -422,6 +424,8 @@ h2.placeIndex {
     text-transform: uppercase;
     transition: background 0.3s ease-in-out;
     width: 100%;
+    max-height: 100px;
+    border-radius: 5px;
   }
 
   .button:hover {

@@ -32,6 +32,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_from :twitter
   end
 
+  def instagram
+    callback_from :instagram
+  end
+
   private
 
     def callback_from(provider)
@@ -39,7 +43,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
       @user = User.find_for_oauth(request.env['omniauth.auth'])
 
-      if @user.persisted?
+      if @user.persisted? #保存済みかどうかを確認
         flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
         sign_in_and_redirect @user, event: :authentication
       else
