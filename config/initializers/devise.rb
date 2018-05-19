@@ -290,7 +290,7 @@ Devise.setup do |config|
     config.omniauth :instagram, ENV['INSTAGRAM_CLIENT_ID'], ENV['INSTAGRAM_CLIENT_SECRET']
   end
   # mail setting
-  config.mailer_sender = "ryichikio@gmail.com"
+  config.mailer_sender = "cafeshares.com"
   # lock sessings
   config.unlock_strategy = :email
   config.maximum_attempts = 4
