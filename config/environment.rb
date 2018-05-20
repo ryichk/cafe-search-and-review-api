@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
   :password => ENV['SENDGRID_PASS'],
   :domain => 'cafeshares.com',
   :address => 'smtp.sendgrind.net',
-  :port => '465',
+  :port => '587',
   :authentication => :plain,
   :enable_starttls_auto => true
 }
