@@ -102,7 +102,7 @@ Rails.application.configure do
     :port => "587",
     :user_name => ENV['SENDGRID_USRE'],
     :password => ENV['SENDGRID_PASS'],
-    :domain => 'cafeshares.com',
+    :domain => 'em4543.cafeshares.com',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }
