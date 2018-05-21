@@ -281,9 +281,9 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   # API key
   if Rails.env.production?
-    config.omniauth :facebook, ENV['FB_API_KEY'], ENV['FB_API_SECRET']
-    config.omniauth :twitter, ENV['TW_API_KEY'], ENV['TW_API_SECRET']
-    config.omniauth :instagram, ENV['INSTAGRAM_CLIENT_ID'], ENV['INSTAGRAM_CLIENT_SECRET']
+    config.omniauth :facebook, Rails.application.secrets.facebook_id, Rails.application.secrets.facebook_secret_key
+    config.omniauth :twitter, Rails.application.secrets.twitter_api_key, Rails.application.secrets.twitter_api_secret
+    config.omniauth :instagram, Rails.application.secrets.instagram_client_id, Rails.application.secrets.instagram_client_secret
   else
     config.omniauth :facebook, ENV['FB_API_KEY'], ENV['FB_API_SECRET']
     config.omniauth :twitter, ENV['TW_API_KEY'], ENV['TW_API_SECRET']
