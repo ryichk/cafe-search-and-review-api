@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
 
   def list
     keyword = params[:search]
-    @client = GooglePlaces::Client.new( ENV['GOOGLE_API_KEY'] )
+    @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @places = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
     @place = Place.all
   end

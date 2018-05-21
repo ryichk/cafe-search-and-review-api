@@ -13,7 +13,7 @@
       <% end %>
     <% end %>
     <%= form_tag places_list_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google API 検索"} %>
+      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
       <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
         <span class="glyphicon glyphicon-search">検索</span>
       <% end %>
