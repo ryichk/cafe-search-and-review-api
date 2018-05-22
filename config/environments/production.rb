@@ -100,8 +100,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => "587",
-    :user_name => ENV['SENDGRID_USRE'],
-    :password => ENV['SENDGRID_PASS'],
+    :user_name => Rails.application.secrets.sendgrid_user,
+    :password => Rails.application.secrets.sendgrid_pass,
     :domain => 'em4543.cafeshares.com',
     :authentication => 'plain',
     :enable_starttls_auto => true
