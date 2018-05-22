@@ -35,3 +35,4 @@
 .pryrc
 .DS_Store
 config/secrets.yml
+sendgrid.env
