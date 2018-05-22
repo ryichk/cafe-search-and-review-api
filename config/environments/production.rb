@@ -102,7 +102,7 @@ Rails.application.configure do
     :port => "465",
     :user_name => Rails.application.secrets.sendgrid_api_user,
     :password => Rails.application.secrets.sendgrid_api_pass,
-    :domain => 'em4543.cafeshares.com',
+    :domain => 'cafeshares.com',
     :authentication => 'plain',
     :enable_starttls_auto => true
   }
