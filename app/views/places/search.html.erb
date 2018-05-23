@@ -1,6 +1,18 @@
 <div class="Main">
   <div class="container">
     <div class="col-md-6">
+    <%= form_tag search_places_path, :role => "form", :method => :get do %>
+      <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shares 検索"} %>
+      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
+        <i class="fa fa-search">検索</i>
+      <% end %>
+    <% end %>
+    <%= form_tag places_list_path, :role => "form", :method => :get do %>
+      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
+      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
+        <i class="fa fa-search">検索</i>
+      <% end %>
+    <% end %>
     <h2 style="color: #fff;text-align: center;">お目当のカフェがなかったら<br>ここから検索してみよう</h2>
     <%= form_tag places_list_path, :role => "form", :method => :get do %>
       <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"お目当のカフェが出てこなかったらここで検索してみよう"} %>
