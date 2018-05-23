@@ -20,6 +20,7 @@ class SendgridWebMailer < ActionMailer::Base
         layout: nil,
         assigns: IF_NEEDED || {}
       )
+    )
     mail.contents = content
 
     personalization = Personalization.new
