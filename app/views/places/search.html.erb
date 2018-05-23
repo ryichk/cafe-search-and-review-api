@@ -6,7 +6,6 @@
         <i class="fa fa-search">検索</i>
       <% end %>
     <% end %>
-    <div class="col-md-6">
     <h2>お目当のカフェがなかったらここから検索してみよう</h2>
     <%= form_tag places_list_path, :role => "form", :method => :get do %>
       <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
@@ -14,7 +13,6 @@
         <i class="fa fa-search">検索</i>
       <% end %>
     <% end %>
-    </div>
     <div class="col-md-12">
     <h1>検索結果</h1>
     <div class="Cafe">

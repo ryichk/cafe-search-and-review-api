@@ -36,3 +36,5 @@
 .DS_Store
 config/secrets.yml
 sendgrid.env
+sendgrid.env
+sendgrid.env

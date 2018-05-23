@@ -85,7 +85,7 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
-
+gem 'sendgrid-ruby'
 
 
 
