@@ -8,7 +8,6 @@ class SendgridWebMailer < ActionMailer::Base
   def send_some_email(record, token)
     mail = Mail.new
     # do your mail setup here
-    mail = Mail.new
     mail.from = Email.new(email: cafeshares.com)
     mail.subject = YOUR_SUBJECT
 
