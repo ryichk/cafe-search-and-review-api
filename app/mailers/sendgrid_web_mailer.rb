@@ -7,12 +7,12 @@ class SendgridWebMailer < ActionMailer::Base
 
   def send_some_email(record, token)
     mail = Mail.new
-    // do your mail setup here
+    # do your mail setup here
     mail = Mail.new
     mail.from = Email.new(email: cafeshares.com)
     mail.subject = YOUR_SUBJECT
 
-    // I personally use sendgrid templates, but if you would like to use html - 
+    # I personally use sendgrid templates, but if you would like to use html -
     content = Content.new(
       type: 'text/html',
       value: ApplicationController.render(
@@ -20,7 +20,7 @@ class SendgridWebMailer < ActionMailer::Base
         layout: nil,
         assigns: IF_NEEDED || {}
       )
-    mail.contents = content 
+    mail.contents = content
 
     personalization = Personalization.new
     personalization.to = Email.new(email: EMAIL, name: NAME)
