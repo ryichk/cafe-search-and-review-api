@@ -40,7 +40,7 @@
                } ),:method => 'post', :class=>'btn btn-default' ) %></div>
           <% end %>
           <% if place.photos[0] %>
-            <div class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto" ></div>
+            <div class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
           <% else %>
             <div class="boxBottom"><img src="" width="300"></div>
           <% end %>

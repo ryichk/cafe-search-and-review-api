@@ -24,7 +24,7 @@
     <div class="star-rating-top">
       <% @ranking.each.with_index(1) do |place, i| %>
         <div class="CafePhotos">
-          <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop") %></a>
+          <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
           <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
           <div class="haert"><%= render "like_places/like_place", place: place %></div>
           <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>

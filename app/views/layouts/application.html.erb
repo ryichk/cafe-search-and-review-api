@@ -1,6 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+    html {
+      position: relative;
+    }
+    html, body {
+      background:url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat fixed;
+      width: 100%;
+      min-width: 360px;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+    body {
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 70px;
+    }
+    .jumbotron {
+      background-color:#444;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-radius:5px;
+      color:#f1faf1;
+      opacity:0.8;
+    }
+    .jumbotron h1,
+    .jumbotron .h1 {
+      color: inherit;
+    }
+    .jumbotron p {
+      margin-bottom: 15px;
+      font-size: 21px;
+      font-weight: 200;
+    }
+    .jumbotron > hr {
+      border-top-color: #d5d5d5;
+    }
+    .container .jumbotron,
+    .container-fluid .jumbotron {
+      padding-right: 15px;
+      padding-left: 15px;
+      border-radius: 6px;
+    }
+    .jumbotron .container {
+      max-width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      .jumbotron {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .container .jumbotron,
+      .container-fluid .jumbotron {
+        padding-right: 60px;
+        padding-left: 60px;
+      }
+      .jumbotron h1,
+      .jumbotron .h1 {
+        font-size: 63px;
+      }
+    }
+    .jumbotron h2 {
+      text-align: center;
+      color: #fff;
+    }
+    .navbar {
+      background-color: #222;
+    }
+    .navbar-brand {
+      overflow: hidden;
+      width: 90px;
+      height: 80px;
+      position: relative;
+    }
+    .navbar-brand .CafeSharesLogo {
+      position: absolute;
+      top: 50%;
+      left: 70%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      height: auto;
+    }
+    .notice {
+      text-align: center;
+      color: #9f5;
+      font-size: 20px;
+    }
+    .alert {
+      text-align: center;
+      color: #f43;
+      font-size: 20px;
+    }
+    </style>
     <title>Cafe Shares カフェ・シェアーズ</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>

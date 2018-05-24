@@ -15,7 +15,7 @@
       <% end %>
       </div>
       <a href="/places/<%= @place.id %>/reviews/new" class="btn placeShowBtn btn-default" >投稿する</a>
-      <div><img src="<%= @place.photos %>" class="cafePhoto"></div>
+      <div><img src="<%= @place.photos %>" class="cafePhoto img-responsive"></div>
     </div>
   </div>
   <!-- <div class="map_container">
@@ -47,7 +47,7 @@
           <%= simple_format(review.review) %>
         </p>
         <% unless review.photos.blank? %>
-          <img src="review.photos">
+          <img src="review.photos" class="img-responsive">
         <% end %>
       </li>
       <br>
