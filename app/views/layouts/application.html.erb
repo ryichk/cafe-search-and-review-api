@@ -3,7 +3,7 @@
   <head>
     <style>
     html {
-      background:url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat fixed;
+      background-color: #fff;
       width: 100%;
       position: relative;
     }
@@ -12,15 +12,13 @@
       text-align: center;
     }
     body {
-      background-color: rgba(70,50,60,0.1);
       margin-right: auto;
       margin-left: auto;
       margin-top: 70px;
     }
     .jumbotron {
-      background-color:#444;
-      padding-top: 30px;
-      padding-bottom: 30px;
+      background:url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
+      padding: 30px;
       margin-bottom: 30px;
       border-radius:5px;
       color:#f1faf1;
@@ -48,7 +46,14 @@
       max-width: 100%;
     }
     @media screen and (min-width: 768px) {
+      html {
+        background:url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
+      }
+      body {
+        background-color: rgba(70,50,60,0.1);
+      }
       .jumbotron {
+        background: rgba(30,30,30,0.5);
         padding-top: 48px;
         padding-bottom: 48px;
       }
