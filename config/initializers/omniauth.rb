@@ -7,7 +7,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
         authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"
     }
   # Twitter
-  provider :twitter, Rails.application.secrets.twitter_api_key, Rails.application.secrets.twitter_api_secret
+  provider :twitter, Rails.application.secrets.TW_API_KEY, Rails.application.secrets.TW_API_SECRET
   # Instagram
   provider :instagram, Rails.application.secrets.instagram_client_id, Rails.application.secrets.instagram_client_secret
 end
