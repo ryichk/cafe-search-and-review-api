@@ -99,7 +99,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :port => 465,
     :user_name => ENV['SENDGRID_API_USER'],
     :password => ENV['SENDGRID_API_PASS'],
     :domain => 'cafeshares.com',
