@@ -99,11 +99,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
-    :port => "465",
+    :port => 587,
     :user_name => ENV['SENDGRID_API_USER'],
     :password => ENV['SENDGRID_API_PASS'],
     :domain => 'cafeshares.com',
-    :authentication => 'plain',
+    :authentication => :plain,
     :enable_starttls_auto => true
   }
 
