@@ -21,7 +21,7 @@ development:
   host: localhost
   database: cafeshaker_development
   username: root
-  password: passw0rd
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
