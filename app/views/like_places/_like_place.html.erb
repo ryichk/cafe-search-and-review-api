@@ -3,14 +3,14 @@
     <% if place.good?(current_user) %>
       <%= form_for(place.like_places.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
         <%= button_tag(class: "btn-heart") do %>
-          <%= content_tag :span, "#{place.like_places_count}", class: "glyphicon-heart" %>
+          <%= content_tag :i, "#{place.like_places_count}", class: "fa fa-heart" %>
         <% end %>
       <% end %>
     <% else %>
       <%= form_for(place.like_places.build, remote: true) do |f| %>
       <div><%= hidden_field_tag :place_id, place.id %></div>
         <%= button_tag(class: "btn-heart") do %>
-          <%= content_tag :span, "#{place.like_places_count}", class: "glyphicon-heart glyphicon-heart-empty" %>
+          <%= content_tag :span, "#{place.like_places_count}", class: "fa fa-heart glyphicon-heart-empty" %>
         <% end %>
       <% end %>
     <% end %>
