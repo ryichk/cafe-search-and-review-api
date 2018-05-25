@@ -267,7 +267,6 @@ th {
   display:inline-block;
   font-style: normal;
   font-weight: normal;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -278,7 +277,7 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  font-size: 45px;
+  font-size: 60px;
   color: #f66;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -288,7 +287,7 @@ th {
   margin-top: -35px;
 }
 
-.fa-thumbs-up::before {
+.fa-thumbs-up {
   float: right;
   font-style: normal;
   font-weight: normal;
