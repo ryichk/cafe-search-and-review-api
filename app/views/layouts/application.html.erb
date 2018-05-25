@@ -19,12 +19,11 @@
     }
     .jumbotron {
       position: relative;
-      background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/auto 100% no-repeat;
-      -webkit-background-size:100% auto;
       background-color: rgba(0,0,0,0.4);
+      box-shadow: 13px 13px 13px rgba(0,0,0,0.4);
       height: 220PX;
       width: 100%;
-      margin: 0 auto;
+      margin: 50px auto;
       border-radius:20px;
       color:#f1faf1;
       z-index: 1;
@@ -36,7 +35,7 @@
     .jumbotron p {
       position: absolute;
       top: 160px;
-      left: 20px;
+      left: 30px;
       font-size: 21px;
       font-weight: 200;
     }
@@ -78,7 +77,7 @@
       height: 80px;
       position: relative;
     }
-    .navbar-brand .CafeSharesLogo {
+    .CafeSharesLogo {
       position: absolute;
       top: 50%;
       left: 70%;
@@ -86,6 +85,11 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       height: auto;
+    }
+    .CafeSharesLogo:active, .CafeSharesLogo:hover {
+      background-color: #444;
+      border-radius: 20px 70px 40px 10px;
+      padding: 5px 0 0 5px;
     }
     .notice {
       text-align: center;
