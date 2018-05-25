@@ -9,33 +9,6 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
   font-family: 'FontAwesome', sans-serif;
 }
 
-
-
-
-h1 {
-  width: 100%;
-  text-align: center;
-}
-
-body {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 70px;
-}
-.notice {
-  text-align: center;
-  color: #9f5;
-  font-size: 20px;
-}
-.alert {
-  text-align: center;
-  color: #f43;
-  font-size: 20px;
-}
-
-html {
-  position: relative;
-}
 .copyright {
   position: absolute;
   width: 100%;
@@ -47,7 +20,6 @@ html {
 .Cafe {
   margin-bottom: 50px;
 }
-
 .placeIndex {
   position: relative;
 }
@@ -71,92 +43,6 @@ html {
   background-color: transparent;
 }
 
-
-
-/* BackImageSlide */
-
-.backimages {
-  position: fixed;
-  top: 0px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: -1;
-}
-.backimages li {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeate: none;
-  opacity: 0;
-  transform: translate3d(0,0,0);
-  -webkit-animation: anime 40s linear 0s infinite ;
-  animation: anime 40s linear 0s infinite ;
-}
-.backimages li:nth-child(1) {
-  background-image: image-url("coffeebreak_mini.jpg") /*背景画像*/
-}
-.backimages li:nth-child(2) {
-  background-image: image-url("cafeterasu_mini.jpg");
-  -webkit-animation-delay: 10s;
-  animation-delay: 10s;
-}
-.backimages li:nth-child(3) {
-  background-image: image-url("cafetable_mini.jpg");
-  -webkit-animation-delay: 20s;
-  animation-delay: 20s;
-}
-.backimages li:nth-child(4) {
-  background-image: image-url("coffeetime_mini.jpg");
-  -webkit-animation-delay: 30s;
-  animation-delay: 30s;
-}
-
-@-webkit-keyframes anime {
-  0% {
-    -webkit-animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  10% {
-    -webkit-transform: scale(1.1);
-    opacity: 1;
-  }
-  40% {
-    -webkit-transform: scale(1.2);
-      -webkit-animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: scale(1.3);
-    opacity: 0;
-  }
-  100% { opacity: 0 }
-}
-@keyframes anime {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  10% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  40% {
-    transform: scale(1.2);
-      animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.3);
-    opacity: 0;
-  }
-  100% { opacity: 0 }
-}
 
 
 /* place index */

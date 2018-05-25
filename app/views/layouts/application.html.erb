@@ -2,6 +2,89 @@
 <html>
   <head>
     <style>
+    /* BackImageSlide */
+    .backimages {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: -1;
+    }
+    .backimages li {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeate: none;
+      opacity: 0;
+      transform: translate3d(0,0,0);
+      -webkit-animation: anime 40s linear 0s infinite ;
+      animation: anime 40s linear 0s infinite ;
+    }
+    .backimages li:nth-child(1) {
+      background-image: url(<%= asset_path "coffeebreak_mini.jpg" %>);
+    }
+    .backimages li:nth-child(2) {
+      background-image: url(<%= asset_path "cafeterasu_mini.jpg" %>);
+      -webkit-animation-delay: 10s;
+      animation-delay: 10s;
+    }
+    .backimages li:nth-child(3) {
+      background-image: url(<%= asset_path "cafetable_mini.jpg" %>);
+      -webkit-animation-delay: 20s;
+      animation-delay: 20s;
+    }
+    .backimages li:nth-child(4) {
+      background-image: url(<%= asset_path "coffeetime_mini.jpg" %>);
+      -webkit-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+    @-webkit-keyframes anime {
+      0% {
+        -webkit-animation-timing-function: ease-in;
+        opacity: 0;
+      }
+      10% {
+        -webkit-transform: scale(1.1);
+        opacity: 1;
+      }
+      40% {
+        -webkit-transform: scale(1.2);
+          -webkit-animation-timing-function: ease-out;
+        opacity: 1;
+      }
+      50% {
+        -webkit-transform: scale(1.3);
+        opacity: 0;
+      }
+      100% { opacity: 0 }
+    }
+    @keyframes anime {
+      0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+      }
+      10% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+      40% {
+        transform: scale(1.2);
+          animation-timing-function: ease-out;
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0;
+      }
+      100% { opacity: 0 }
+    }
+  /* ここまでsignupとsigninのbackground-image slide */
     html {
       background: url(<%= asset_path "cafetable_mini.jpg" %>) 75% top/cover no-repeat;
       width: auto;
@@ -27,6 +110,10 @@
       border-radius:20px;
       color:#f1faf1;
       z-index: 1;
+    }
+    .jumbotron-place-index {
+      background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/auto 100% no-repeat;
+      -webkit-background-size:100% auto;
     }
     .jumbotron h1 {
       position: absolute;
@@ -102,12 +189,12 @@
       font-size: 20px;
     }
     </style>
-    <title>Cafe Shares カフェ・シェアーズ</title>
     <%= csrf_meta_tags %>
+    <title>Cafe Shares カフェ・シェアーズ</title>
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>
-    <meta name="theme-color" content="#5a2f32"><!-- Chromeのタブの色 -->
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="theme-color" content="#5a2f32"><!-- Chromeのタブの色 -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="//maps.googleapis.com/maps/api/place/textsearch/json?query=cafe+in+keyword&key=<%= ENV['GOOGLE_API_KEY'] %>" type='text/javascript'></script>
