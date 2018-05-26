@@ -225,7 +225,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to_unless_current 'HOME', root_path %></li>
+            <li><%= link_to_unless_current 'HOME', root_path, data:{"turbolinks"=>false} %></li>
             <% if user_signed_in? %>
               <li><%= link_to_unless_current current_user.username, user_path(current_user.id) %></li>
               <li><%= link_to_unless_current 'みんなの口コミ一覧', reviews_path %></li>
