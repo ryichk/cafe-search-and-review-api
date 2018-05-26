@@ -9,14 +9,6 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
   font-family: 'FontAwesome', sans-serif;
 }
 
-.copyright {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  opacity: 0.9;
-  display: inline-block;
-}
 .Cafe {
   margin-bottom: 50px;
 }
@@ -47,7 +39,6 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
     right: 40%;
   }
 }
-
 
 
 
@@ -318,7 +309,8 @@ h2.placeIndex {
 
 /* Review new */
 .contents {
-  padding: 20px;
+  position: relative;
+  padding: 10px;
   margin: 0 auto;
   width: auto;
 }
@@ -632,18 +624,16 @@ td {
 }
 
 
+
 /* copyright */
-footer {
+.Copyright {
   position: absolute;
   bottom: 0;
-}
-.copyright {
+  height: 100px;
+  width: 100%;
+  display: block;
   color: #bfbfbf;
   text-align: center;
-  padding: 13px 0 0;
-  font-size: 17px;
-  float: right;
-  margin-top: 100px;
-  margin-right: 27%;
-  clear: both;
+  font-size: 20px;
+  padding-top: 100px;
 }
