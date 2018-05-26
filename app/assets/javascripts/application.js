@@ -14,9 +14,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require underscore
+//= require underscore.min
 //= require gmaps/google
-//= require skippr
+//= require skippr.min
 //= require rails-ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require_tree .

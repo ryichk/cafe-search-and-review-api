@@ -1,6 +1,5 @@
 <div class="Main">
-  <div class="showReview">
-    <%= form_tag search_places_path, :role => "form", :method => :get do %>
+  <%= form_tag search_places_path, :role => "form", :method => :get do %>
       <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shares 検索"} %>
       <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
         <i class="fa fa-search">検索</i>
@@ -12,10 +11,11 @@
         <i class="fa fa-search">検索</i>
       <% end %>
     <% end %>
+  <div class="showReview">
     <div class="jumbotron animated bounceIn">
     <h1>検索したお店はこちら！</h1>
     </div>
-    <h3 style="text-align: center;">登録ボタンを押したらCafe Sharesで<br>シェアできるようになるよ</h3>
+    <h3 style="text-align: center;">登録すればCafe Sharesでシェアできるようになるよ</h3>
     <div class="col-md-12">
       <div class="Cafe">
       <% @places.each do |place| %>

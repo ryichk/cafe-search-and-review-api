@@ -71,6 +71,7 @@ gem 'gmaps4rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'geocoder'
 gem 'devise'
@@ -85,7 +86,6 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
-gem 'sendgrid-ruby'
 
 
 
