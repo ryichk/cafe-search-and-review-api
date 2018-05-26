@@ -245,7 +245,7 @@
             <input type="text" class="form-control col-lg-8" placeholder="Search">
           </form> -->
         </div><!--/.nav-collapse -->
-        <script async>
+        <script data-turbolinks-eval="false" async>
           $(document).on('click touchend', function(e) {
             if (!$(e.target).closest('li').length){
               $('.navbar-collapse').on('click touchend' function(){
@@ -256,7 +256,7 @@
         </script>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
-    <script async>
+    <script data-turbolinks-eval="false" async>
       var menuHeight = $(".navbar-collapse").height();
       var startPos = 0;
       $(window).scroll(function(){
