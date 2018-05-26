@@ -419,6 +419,7 @@ $rate5: $starFull * 5;//星5
   width: 50px;
   background: rgba(0,0,0,0);
   border: none;
+  font-size: 2.6em;
 }
 
 
@@ -626,6 +627,10 @@ td {
 
 
 /* copyright */
+footer {
+  position: absolute;
+  bottom: 0;
+}
 .copyright {
   color: #bfbfbf;
   text-align: center;

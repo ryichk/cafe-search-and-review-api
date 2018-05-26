@@ -282,7 +282,7 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 .heart {
-  font-size: 31px;
+  font-size: 2.5em;
 }
 .btn-good {
   float: right;
@@ -299,11 +299,10 @@ th {
   -moz-osx-font-smoothing: grayscale;
 }
 .empty {
-  font-size: 31px;
+  font-size: 2.5em;
   color: #aaa;
 }
 .thums-up {
-  font-size: 31px;
   margin-bottom: 20px;
 }
 
@@ -312,7 +311,6 @@ th {
   border-radius: 5px;
   margin: 2px 0;
 }
-
 .fa-twitter {
   background-color: #1da1f3;
   border-radius: 5px;
