@@ -3,14 +3,14 @@
   <% if review.like?(current_user) %>
     <%= form_for(review.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
       <%= button_tag(class: "btn-good") do %>
-        <%= fa_icon 's fa-thumbs-up thumbs-up' %><%= " #{review.likes_count}" %>
+        <%= fa_icon 's fa-thumbs-up thumbs-up' %><small><%= " #{review.likes_count}" %></small>
       <% end %>
     <% end %>
   <% else %>
     <%= form_for(review.likes.build, remote: true) do |f| %>
       <div><%= hidden_field_tag :review_id, review.id %></div>
       <%= button_tag(class: "btn-good") do %>
-        <%= content_tag :i, "", class: "fa fa-thumbs-up empty" %><%= content_tag :p, " #{review.likes_count}", class: "thumbs-up" %>
+        <%= content_tag :i, "", class: "fa fa-thumbs-up empty" %><%= content_tag :small, " #{review.likes_count}", class: "thumbs-up" %>
       <% end %>
     <% end %>
   <% end %>

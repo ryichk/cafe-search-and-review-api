@@ -298,6 +298,10 @@ th {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.fa-thumbs-up:before{
+  margin-top: -40px;
+  display: inherit;
+}
 .empty {
   font-size: 2.5em;
   color: #aaa;
@@ -501,7 +505,7 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+  margin: 10px 0 0 10px;
 }
 .lead {
   margin-bottom: 20px;
@@ -516,7 +520,8 @@ p {
 }
 small,
 .small {
-  font-size: 85%;
+  font-size: 65%;
+  margin: 2px;
 }
 mark,
 .mark {
