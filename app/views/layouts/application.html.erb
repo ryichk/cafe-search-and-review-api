@@ -87,7 +87,7 @@
   /* ここまでsignupとsigninのbackground-image slide */
     html {
       background: url(<%= asset_path "cafetable_mini.jpg" %>) 75% top/cover no-repeat;
-      width: auto;
+      width: 100%;
       position: relative;
       z-index: -1;
     }
@@ -202,7 +202,6 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
   </head>
-
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -240,6 +239,24 @@
         </div><!--/.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
+    <script>
+      $('contents').click(function(){
+      $('.navbar-collapse').removeClass('in');
+      });
+      var menuHeight = $(".navbar-collapse").height();
+      var startPos = 0;
+      $(window).scroll(function(){
+        var currentPos = $(this).scrollTop();
+        if (currentPos > startPos) {
+          if($(window).scrollTop() >= 140) {
+            $('.navbar').css("top", "-" + menuHeight + "px");
+          }
+        } else {
+          $(".navbar").css("top", 0 + "px");
+        }
+        startPos = currentPos;
+      });
+    </script>
     <div class="contents">
       <span class="notice"><%= notice %></span>
       <p class="alert"><%= alert %></p>

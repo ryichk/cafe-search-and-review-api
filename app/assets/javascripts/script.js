@@ -33,6 +33,3 @@ $(function(){
   });
 });
 
-$('body').on("click",function(){
-    $('div').removeClass("in");
-});
