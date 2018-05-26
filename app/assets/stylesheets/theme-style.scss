@@ -111,6 +111,9 @@ h2.placeIndex {
     margin:10px 0 0 30px;
   }
 }
+.placeIndexBtn{
+  float: right;
+}
 
 .star-rating-top {
   position: relative; /*相対位置*/
@@ -397,7 +400,7 @@ $rate5: $starFull * 5;//星5
 
 
 .star-rating{
-  width: 280px;
+  width: 50%;
   margin: 10px 0 0 -10px;
   float: left;
 }
