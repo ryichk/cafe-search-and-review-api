@@ -277,10 +277,12 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-  font-size: 100px;
   color: #f66;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.heart {
+  font-size: 31px;
 }
 .btn-good {
   float: right;
@@ -292,16 +294,16 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 0.6;
-  font-size: 31px;
   color: #22dfaa;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .empty {
+  font-size: 31px;
   color: #aaa;
 }
 .thums-up {
-  color: #fff;
+  font-size: 31px;
   margin-bottom: 20px;
 }
 
@@ -3193,6 +3195,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  text-align: center;
+  font-size: 16px;
 }
 .nav > li > a {
   position: relative;
