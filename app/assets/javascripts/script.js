@@ -2,7 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require skippr
+//= require skippr.min
 //= require_tree .
 //Skipprの初期化
 $(function(){
@@ -18,13 +18,13 @@ $(function(){
         // ナビゲーションの形("block" or "bubble")
         navType : 'block',
         // 子要素の種類("div" or "img")
-        childrenElementType : '.CafePhotos',
+        childrenElementType : 'div',
         // ナビゲーション矢印の表示(trueで表示)
         arrows : true,
         // スライドショーの自動再生(falseで自動再生なし)
         autoPlay : true,
         // 自動再生時のスライド切替間隔(ミリ秒)
-        autoPlayDuration : 5000,
+        autoPlayDuration : 4000,
         // キーボードの矢印キーによるスライド送りの設定(trueで有効)
         keyboardOnAlways : true,
         // 一枚目のスライド表示時に戻る矢印を表示するかどうか(falseで非表示)
