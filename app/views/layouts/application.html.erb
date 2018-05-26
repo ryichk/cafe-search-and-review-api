@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="theme-color" content="#5a2f32"><!-- Chromeのタブの色 -->
     <style>
     /* BackImageSlide */
     .backimages {
@@ -201,8 +203,6 @@
     <title>Cafe Shares カフェ・シェアーズ</title>
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta name="theme-color" content="#5a2f32"><!-- Chromeのタブの色 -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="//maps.googleapis.com/maps/api/place/textsearch/json?query=cafe+in+keyword&key=<%= ENV['GOOGLE_API_KEY'] %>" type='text/javascript'></script>
@@ -268,11 +268,9 @@
         <span class="alert"><%= alert %></span>
       </div>
       <%= yield %>
-      <footer class="footer copyright">
-        <div class="containerCopyright">
-          <small>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</small>
-        </div>
-      </footer>
     </div>
   </body>
+<div class="Copyright">
+  <p>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</p>
+</div>
 </html>
