@@ -23,25 +23,31 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
 .placeIndex {
   position: relative;
 }
+.btn-heart {
+  background-color: transparent;
+  font-size: 1.8em;
+}
 .SlideShow {
   height: 300px;
   .btn-heart {
     position: absolute;
     bottom: 70px;
-    right: -19px;
-    width: 50px;
+    right: 20px;
+    width: auto;
     border: none;
+    font-size: 2.0em;
   }
 }
 .heartIndex {
   .btn-heart {
     border: none;
     margin-left: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 40%;
   }
 }
-.btn-heart {
-  background-color: transparent;
-}
+
 
 
 
@@ -406,7 +412,7 @@ $rate5: $starFull * 5;//星5
 
 .star-rating{
   width: 280px;
-  margin: 0 0 5px 0;
+  margin: 10px 0 0 -10px;
   float: left;
 }
 
