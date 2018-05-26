@@ -1,3 +1,4 @@
+
 <div class="Main">
   <!-- Main jumbotron -->
   <div class="jumbotron jumbotron-place-index animated tada">
@@ -20,10 +21,10 @@
     <% end %>
   </div>
   <h2 class="placeIndex">人気のカフェ</h2>
-  <div class="SlideShow">
+  <div id="aspslide" class="SlideShow">
     <div class="star-rating-top">
       <% @ranking.each.with_index(1) do |place, i| %>
-        <div class="CafePhotos">
+        <div id="asnakami<%=i%>" class=" asnakami CafePhotos">
           <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
           <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
           <div class="haert"><%= render "like_places/like_place", place: place %></div>
