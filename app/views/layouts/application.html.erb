@@ -220,11 +220,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to image_tag("cafeshareslogo.png", :class=>"CafeSharesLogo"), root_path, data: { no_turbolink: true }, :class=>"navbar-brand" %>
+          <%= link_to image_tag("cafeshareslogo.png", :class=>"CafeSharesLogo"), root_path, :class=>"navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'HOME', root_path, data: { no_turbolink: true } %></li>
+            <li><%= link_to 'HOME', root_path %></li>
             <% if user_signed_in? %>
               <li><%= link_to current_user.username, user_path(current_user.id) %></li>
               <li><%= link_to 'みんなの口コミ一覧', reviews_path %></li>
@@ -245,18 +245,9 @@
             <input type="text" class="form-control col-lg-8" placeholder="Search">
           </form> -->
         </div><!--/.nav-collapse -->
-        <script data-turbolinks-eval="false" async>
-          $(document).on('click touchend', function(e) {
-            if (!$(e.target).closest('li').length){
-              $('.navbar-collapse').on('click touchend' function(){
-                $('.navbar-collapse').removeClass('.in');
-              };
-            };
-          });
-        </script>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
-    <script data-turbolinks-eval="false" async>
+    <script async>
       var menuHeight = $(".navbar-collapse").height();
       var startPos = 0;
       $(window).scroll(function(){
@@ -277,11 +268,11 @@
         <span class="alert"><%= alert %></span>
       </div>
       <%= yield %>
+      <footer class="footer copyright">
+        <div class="containerCopyright">
+          <small>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</small>
+        </div>
+      </footer>
     </div>
-    <footer class="footer copyright">
-    <div class="containerCopyright">
-      <small>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</small>
-    </div>
-  </footer>
   </body>
 </html>

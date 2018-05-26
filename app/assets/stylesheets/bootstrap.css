@@ -3507,7 +3507,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  padding: 14px 13px;
+  padding: 14px 17px;
   margin-top: 18px;
   margin-right: 15px;
   margin-bottom: 8px;
