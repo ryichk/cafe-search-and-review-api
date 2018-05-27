@@ -1,1 +1,1 @@
-$(".table-<%= @place.id %> #like_place").html("<%= escape_javascript(render 'like_places/like_place', place: @place) %>");
+$("#heart-<%= @place.id %> .like_place").html("<%= escape_javascript(render 'like_places/like_place', place: @place) %>");

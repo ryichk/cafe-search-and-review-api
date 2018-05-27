@@ -7,6 +7,7 @@ class Place < ApplicationRecord
   has_many :like_places, dependent: :destroy
   has_many :good_users, through: :like_places, source: :user
 
+
   #placeをいいねする
   def good(user)
     like_places.create(user_id: user.id)

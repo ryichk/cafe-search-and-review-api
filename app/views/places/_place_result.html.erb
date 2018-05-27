@@ -2,7 +2,9 @@
   <% @places.each do |place| %>
   <div class="table">
     <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div></a>
-    <div class="heartIndex"><%= render "like_places/like_place", place: place %></div>
+    <div id="heart-<%= place.id %>" class="heartIndex">
+      <%= render "like_places/like_place", place: place %>
+    </div>
     <div class="star-rating">
     <% if place.reviews.present? %>
       <span class="rate rate<%= place.review_average %>"></span>

@@ -16,7 +16,9 @@
         <div id="asnakami<%=i%>" class=" asnakami CafePhotos">
           <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
           <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
-          <div class="haert"><%= render "like_places/like_place", place: place %></div>
+          <div id="heart-<%= place.id %>">
+            <%= render "like_places/like_place", place: place %>
+          </div>
           <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>
           <% if place.reviews.present? %>
             <span class="rate rate<%= place.review_average %>"></span>
