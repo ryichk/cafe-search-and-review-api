@@ -1,37 +1,8 @@
 <div class="Main">
   <div class="container">
-    <%= form_tag search_places_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shares 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
-    <h2>お目当のカフェがなかったらここから検索してみよう</h2>
-    <%= form_tag places_list_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
+    <%= render "search_box" %>
     <div class="col-md-12">
     <h1>検索結果</h1>
-    <div class="Cafe">
-      <% @places.each do |place| %>
-      <div class="table">
-        <div class="cafename"><h4><%= place.name %></h4></div>
-        <div class="star-rating">
-        <% if place.reviews.present? %>
-          <span class="rate rate<%= place.review_average %>"></span>
-        <% else %>
-          <span class="rate rate0"></span>
-        <% end %>
-        </div>
-        <div class="topLeft"><%= link_to ( place ), :title => "show" do %> <span class="glyphicon glyphicon-stats placeIndexBtn" aria-hidden="true">詳細</span><% end %></div>
-        <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
-        <div class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></div>
-        <div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto img-responsive"></div>
-      </div>
-      <% end %>
-    </div>
+    <%= render "place_result" %>
   </div>
 </div>

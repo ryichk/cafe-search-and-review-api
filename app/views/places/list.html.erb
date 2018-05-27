@@ -4,18 +4,7 @@
     <h1>検索したお店はこちら！</h1>
     </div>
     <h3 style="text-align: center;">登録すればCafe Sharesでシェアできるようになるよ</h3>
-    <%= form_tag search_places_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shares 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
-    <%= form_tag places_list_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
+    <%= render "search_box" %>
     <div class="col-md-12">
       <div class="Cafe">
       <% @places.each do |place| %>
@@ -42,7 +31,7 @@
           <% if place.photos[0] %>
             <div class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
           <% else %>
-            <div class="boxBottom"><img src="no_image.png" width="300"></div>
+            <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
           <% end %>
         </div>
         <% end %>

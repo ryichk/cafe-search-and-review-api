@@ -7,18 +7,7 @@
   </div><!-- /.jumbotron -->
 
   <div class="col-md-6">
-    <%= form_tag search_places_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Shares 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
-    <%= form_tag places_list_path, :role => "form", :method => :get do %>
-      <%= text_field_tag :search, params[:search], { :class => "form-control", :required => true, :placeholder=>"Google 検索"} %>
-      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-        <i class="fa fa-search">検索</i>
-      <% end %>
-    <% end %>
+    <%= render "search_box" %>
   </div>
   <h2 class="placeIndex">人気のカフェ</h2>
   <div id="aspslide" class="SlideShow">
@@ -41,23 +30,6 @@
 
   <div class="col-md-12">
     <h2 class="placeIndex">登録されているお店</h2>
-    <div class="Cafe">
-      <% @places.each do |place| %>
-      <div class="table table-<%= place.id %>">
-        <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div></a>
-        <div class="heartIndex"><%= render "like_places/like_place", place: place %></div>
-        <div class="star-rating">
-          <% if place.reviews.present? %>
-            <span class="rate rate<%= place.review_average %>"></span>
-          <% else %>
-            <span class="rate rate0"></span>
-          <% end %>
-        </div>
-        <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
-        <div class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></div>
-        <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto"></div></a>
-      </div>
-      <% end %>
-    </div>
+    <%= render "place_result" %>
   </div>
 </div>
