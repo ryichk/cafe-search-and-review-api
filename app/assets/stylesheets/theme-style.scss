@@ -12,10 +12,6 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
 .Cafe {
   margin-bottom: 50px;
 }
-.table:hover{
-  padding: 10px 20px;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
-}
 .placeIndex {
   position: relative;
 }
@@ -80,8 +76,9 @@ h2.placeIndex {
   height: auto;
   float: left;
   margin-bottom: 10;
-  padding: 10px;
+  padding: 9px 6px 0px 9px;
   background: rgba(50,50,50,0.7);
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
   h4 {
     height: 40px;
     color: #f3f3f3;
@@ -136,8 +133,7 @@ h2.placeIndex {
   border-radius: 8px 5px 5px 0;
   margin-top: 0;
   padding: 3px 6px 4px 8px;
-  background-color: #000;
-  opacity: 0.8;
+  background-color: #0009;
   color: #fff;
 }
 .star-rating-top p {
