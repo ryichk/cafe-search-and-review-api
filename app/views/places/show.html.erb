@@ -33,19 +33,24 @@
   </div>
   <div class="showReview">
     <h2>みんなの投稿</h2>
-    <ul>
+    <ul class="show-review-ul">
       <% @place.reviews.each do |review| %>
-      <li>
-        <h3 title="<%= review.user.username %>">
-          <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
-        </h3>
+      <li class="show-review-li">
+        <div class="show-review-image">
+        <% if review.user.avatar.present? %>
+          <%= image_tag review.user.avatar, :class=>"review-user-prof" %>
+        <% else %>
+          <%= image_tag 'coffeetime_mini.jpg', :class=>"review-user-prof" %>
+        <% end %>
+        </div>
+        <h3 class="show-review-h3"><%= review.user.username %></h3>
         <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
         <div class="star-rating">
           <span class="rate rate<%= review.rank %>"></span>
         </div>
-        <p class="review">
-          <%= simple_format(review.review) %>
-        </p>
+        <div class="review">
+            <%= simple_format(review.review) %>
+        </div>
         <% unless review.photos.blank? %>
           <img src="review.photos" class="img-responsive">
         <% end %>

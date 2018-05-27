@@ -425,8 +425,52 @@ $rate5: $starFull * 5;//星5
   color: #fff;
   margin-top: 100px;
 }
+.show-review-ul {
+  position: relative;
+  list-style: none;
+  margin-left: -30px;
+}
+.show-review-li {
+  background-color:#0007;
+  border-radius: 7px;
+  padding: 1px;
+  .star-rating{
+    position: absolute;
+    top:50px;
+    right:9%;
+  }
+  .btn-good{
+    position:absolute;
+    top:5%;
+    right:5px;
+    margin:0 auto;
+    small{
+      display: inherit;
+      font-size:55%;
+    }
+  }
+}
+.show-review-h3{
+  margin-left: 10px;
+  position: absolute;
+  top: -5px;
+  right: 30%;
+}
+.show-review-image {
+  width: 30%;
+  height: 80px;
+  margin: 7px 0 0 7px;
+  position: absolute;
+}
+.review-user-prof {
+  width: 100%;
+  border-radius: 10px;
+}
 .review {
-  margin-top: 50px;
+  margin: 90px 10px 0 10px;
+  p {
+    margin:0 0 10px 5px;
+  }
 }
 .btn-placeShow {
   color: #fafafa;

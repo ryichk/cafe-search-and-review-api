@@ -299,7 +299,7 @@ th {
 }
 .fa-thumbs-up:before{
   margin-top: -40px;
-  display: inherit;
+  display: inline;
 }
 .empty {
   font-size: 2.5em;
