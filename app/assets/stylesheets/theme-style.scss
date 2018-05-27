@@ -12,6 +12,10 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
 .Cafe {
   margin-bottom: 50px;
 }
+.table:hover{
+  padding: 10px 20px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
 .placeIndex {
   position: relative;
 }
@@ -151,7 +155,7 @@ h2.placeIndex {
 }
 
 
-#search {
+#search, #keyword {
   float: left;
   width: 75%;
   margin: 15px 0;
