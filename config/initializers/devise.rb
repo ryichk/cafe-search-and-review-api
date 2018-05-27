@@ -281,7 +281,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   # API key
 
-    config.omniauth :facebook, Rails.application.secrets.FB_API_KEY, Rails.application.secrets.FB_API_SECRET
+    config.omniauth :facebook, Rails.application.secrets.facebook_id, Rails.application.secrets.facebook_secret_key
     config.omniauth :twitter, Rails.application.secrets.TW_API_KEY, Rails.application.secrets.TW_API_SECRET
     config.omniauth :instagram, ENV['INSTAGRAM_CLIENT_ID'], ENV['INSTAGRAM_CLIENT_SECRET']
 

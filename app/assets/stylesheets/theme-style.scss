@@ -23,8 +23,8 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
   height: 300px;
   .btn-heart {
     position: absolute;
-    bottom: 25px;
-    right: 15px;
+    bottom: 40px;
+    right: 5px;
     width: 70px;
     border: none;
     font-size: 2.0em;
@@ -43,7 +43,9 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
 .boxBottom{
   display: inline-block;
 }
-
+.table:hover{
+  margin: 5px 8px 10px 8px;
+}
 
 
 /* place index */
