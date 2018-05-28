@@ -1,5 +1,6 @@
 <div class="table">
-  <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div></a>
+  <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div>
+  <div class="topLeft Gapi"><span><%= place.address %></span></div></a>
   <div id="heart-<%= place.id %>" class="heartIndex">
     <%= render "like_places/like_place", place: place %>
   </div>
@@ -10,7 +11,6 @@
     <span class="rate rate0"></span>
   <% end %>
   </div>
-  <!-- <td rowspan="2"><%= link_to( place, method: :delete, data: { confirm: "#{place.name} を削除します" }, :title => "delete" ) do %><span class="glyphicon glyphicon-trash placeIndexBtn"></span><% end %></td> -->
   <div class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></div>
   <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto img-responsive"></div></a>
 </div>

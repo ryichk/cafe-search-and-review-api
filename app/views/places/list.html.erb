@@ -8,16 +8,14 @@
     <div class="col-md-12">
       <div class="Cafe">
       <% @cafes.each do |cafe| %>
-        <% if @place.find_by(address: cafe.formatted_address) != nil %>
-          <% @places.each do |place| %>
-            <% if Place.exists?(:name => cafe.name) %>
-              <%= render "place_result", place: place %>
-            <% end %>
-          <% end %>
-        <% else %>
+        <% if @place.find_by(address: cafe.formatted_address) == nil %>
         <div class="table">
           <div class="cafename"><h4><%= cafe.name %></h4></div>
           <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
+          <div id="heart-0" class="heartIndex"></div>
+          <div class="star-rating">
+            <span class="rate rate0"></span>
+          </div>
           <% if cafe.photos[0] %>
             <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
               :name => cafe.name,
@@ -40,6 +38,12 @@
             <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
           <% end %>
         </div>
+        <% else %>
+          <% @places.each do |place| %>
+            <% if Place.exists?(:name => cafe.name) %>
+              <%= render "place_result", place: place %>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
       </div>
