@@ -8,15 +8,15 @@
     <div class="col-md-12">
       <div class="Cafe">
       <% @cafes.zip(@places).each do |cafe place| %>
-        <% if cafe.name == place.name %>
-          <%= render "place_result", place: place%>
+        <% if Place.exists?(:name => cafe.name) %>
+          <%= render "place_result", place: place %>
         <% else %>
           <% if @place.find_by(address: cafe.formatted_address) == nil %>
           <div class="table">
             <div class="cafename"><h4><%= cafe.name %></h4></div>
             <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
             <% if cafe.photos[0] %>
-              <div class="topRight"><%= link_to( '投稿する'( :place => {
+              <div class="topRight"><%= link_to( '投稿する'( :cafe => {
                 :name => cafe.name,
                 :latitude => cafe.lat,
                 :longitude => cafe.lng,
@@ -24,7 +24,7 @@
                 :photos => cafe.photos[0].fetch_url(800),
                  } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
             <% else %>
-              <div class="topRight"><%= link_to( '投稿する'( :place => {
+              <div class="topRight"><%= link_to( '投稿する'( :cafe => {
                 :name => cafe.name,
                 :latitude => cafe.lat,
                 :longitude => cafe.lng,
