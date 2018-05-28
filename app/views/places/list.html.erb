@@ -7,39 +7,38 @@
     <%= render "search_box" %>
     <div class="col-md-12">
       <div class="Cafe">
-      <% @places.each do |place| %>
-        <% if Place.exists?(:name => cafe.name) %>
-          <%= render "place_result", place: place %>
-        <% else %>
-      <% end %>
       <% @cafes.each do |cafe| %>
-          <% if @place.find_by(address: cafe.formatted_address) == nil %>
-          <div class="table">
-            <div class="cafename"><h4><%= cafe.name %></h4></div>
-            <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
-            <% if cafe.photos[0] %>
-              <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
-                :name => cafe.name,
-                :latitude => cafe.lat,
-                :longitude => cafe.lng,
-                :address => cafe.formatted_address,
-                :photos => cafe.photos[0].fetch_url(800),
-                 } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
-            <% else %>
-              <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
-                :name => cafe.name,
-                :latitude => cafe.lat,
-                :longitude => cafe.lng,
-                :address => cafe.formatted_address,
-                 } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
-            <% end %>
-            <% if cafe.photos[0] %>
-              <div class="boxBottom"><img src="<%= cafe.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
-            <% else %>
-              <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
-            <% end %>
-          </div>
+        <% if @place.find_by(address: cafe.formatted_address) != nil %>
+          <% @places.each do |place| %>
+            <% if Place.exists?(:name => cafe.name) %>
+              <%= render "place_result", place: place %>
           <% end %>
+        <% else %>
+        <div class="table">
+          <div class="cafename"><h4><%= cafe.name %></h4></div>
+          <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
+          <% if cafe.photos[0] %>
+            <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
+              :name => cafe.name,
+              :latitude => cafe.lat,
+              :longitude => cafe.lng,
+              :address => cafe.formatted_address,
+              :photos => cafe.photos[0].fetch_url(800),
+               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
+          <% else %>
+            <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
+              :name => cafe.name,
+              :latitude => cafe.lat,
+              :longitude => cafe.lng,
+              :address => cafe.formatted_address,
+               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
+          <% end %>
+          <% if cafe.photos[0] %>
+            <div class="boxBottom"><img src="<%= cafe.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
+          <% else %>
+            <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
+          <% end %>
+        </div>
         <% end %>
       <% end %>
       </div>
