@@ -44,15 +44,11 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
   display: inline-block;
 }
 .table:hover{
-  margin: 5px 8px 10px 8px;
+  margin: 5px;
 }
 
 
 /* place index */
-
-.jumbotron {
-  margin-top: -27px;
-}
 
 .jumbotron p {
   text-align: center;
@@ -64,13 +60,8 @@ url(https://weloveiconfonts.com/api/?family=fontawesome);
 
 h2.placeIndex {
   clear: both;
-  margin-top: 190px;
-  margin-left: 9%;
-  margin-bottom: 17px;
+  margin-top: 180px;
   color: #fff;
-}
-.col-md-12 .placeIndex {
-  margin-top: -30px;
 }
 
 .table {
@@ -423,6 +414,10 @@ $rate5: $starFull * 5;//星5
 
 
 /* Place Show */
+.show-place-h1 {
+  margin-top: -25px;
+  font-size: 2.6em;
+}
 .showReview {
   color: #fff;
   margin-top: 100px;
