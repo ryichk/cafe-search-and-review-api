@@ -23,14 +23,14 @@
               :longitude => cafe.lng,
               :address => cafe.formatted_address,
               :photos => cafe.photos[0].fetch_url(800),
-               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn' ) %></div>
+               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn btn-none-post' ) %></div>
           <% else %>
             <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
               :name => cafe.name,
               :latitude => cafe.lat,
               :longitude => cafe.lng,
               :address => cafe.formatted_address,
-               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn' ) %></div>
+               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn btn-none-post' ) %></div>
           <% end %>
           <% if cafe.photos[0] %>
             <div class="boxBottom"><img src="<%= cafe.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>

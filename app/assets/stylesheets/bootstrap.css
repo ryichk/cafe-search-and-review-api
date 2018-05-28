@@ -349,10 +349,6 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-a {
-  color: #337ab7;
-  text-decoration: none;
-}
 a:hover,
 a:focus {
   color: #23527c;
@@ -552,10 +548,7 @@ mark,
 xt-success {
   color: #3c763d;
 }
-a.text-success:hover,
-a.text-success:focus {
-  color: #2b542c;
-}
+
 .text-info {
   color: #31708f;
 }

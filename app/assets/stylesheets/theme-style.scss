@@ -105,12 +105,23 @@ h2.placeIndex {
   padding-top: 5px;
 }
 .topRight {
-  .btn {
-    margin:10px 0 0 30px;
+  btn-none-post{
+    margin-top: -32px;
   }
 }
 .placeIndexBtn{
   float: right;
+}
+
+.none-post{
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-size: 0.9em;
+  width: 20%;
+  color: #8f8;
+  border: 1px solid;
+  border-radius: 5px;
 }
 
 .star-rating-top {
@@ -396,7 +407,7 @@ $rate5: $starFull * 5;//星5
 
 
 .star-rating{
-  width: 50%;
+  width: 46%;
   margin: 10px 0 0 -10px;
   float: left;
 }
