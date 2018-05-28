@@ -15,8 +15,9 @@ class PlacesController < ApplicationController
 
   def list
     keyword = params[:search]
+    @places = Place.where('name LIKE ?', "%#{keyword}%")
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
-    @places = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
+    @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
     @place = Place.all
   end
 
@@ -28,30 +29,24 @@ class PlacesController < ApplicationController
     end
   end
 
-  def search
-    @places = Place.where('name LIKE ?', "%#{params[:keyword]}%").limit(15)
-  end
+  # def search
+  #   @places = Place.where('name LIKE ?', "%#{params[:keyword]}%").limit(15)
+  # end
 
 
   def create
     @place = Place.new(place_params)
-
-    respond_to do |format|
-      if @place.save
-        format.html { redirect_to places_path, notice: "#{@place.name} を登録しました" }
-      else
-        format.html { render :index, notice: "すでに登録されているため登録できませんでした" }
-      end
-    end
+    @p = @place.save
+    redirect_to new_place_review_path(@p.id)
   end
 
-  def destroy
-    @place.destroy
+  # def destroy
+  #   @place.destroy
 
-    respond_to do |format|
-      format.html { redirect_to places_path, notice: "#{@place.name} を削除しました。"}
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to places_path, notice: "#{@place.name} を削除しました。"}
+  #   end
+  # end
 
   private
   # Use callbacks to share common setup or constraints between actions.
