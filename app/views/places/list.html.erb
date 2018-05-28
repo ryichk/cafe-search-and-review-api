@@ -16,7 +16,7 @@
             <div class="cafename"><h4><%= cafe.name %></h4></div>
             <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
             <% if cafe.photos[0] %>
-              <div class="topRight"><%= link_to( '投稿する'( :cafe => {
+              <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
                 :name => cafe.name,
                 :latitude => cafe.lat,
                 :longitude => cafe.lng,
@@ -24,7 +24,7 @@
                 :photos => cafe.photos[0].fetch_url(800),
                  } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
             <% else %>
-              <div class="topRight"><%= link_to( '投稿する'( :cafe => {
+              <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
                 :name => cafe.name,
                 :latitude => cafe.lat,
                 :longitude => cafe.lng,
