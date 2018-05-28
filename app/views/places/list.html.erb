@@ -12,7 +12,7 @@
         <div class="table">
           <div class="cafename"><h4><%= cafe.name %></h4></div>
           <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
-          <div id="heart-0" class="heartIndex"></div>
+          <div class="heartIndex none-post">まだ投稿されてません</div>
           <div class="star-rating">
             <span class="rate rate0"></span>
           </div>
@@ -23,14 +23,14 @@
               :longitude => cafe.lng,
               :address => cafe.formatted_address,
               :photos => cafe.photos[0].fetch_url(800),
-               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
+               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn' ) %></div>
           <% else %>
             <div class="topRight"><%= link_to( '投稿する', places_path( :place => {
               :name => cafe.name,
               :latitude => cafe.lat,
               :longitude => cafe.lng,
               :address => cafe.formatted_address,
-               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
+               } ),:method => 'post', :class=>'btn btn-default placeIndexBtn' ) %></div>
           <% end %>
           <% if cafe.photos[0] %>
             <div class="boxBottom"><img src="<%= cafe.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
