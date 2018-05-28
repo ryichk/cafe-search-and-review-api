@@ -12,6 +12,7 @@
           <% @places.each do |place| %>
             <% if Place.exists?(:name => cafe.name) %>
               <%= render "place_result", place: place %>
+            <% end %>
           <% end %>
         <% else %>
         <div class="table">
