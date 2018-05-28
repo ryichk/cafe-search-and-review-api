@@ -3,37 +3,41 @@
     <div class="jumbotron animated bounceIn">
     <h1>検索したお店はこちら！</h1>
     </div>
-    <h3 style="text-align: center;">登録すればCafe Sharesでシェアできるようになるよ</h3>
+    <% #<h3 style="text-align: center;">登録すればCafe Sharesでシェアできるようになるよ</h3> %>
     <%= render "search_box" %>
     <div class="col-md-12">
       <div class="Cafe">
-      <% @places.each do |place| %>
-        <% if @place.find_by(address: place.formatted_address) == nil %>
-        <div class="table">
-          <div class="cafename"><h4><%= place.name %></h4></div>
-          <div class="topLeft Gapi"><%= place.formatted_address %></div>
-          <% if place.photos[0] %>
-            <div class="topRight"><%= link_to( '登録', places_path( :place => {
-              :name => place.name,
-              :latitude => place.lat,
-              :longitude => place.lng,
-              :address => place.formatted_address,
-              :photos => place.photos[0].fetch_url(800),
-               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
-          <% else %>
-            <div class="topRight"><%= link_to( '登録', places_path( :place => {
-              :name => place.name,
-              :latitude => place.lat,
-              :longitude => place.lng,
-              :address => place.formatted_address,
-               } ),:method => 'post', :class=>'btn btn-default' ) %></div>
+      <% @cafes.zip(@places).each do |cafe place| %>
+        <% if cafe.name == place.name %>
+          <%= render "place_result", place: place%>
+        <% else %>
+          <% if @place.find_by(address: cafe.formatted_address) == nil %>
+          <div class="table">
+            <div class="cafename"><h4><%= cafe.name %></h4></div>
+            <div class="topLeft Gapi"><%= cafe.formatted_address %></div>
+            <% if cafe.photos[0] %>
+              <div class="topRight"><%= link_to( '投稿する'( :place => {
+                :name => cafe.name,
+                :latitude => cafe.lat,
+                :longitude => cafe.lng,
+                :address => cafe.formatted_address,
+                :photos => cafe.photos[0].fetch_url(800),
+                 } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
+            <% else %>
+              <div class="topRight"><%= link_to( '投稿する'( :place => {
+                :name => cafe.name,
+                :latitude => cafe.lat,
+                :longitude => cafe.lng,
+                :address => cafe.formatted_address,
+                 } ),:method => 'post', :class=>'btn btn-default' )# placeの登録 %></div>
+            <% end %>
+            <% if cafe.photos[0] %>
+              <div class="boxBottom"><img src="<%= cafe.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
+            <% else %>
+              <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
+            <% end %>
+          </div>
           <% end %>
-          <% if place.photos[0] %>
-            <div class="boxBottom"><img src="<%= place.photos[0].fetch_url(800) %>" class="cafePhoto img-responsive" ></div>
-          <% else %>
-            <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
-          <% end %>
-        </div>
         <% end %>
       <% end %>
       </div>

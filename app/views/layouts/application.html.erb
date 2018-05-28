@@ -16,7 +16,7 @@
       text-align: center;
     }
     body {
-      margin: 50 auto;
+      margin: 50px auto;
       z-index: 0;
     }
     .jumbotron {
@@ -25,7 +25,7 @@
       box-shadow: 13px 13px 13px rgba(0,0,0,0.4);
       height: 210PX;
       width: 100%;
-      margin: 50px auto;
+      margin: 50px 0 40px 0;
       border-radius:20px;
       color:#f1faf1;
       z-index: 1;
@@ -41,7 +41,7 @@
     .jumbotron p {
       position: absolute;
       top: 130px;
-      left: 20px;
+      left: 10px;
       font-size: 21px;
       font-weight: 200;
     }
@@ -94,11 +94,7 @@
       font-size: 20px;
     }
     @media screen and (min-width: 768px) {
-      html {
-        background:url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
-      }
       .jumbotron {
-        background: rgba(30,30,30,0.5);
         padding-top: 48px;
         padding-bottom: 48px;
       }
@@ -163,6 +159,7 @@
             <input type="text" class="form-control col-lg-8" placeholder="Search">
           </form> -->
         </div><!--/.nav-collapse -->
+        <%= render "search_box" %>
       </div><!-- /.container -->
     </div><!-- /.navbar -->
     <script async>

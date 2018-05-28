@@ -13,7 +13,7 @@
   <div id="aspslide" class="SlideShow">
     <div class="star-rating-top">
       <% @ranking.each.with_index(1) do |place, i| %>
-        <div id="asnakami<%=i%>" class=" asnakami CafePhotos">
+        <div class="CafePhotos">
           <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
           <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
           <div id="heart-<%= place.id %>">
@@ -32,6 +32,11 @@
 
   <div class="col-md-12">
     <h2 class="placeIndex">登録されているお店</h2>
-    <%= render "place_result" %>
+    <div class="Cafe">
+      <% @places.each do |place| %>
+        <%= render "place_result", place: place %>
+      <% end %>
+    </div>
+
   </div>
 </div>
