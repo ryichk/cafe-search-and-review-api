@@ -7,7 +7,7 @@
     <%= render "search_box" %>
     <div class="col-md-12">
       <div class="Cafe">
-      <% @cafes.zip(@places).each do |cafe place| %>
+      <% @cafes.zip(@places).each |cafe place| do %>
         <% if Place.exists?(:name => cafe.name) %>
           <%= render "place_result", place: place %>
         <% else %>
