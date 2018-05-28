@@ -36,7 +36,8 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
-    @p = @place.save
+    @place.save
+    @p = Place.where(name: @place.name)
     redirect_to new_place_review_path(@p.id)
   end
 
