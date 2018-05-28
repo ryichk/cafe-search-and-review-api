@@ -38,7 +38,7 @@ class PlacesController < ApplicationController
     @place = Place.new(place_params)
     @place.save
     @p = Place.where(name: @place.name)
-    redirect_to new_place_review_path(@p.id)
+    redirect_to new_place_review_path(@p.ids)
   end
 
   # def destroy
