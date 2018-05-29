@@ -41,7 +41,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def callback_from(provider)
       provider = provider.to_s
 
-      @user = User.find_or_create_by(user_params)
+      @user = User.find_for_oauth(request.env['omniauth.auth'])
 
       if @user.persisted? #保存済みかどうかを確認
         sign_in_and_redirect @user, :event => :authentication
