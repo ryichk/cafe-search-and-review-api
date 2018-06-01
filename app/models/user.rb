@@ -66,22 +66,7 @@ class User < ApplicationRecord
         User.create_unique_string + "@example.com"
       end
 
-      def self.find_for_oauth(auth)
-        user = User.where(uid: auth.uid, provider: auth.provider).first
 
-        unless user
-          user = User.create(
-            username: auth.info.nickname,
-            uid:      auth.uid,
-            provider: auth.provider,
-            email:    User.dummy_email(auth),
-            password: Devise.friendly_token[0, 20],
-            agreement: 1
-          )
-        end
-
-        user
-      end
 
       def self.dummy_email(auth)
         "#{auth.uid}-#{auth.provider}@example.com"
