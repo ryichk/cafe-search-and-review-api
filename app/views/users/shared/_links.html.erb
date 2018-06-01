@@ -1,4 +1,5 @@
-<ul class="nav navbar-nav login">
+<div class="form-wrapper">
+  <ul class="nav navbar-nav login">
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
     <li><%= link_to "パスワードを忘れた。", new_password_path(resource_name) %><li>
   <% end -%>
@@ -9,7 +10,6 @@
     <li><%= link_to "パスワードリセットのメールを受け取れなかった。", new_unlock_path(resource_name) %></li>
   <% end -%>
     <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
-    <li><%= link_to " Twitterログイン", user_twitter_omniauth_authorize_path, :class => 'navbar-link fa fa-twitter' %></li>
     <li><%= link_to " Instagramログイン", user_instagram_omniauth_authorize_path, :class => 'navbar-link fa fa-instagram' %></li>
     <%- if controller_name != 'sessions' %>
     <li><%= link_to "ログイン", new_session_path(resource_name) %><li>
@@ -17,4 +17,5 @@
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
     <li><%= link_to "サインアップ", new_registration_path(resource_name) %><li>
   <% end -%>
-</ul>
+  </ul>
+</div>

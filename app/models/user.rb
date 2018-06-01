@@ -21,7 +21,8 @@ class User < ApplicationRecord
                          uid: auth.uid,
                          email: auth.info.email,
                          password: Devise.friendly_token[0,20],
-                         agreement: 1
+                         agreement: 1,
+                         avatar_url: auth.info.image
                          )
     end
     user
@@ -35,7 +36,8 @@ class User < ApplicationRecord
                          uid: auth.uid,
                          email: User.create_unique_email,
                          password: Devise.friendly_token[0,20],
-                         agreement: 1
+                         agreement: 1,
+                         avatar_url: auth.info.image
                          )
     end
     user
@@ -44,12 +46,13 @@ class User < ApplicationRecord
   def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
-      user = User.create(username: auth.info.nickname,
+      user = User.create(username: auth.info.name,
                          provider: auth.provider,
                          uid: auth.uid,
-                         email: User.create_unique_email,
+                         email: User.info.email,
                          password: Devise.friendly_token[0,20],
-                         agreement: 1
+                         agreement: 1,
+                         avatar_url: auth.info.image
                          )
     end
     user
