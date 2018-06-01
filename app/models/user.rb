@@ -71,10 +71,12 @@ class User < ApplicationRecord
 
         unless user
           user = User.create(
+            username: auth.info.nickname,
             uid:      auth.uid,
             provider: auth.provider,
             email:    User.dummy_email(auth),
             password: Devise.friendly_token[0, 20]
+            agreement: 1
           )
         end
 
