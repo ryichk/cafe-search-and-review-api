@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @username = current_user.username
     @reviews = Review.includes(:place)
   end
 
