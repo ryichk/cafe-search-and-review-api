@@ -12,24 +12,22 @@
     <div class="userReviews">
       <h2><%= @username %>さんの投稿一覧</h2>
       <% unless @places.blank? %>
-        <% @places.each do |place| %>
-          <% @reviews.each do |review| %>
-            <% if current_user.id == review.user_id %>
-            <div class="userReview">
-              <h3><%= place.name %></h3>
-              <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
-              <p class="address"><%= place.address %></p>
-              <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
-              <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", method: :delete %></p>
-              <div class="star-rating">
-                <span class="rate rate<%= review.rank %>"></span>
-              </div>
-              <p class="review"><%= simple_format(review.review) %></p>
-              <% unless review.photos.blank? %>
-                <img src="review.photos">
-              <% end %>
+        <% @reviews.each do |review| %>
+          <% if current_user.id == review.user_id %>
+          <div class="userReview">
+            <h3><%= review.place.name %></h3>
+            <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
+            <p class="address"><%= review.place.address %></p>
+            <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
+            <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", method: :delete %></p>
+            <div class="star-rating">
+              <span class="rate rate<%= review.rank %>"></span>
             </div>
+            <p class="review"><%= simple_format(review.review) %></p>
+            <% unless review.photos.blank? %>
+              <img src="review.photos">
             <% end %>
+          </div>
           <% end %>
         <% end %>
       <% end %>
