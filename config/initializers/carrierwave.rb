@@ -17,7 +17,7 @@ CarrierWave.configure do |config|
 
   # S3バケット名
   config.fog_directory = Rails.application.secrets.AWS_S3_BUCKET
-  config.assets_host = Rails.application.secrets.AWS_S3_URL
+  config.asset_host = Rails.application.secrets.AWS_S3_URL
 end
 
 日本語の文字化けを防ぐ
