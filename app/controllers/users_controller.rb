@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    id = current_user.id
-    @reviews = Review.includes(:place).where(user_id: id).references(:review)
+    id_user = current_user.id
+    @reviews = Review.includes(:place).references(:review).where(user_id: id_user)
   end
 
 end
