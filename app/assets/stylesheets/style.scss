@@ -82,6 +82,9 @@
 }
 
 @media screen and (min-width: 769px) {
+  .form-wrapper {
+    max-width: 800px;
+  }
   .tableShow {
     height: 405px;
     .cafePhoto {
