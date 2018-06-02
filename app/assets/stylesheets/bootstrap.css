@@ -351,7 +351,7 @@ textarea {
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #444;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -5226,7 +5226,7 @@ button.close {
   margin-left: auto;
 }
 .pull-right {
-  float: right !important;
+  background-color: #555;
 }
 .pull-left {
   float: left !important;

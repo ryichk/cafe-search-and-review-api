@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#753"><!-- Chromeのタブの色 -->
+    <meta name="theme-color" content="#333"><!-- Chromeのタブの色 -->
     <style>
     html {
       background: url(<%= asset_path "cafetable_mini.jpg" %>) 67% top/cover no-repeat;
@@ -93,7 +93,25 @@
       color: #f43;
       font-size: 20px;
     }
-    @media screen and (min-width: 768px) {
+    @media (min-width: 415px) and (max-width: 768px){
+      .jumbotron {
+        height: 300px;
+      }
+      .jumbotron h1 {
+        font-size: 4.7em;
+
+      }
+      .jumbotron p {
+        top: 180px;
+        left: 20%;
+        font-size: 2em;
+      }
+      .jumbotron .show-place-h1 {
+        font-size: 3.9em;
+        padding: 20px;
+      }
+    }
+    @media (min-width: 769px) {
       .jumbotron {
         padding-top: 48px;
         padding-bottom: 48px;

@@ -1,12 +1,9 @@
-@media screen and (max-width:419px){
+@media screen and (max-width:375px){
   body {
     max-width: 100%;
-  }
-}
-@media screen and (min-width:420px){
-  body {
     width: 100%;
   }
+
   /* Top Slide Photos */
   .SlideShow {
     height: 420px;
@@ -72,19 +69,89 @@
   }
 }
 
-@media screen and (min-width: 465px) and (max-width: 580px){
+@media (min-width: 415px) and (max-width: 768px){
+  .SlideShow {
+    height: 450px;
+    p {
+      font-size: 1.5em;
+      width: 77%;
+    }
+    .rate::before, .rate::after {
+      top: 30px;
+    }
+    .btn-heart {
+      bottom: 5px;
+    }
+  }
+  .cafePhotoTop {
+    height: 400px;
+  }
+  .name {
+    font-size: 2.3em;
+  }
+  .skippr-nav-container {
+    left: 68%;
+  }
+  .skippr-nav-element-block {
+    width: 50px;
+  }
+  .table {
+    width: 48%;
+    margin: 5px;
+  }
+  .heartIndex .btn-heart {
+    margin-right: 20px;
+  }
+
   .tableShow {
-    height: 370px;
+    height: 450px;
+    border-radius: 5px;
     .cafePhoto {
-      height: 250px;
+      height: 360px;
     }
     .placeShowBtn {
       margin-bottom: -40px;
     }
   }
+  .showAddress{
+    font-size: 1.5em;
+  }
+  .show-review-ul {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .show-review-li {
+    position: ralative;
+    width: 45%;
+    float: left;
+    margin: 10px;
+    .star-rating {
+      margin: 50px 0 0 0;
+    }
+    .btn-good {
+      width: 40%;
+      display: inline-flex;
+      margin: 10px;
+      .fa {
+        display: block;
+      }
+      small {
+        margin-top: 10px;
+      }
+    }
+  }
+  .review {
+    margin: 90px 10px 0 10px;
+  }
+  .show-review-h3 {
+    margin-left: 150px;
+  }
+  .show-review-image {
+    width: 17%;
+  }
 }
 
-@media screen and (min-width: 581px) and (max-width: 739px){
+@media screen and (min-width: 769px) and (max-width: 1280px){
   .tableShow {
     height: 405px;
     .cafePhoto {
@@ -95,10 +162,6 @@
       margin-bottom: 10px;
     }
   }
-}
-
-
-@media screen and (min-width: 740px) and (max-width: 779px){
   .cafePhotoTop {
     height: 345px;
     width: 80%;
@@ -224,7 +287,7 @@
   }
 }
 
-@media screen and (min-width: 1010px){
+@media screen and (min-width: 1281px){
   .col-md-6 {
     width: 70%;
     margin-left: 20%;
