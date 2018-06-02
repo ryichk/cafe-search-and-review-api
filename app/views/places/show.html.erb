@@ -37,7 +37,7 @@
       <% @place.reviews.each do |review| %>
       <li class="show-review-li">
         <div class="show-review-image">
-        <% if review.user.avatar.present? %>
+        <% if review.user.avatar_url.present? %>
           <%= image_tag review.user.avatar_url, :class=>"review-user-prof" %>
         <% else %>
           <%= image_tag 'coffeetime_mini.jpg', :class=>"review-user-prof" %>
