@@ -81,7 +81,7 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1280px){
+@media screen and (min-width: 769px) {
   .tableShow {
     height: 405px;
     .cafePhoto {
@@ -147,8 +147,8 @@
   .star-rating-top .name {
     display: inline-block;
     position: absolute; /*絶対位置*/
-    top: 13%;
-    left: 14%;
+    top: 5%;
+    left: 12%;
     border-radius: 8px 5px 5px 0;
     margin-top: 0;
     padding: 10px 6px 8px 8px;
@@ -167,8 +167,8 @@
   }
   .star-rating-top span {
     position: absolute;
-    top: 75%;
-    right: 15%;
+    top: 80%;
+    right: 10%;
     display: block;
     padding: 10px;
     background-color: #000;
@@ -182,13 +182,19 @@
   }
   .table {
     width: 31.33%;
-    height: 350px;
+    height: 365px;
     float: left;
     margin: 1%;
     padding: 10px;
     .cafePhoto {
       height: 193px;
     }
+  }
+  .heartIndex .btn-heart {
+    margin-right: 0;
+  }
+  .star-rating {
+    margin: 10px 0 0 -20px;
   }
   .table cafename {
     height: 40px;
