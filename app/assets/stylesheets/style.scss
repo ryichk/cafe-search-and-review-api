@@ -134,11 +134,22 @@
 }
 
 @media screen and (min-width: 780px){
+  #search, #keyword {
+    width: 60%;
+    margin: 15px 0 0 80px;
+  }
+  .search {
+    margin: 15px;
+  }
+  .placeIndex {
+    font-size: 3em;
+    margin-left: 20%;
+  }
   .SlideShow {
-    height: 500px;
+    height: 700px;
   }
   .cafePhotoTop {
-    height: 400px;
+    height: 600px;
     width: 80%;
     margin-left: 12%;
     margin-top: 30px;
@@ -182,12 +193,12 @@
   }
   .table {
     width: 31.33%;
-    height: 365px;
+    height: 400px;
     float: left;
     margin: 1%;
     padding: 10px;
     .cafePhoto {
-      height: 193px;
+      height: 230px;
     }
   }
   .heartIndex .btn-heart {
@@ -220,59 +231,5 @@
   }
   .showReview {
     clear: both;
-  }
-}
-
-@media screen and (min-width: 1281px){
-  .col-md-6 {
-    width: 70%;
-    margin-left: 20%;
-  }
-  .SlideShow {
-    height: 587px;
-  }
-  .cafePhotoTop {
-    height: 495px;
-    width: 80%;
-    margin-left: 10.5%;
-    margin-top: 30px;
-    margin-bottom: -3%;
-  }
-  .star-rating-top .name {
-    display: inline-block;
-    position: absolute; /*絶対位置*/
-    top: 13%;
-    left: 14%;
-    border-radius: 8px 5px 5px 0;
-    margin-top: 0;
-    padding: 10px 6px 8px 8px;
-    background-color: #000;
-    opacity: 0.8;
-    color: #fff;
-    font-size: 33px;
-  }
-  .star-rating-top p {
-    position: absolute;
-    bottom: 15%;
-    left: 14%;
-    width: 58%;
-    color: #fafafa;
-    font-size: 20px;
-  }
-  .star-rating-top span {
-    position: absolute;
-    top: 82%;
-    right: 15%;
-    display: block;
-    padding: 10px;
-    background-color: #000;
-  }
-  .table {
-    width: 23%;
-    margin: 1%;
-  }
-  .skippr-nav-element-block {
-    width: 90px;
-    height: 15px;
   }
 }
