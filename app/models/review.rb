@@ -29,7 +29,7 @@ class Review < ApplicationRecord
       def clean_s3
         photos.remove!
         photos.thumb.remove!
-      rescue Excon::Errors::Error => Error
+      rescue Excon::Errors::Error => error
         puts "エラーです。"
         false
       end
