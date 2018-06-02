@@ -20,5 +20,5 @@ CarrierWave.configure do |config|
   config.asset_host = Rails.application.secrets.AWS_S3_URL
 end
 
-日本語の文字化けを防ぐ
+  # 日本語の文字化けを防ぐ
 CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
