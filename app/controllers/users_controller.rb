@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @reviews = current_user.reviews.includes(:place).order("created_at DESC")
+    @reviews = Review.includes(:place).where("user_id = #{current_user.id}").references(:place)
   end
 
 end
