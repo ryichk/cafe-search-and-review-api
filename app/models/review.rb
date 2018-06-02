@@ -1,13 +1,14 @@
 class Review < ApplicationRecord
 
-  has_attached_file :picture, styles: { medium: "300x300#", thumb: "100x100#" }
-  validates_attachment_content_type :picture, content_type: ["image/jpg","image/jpeg","image/png"]
   validates :rank, presence: true
   validates :review, presence: true
   belongs_to :user
   belongs_to :place
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
+  mount_uploaders :photos, PhotosUploader
+  before_destroy :clean_s3
+
 
   # レビューにいいねをする
   def like(user)
@@ -23,4 +24,13 @@ class Review < ApplicationRecord
   def like?(user)
     like_users.include?(user)
   end
+
+    private
+      def clean_s3
+        photos.remove!
+        photos.thumb.remove!
+      rescue Excon::Errors::Error => Error
+        puts "エラーです。"
+        false
+      end
 end

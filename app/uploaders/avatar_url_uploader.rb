@@ -28,9 +28,10 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  # 拡張子が同じでないとGIFをJPGとかニコンベートできないので、ファイル名を変更
+  # Override the filename of the uploaded files:
+  # ファイル名の設定（以下はランダムな１６進数文字列をファイル名の先頭に付与している例)
   def filename
-    super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
+    "#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end
 
     protected
@@ -40,7 +41,9 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
         model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
       end
 
-      # サムネイルを生成する設定
+      # Create different versions of your uploaded files:
+      # リサイズの設定（要RMagick)
+      # 1つだけではなく複数のversionを設定可能
       version :thumb do
         process resize_to_fill: [50, 50]
       end
