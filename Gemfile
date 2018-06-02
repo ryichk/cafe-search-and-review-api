@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'aws-sdk-s3'
+  gem 'rmagick'
+  gem 'fog-aws'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -87,5 +89,7 @@ gem 'paperclip'
 gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
 gem 'activerecord-session_store'
+gem 'carrierwave'
+
 
 

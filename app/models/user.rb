@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :like_places, dependent: :destroy
   # belongs_to :place
 
+  mount_uploader :avatar_url, Avatar_urlUploader
+  before_destroy :clean_s3
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
@@ -69,9 +72,15 @@ class User < ApplicationRecord
         User.create_unique_string + "@example.com"
       end
 
-
-
       def self.dummy_email(auth)
         "#{auth.uid}-#{auth.provider}@example.com"
+      end
+
+      def clean_s3
+        avatar_url.remove!
+        avatar_url.thumb.remove!
+      rescue Excon::Errors::Error => error
+        puts "エラーです"
+        false
       end
 end
