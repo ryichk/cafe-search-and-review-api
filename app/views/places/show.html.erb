@@ -38,7 +38,7 @@
       <li class="show-review-li">
         <div class="show-review-image">
         <% if review.user.avatar.present? %>
-          <%= image_tag review.user.avatar, :class=>"review-user-prof" %>
+          <%= image_tag review.user.avatar_url, :class=>"review-user-prof" %>
         <% else %>
           <%= image_tag 'coffeetime_mini.jpg', :class=>"review-user-prof" %>
         <% end %>
