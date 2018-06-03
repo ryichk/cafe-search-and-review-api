@@ -21,7 +21,7 @@
         </div>
         <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;' %>
         <div class="fieldPicuture">
-          <% fields_for @review.photos do |ph| %>
+          <%= fields_for @review.photos do |ph| %>
             <%= ph.file_field :photos, :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
           <% end %>
         </div>

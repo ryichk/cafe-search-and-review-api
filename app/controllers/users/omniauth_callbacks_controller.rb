@@ -69,9 +69,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           end
         end
     end
-      def failure
-        redirect_to root_path
-      end
 
       def user_params
         request.env["omniauth.auth"].slice(:provider, :uid).to_h
