@@ -25,6 +25,30 @@ class Review < ApplicationRecord
     like_users.include?(user)
   end
 
+  def self.create_photos_by(create_params)
+    # 途中でエラーが起きた時にRollbackするようにTransaction
+    Review.transaction do
+      # アップロードされた画像を一枚ずつ処理
+      create_params[:photos].each do |photo|
+        new_photo = Review.new(review: create_params[:review], rank: create_params[:rank], photos: photo, user_id: create_params[:user_id], place_id: create_params[:place_id])
+        return false unless new_photo.save!
+      end
+    end
+    true
+  end
+
+  def self.update_photos_by(create_params)
+    # 途中でエラーが起きた時にRollbackするようにTransaction
+    Review.transaction do
+      # アップロードされた画像を一枚ずつ処理
+      create_params[:photos].each do |photo|
+        new_photo = Review.new(review: create_params[:review], rank: create_params[:rank], photos: photo, user_id: create_params[:user_id], place_id: create_params[:place_id])
+        return false unless new_photo.save!
+      end
+    end
+    true
+  end
+
     private
       def clean_s3
         photos.remove!

@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   def create
     @place = Place.find(params[:place_id])
     respond_to do |format|
-      if Review.create(create_params)
+      if Review.create_photos_by(create_params)
         format.html { redirect_to places_path, notice: "#{@place.name}のレビューを投稿しました" }
       else
         format.html { redirect_to new_place_review_path, alert: "登録できませんでした。レビューがきちんと書かれているか確認してください" }
@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
     review = Review.find(params[:id])
     if review.user_id == current_user.id
       respond_to do |format|
-        if review.update(create_params)
+        if review.update_photos_by(create_params)
           format.html { redirect_to user_path, notice: "#{@place.name} のレビューを更新しました" }
         else
           format.html { redirect_to edit_place_review_path, alert: "更新できませんでした。レビューがきちんと書かれているか確認してください" }
