@@ -25,28 +25,14 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
 
   # jpg,jpeg,gif,pngしか受け付けない
   def extension_white_list
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png JPG JPEG GIF PNG)
   end
 
   # Override the filename of the uploaded files:
   # ファイル名の設定（以下はランダムな１６進数文字列をファイル名の先頭に付与している例)
   def filename
-    "#{secure_token(10)}.#{file.extension}" if original_filename.present?
+    original_filename if original_filename
   end
-
-    protected
-
-      def sucure_token(length=16)
-        var = :"@#{mounted_as}_secure_token"
-        model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
-      end
-
-      # Create different versions of your uploaded files:
-      # リサイズの設定（要RMagick)
-      # 1つだけではなく複数のversionを設定可能
-      version :thumb do
-        process resize_to_fill: [50, 50]
-      end
 
 
 
