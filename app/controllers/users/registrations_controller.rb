@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :authenticate_user!, only: [:edit, :update, :delete, :destroy]
   # def build_resource(hash=nil)
   #   hash[:uid] = User.create_unique_string
   #   super
