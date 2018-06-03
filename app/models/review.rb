@@ -25,15 +25,6 @@ class Review < ApplicationRecord
     like_users.include?(user)
   end
 
-  def self.create_photos_by(create_params)
-    Review.transaction do
-      create_params[:photos].each do |photo|
-        new_photo = Review.new(review: create_params[:review], rank: create_params[:rank], photos: photo, user_id: create_params[:user_id], place_id: create_params[:place_id])
-        return false unless new_photo.save!
-      end
-    end
-    true
-  end
 
     private
       def clean_s3

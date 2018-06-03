@@ -12,9 +12,8 @@ class ReviewsController < ApplicationController
 
   def create
     @place = Place.find(params[:place_id])
-    @review = Review.new(create_params)
     respond_to do |format|
-      if Review.create_photos_by(create_params)
+      if Review.create(create_params)
         format.html { redirect_to places_path, notice: "#{@place.name}のレビューを投稿しました" }
       else
         format.html { redirect_to new_place_review_path, alert: "登録できませんでした。レビューがきちんと書かれているか確認してください" }
