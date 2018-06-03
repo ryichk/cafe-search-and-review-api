@@ -22,7 +22,7 @@
         </div>
         <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;color: #000;' %>
         <div class="fieldPicuture">
-          <%= f.file_field :photos, :multiple => true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+          <%= f.file_field :photos, :multiple => true %>
         </div>
         <%= f.submit "編集する", class: "btn btn-review" %>
       <% end %>
