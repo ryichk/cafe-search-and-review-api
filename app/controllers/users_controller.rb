@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @username = current_user.username
-    @reviews = Review.includes(:place)
+    @reviews = Review.includes(:place).order("created_at DESC")
   end
 
 end
