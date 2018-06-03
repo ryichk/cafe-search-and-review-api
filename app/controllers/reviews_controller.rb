@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
 
     private
       def create_params
-        params.require(:review).permit(:review, :rank, {photos: []}).merge(place_id: params[:place_id], user_id: current_user.id)
+        params.require(:review).permit(:review, :rank, photos: []).merge(place_id: params[:place_id], user_id: current_user.id)
       end
 
       def move_to_users_session
