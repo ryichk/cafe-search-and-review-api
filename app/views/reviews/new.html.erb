@@ -21,7 +21,7 @@
         </div>
         <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;' %>
         <div class="fieldPicuture">
-          <%= f.file_field :photos, :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
+          <%= f.file_field :photos[], :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
         </div>
         <%= f.submit "投稿する", class: "btn btn-review" %>
       <% end %>
@@ -38,11 +38,9 @@
             <span class="rate rate<%= review.rank %>"></span>
           </div>
           <p class="review"><%= simple_format(review.review) %></p>
-          
             <% review.photos.each do |photo| %>
-              <%= image_tag photo.thumb.url if review.photos? %>
+              <%= image_tag photo if review.photos? %>
             <% end %>
-          
         </li>
         <br>
         <% end %>
