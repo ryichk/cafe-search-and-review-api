@@ -44,7 +44,7 @@
       background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
       -webkit-background-size: cover;
     }
-    .jumbotron h1 {
+    .jumbotron .top_h1 {
       position: absolute;
       top: 70px;
     }
@@ -211,7 +211,7 @@
   </body>
 <div class="Copyright">
   <p>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</p>
-  <%= link_to_unless_current '利用規約', terms_index_path %>
-  <%= link_to "お問い合わせ", inquiry_path, :class => 'navbar-link' %>
+  <%= link_to_unless_current '利用規約 ', terms_index_path %>
+  <%= link_to " お問い合わせ", inquiry_path, :class => 'navbar-link' %>
 </div>
 </html>
