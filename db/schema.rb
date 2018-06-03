@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180603081536) do
+ActiveRecord::Schema.define(version: 20180603095027) do
 
   create_table "like_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id", null: false
@@ -32,14 +32,6 @@ ActiveRecord::Schema.define(version: 20180603081536) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "review_id"
-    t.string "photos"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["review_id"], name: "index_photos_on_review_id"
-  end
-
   create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "address"
@@ -47,8 +39,6 @@ ActiveRecord::Schema.define(version: 20180603081536) do
     t.float "longitude", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.text "review"
     t.string "photos"
     t.integer "like_places_count"
   end

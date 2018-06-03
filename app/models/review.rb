@@ -6,8 +6,7 @@ class Review < ApplicationRecord
   belongs_to :place
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
-  has_many :photos
-  accepts_nested_attributes_for :photos
+  # mount_uploaders :photos, PhotosUploader
   before_destroy :clean_s3
 
 
