@@ -1,7 +1,7 @@
 <div class="Main">
   <div class="reviewNew">
     <div class="contents row">
-      <%= form_for @review do |f| %>
+      <%= form_for [@place, @review] do |f| %>
       <div class="jumbotron">
         <h1>レビューの編集</h1>
       </div>
