@@ -688,8 +688,6 @@ td {
 
 /* copyright */
 .Copyright {
-  position: absolute;
-  bottom: 0;
   height: 100px;
   width: 100%;
   display: block;
@@ -698,5 +696,6 @@ td {
   font-size: 20px;
   padding-top: 100px;
   z-index: -1;
+  float: left;
 }
 
