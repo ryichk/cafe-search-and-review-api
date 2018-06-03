@@ -27,7 +27,7 @@
       <% end %>
     </div>
     <div class="showReview">
-      <h2>レビュー一覧</h2>
+      <h2>投稿一覧</h2>
       <ul>
         <% @place.reviews.each do |review| %>
         <li>
@@ -42,7 +42,7 @@
           </p>
           <% unless review.photos.blank? %>
             <% review.photos.each do |photo| %>
-              <img src="<%= photo %>">
+              <%= image_tag photo, :size => '100x100' %>
             <% end %>
           <% end %>
         </li>
