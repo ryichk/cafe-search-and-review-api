@@ -716,23 +716,27 @@ td {
 .cafe-Photos {
   margin: 15px 0 20px 0;
   padding: 10px 0 5px 20px;
-  h2 {
-    margin-top: -40px;
-  }
-  h3 {
-    margin-top: -70px;
-  }
-  .btn-good {
-    display: inline-flex;
-    margin: 0 35px;
-  }
-  small {
-    margin: 8px 0 0 7px;
-  }
   img {
     border-radius: 8px;
     margin-top: 10px;
     min-height: 200px;
+    position: relative;
+  }
+  h2 {
+    position: absolute;
+    margin-top: -40px;
+  }
+  h3 {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+  }
+  .btn-good {
+    display: inline-flex;
+    position: absolute;
+  }
+  small {
+    margin: 8px 0 0 7px;
   }
 }
 
