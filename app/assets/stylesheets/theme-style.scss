@@ -725,15 +725,18 @@ td {
   h2 {
     position: absolute;
     margin-top: -40px;
+    font-size: 1.8em;
   }
   h3 {
     position: absolute;
-    top: 400px;
-    left: 50px;
+    margin: -90px 0 0 10px;
+    width: 80%;
+    font-size: 1.6em;
   }
   .btn-good {
     display: inline-flex;
     position: absolute;
+    margin: -50px 0 0 230px;
   }
   small {
     margin: 8px 0 0 7px;
