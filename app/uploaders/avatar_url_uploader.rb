@@ -31,8 +31,22 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # ファイル名の設定（以下はランダムな１６進数文字列をファイル名の先頭に付与している例)
   def filename
-    original_filename if original_filename
+    "#{secure_token(10)}.#{file.extension}" if original_filename
   end
+
+    protected
+
+      def sucure_token(length=16)
+        var = :"@#{mounted_as}_secure_token"
+        model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
+      end
+
+      # Create different versions of your uploaded files:
+      # リサイズの設定（要RMagick)
+      # 1つだけではなく複数のversionを設定可能
+      version :thumb do
+        process resize_to_fill: [50, 50]
+      end
 
 
 
