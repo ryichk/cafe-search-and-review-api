@@ -46,7 +46,7 @@ a {
   margin-bottom: 10px;
 }
 .table:hover{
-  background-color: rgba(180, 250, 240, 0.5);
+  
 }
 
 
@@ -444,13 +444,16 @@ $rate5: $starFull * 5;//星5
   border-radius: 7px;
   padding: 1px;
   .star-rating{
-    margin: 10px 0 0 140px;
+    width: 40%;
+    margin: 10px 0 0 130px;
   }
   .btn-good{
-    margin:-25px auto 0 auto;
+    margin:-5px 15px 0 auto;
+    display: inline-flex;
     small{
       display: inherit;
       font-size:55%;
+      margin: 10px 0;
     }
   }
 }
@@ -458,7 +461,7 @@ $rate5: $starFull * 5;//星5
   margin-left: 160px;
 }
 .show-review-image {
-  width: 30%;
+  width: 35%;
   height: 80px;
   margin: 7px 0 0 7px;
   position: absolute;
@@ -577,11 +580,11 @@ $rate5: $starFull * 5;//星5
   color: #fff;
 }
 .user_image img {
-  width: 200px;
+  width: 70%;
   height: auto;
   float: right;
   margin-top: 20px;
-  margin-right: 20%;
+  margin-right: 15%;
   border-radius: 7px 7px 7px 7px;
 }
 .userReviews {
