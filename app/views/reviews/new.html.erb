@@ -40,7 +40,7 @@
           <p class="review"><%= simple_format(review.review) %></p>
           <% unless review.photos.blank? %>
             
-              <%= image_tag(review.photos) %>
+              <%= image_tag(review.photos[0]) %>
           <% end %>
         </li>
         <br>
