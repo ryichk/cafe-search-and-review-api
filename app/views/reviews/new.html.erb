@@ -4,7 +4,7 @@
       <h1 class="review"><%= @place.name %></h1>
       <br>
       <img src="<%= @place.photos %>" class="cafePhoto">
-      <%= form_for [@place, @review] do |f| %>
+      <%= form_for [@place, @review], html: { multiple: true} do |f| %>
         <div class="evaluation">
           <%= f.radio_button 'rank', 5 %>
           <label for="review_rank_5"><span class="text">最高</span>★</label>
@@ -21,8 +21,7 @@
         <div class="fieldPicuture">
           <%= f.file_field :photos, :multiple => true %>
         </div>
-        <%= button_tag type: "submit", class: "btn btn-review" do %>投稿する
-        <% end %>
+        <%= f.submit "編集する", class: "btn btn-review" %>
       <% end %>
     </div>
     <div class="showReview">

@@ -24,8 +24,7 @@
         <div class="fieldPicuture">
           <%= f.file_field :photos, :multiple => true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
         </div>
-        <%= button_tag type: "submit", class: "btn btn-review" do %>編集する
-        <% end %>
+        <%= f.submit "編集する", class: "btn btn-review" %>
       <% end %>
     </div>
   </div>
