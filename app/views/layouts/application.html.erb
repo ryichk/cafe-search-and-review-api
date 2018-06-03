@@ -8,7 +8,9 @@
       background: url(<%= asset_path "cafetable_mini.jpg" %>) 67% top/cover no-repeat;
       background-attachment: fixed;
       width: 100%;
-      position: relative;
+      height: 100vh;
+      position: fixed;
+      -webkit-background-size: 67% top;
       z-index: -1;
     }
     h1 {
@@ -32,7 +34,7 @@
     }
     .jumbotron-place-index {
       background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
-      -webkit-background-size:100% auto;
+      -webkit-background-size: cover;
     }
     .jumbotron h1 {
       position: absolute;
