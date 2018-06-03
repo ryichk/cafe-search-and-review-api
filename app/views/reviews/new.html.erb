@@ -42,7 +42,7 @@
           </p>
           <% unless review.photos.blank? %>
             <% review.photos.each do |photo| %>
-              <%= image_tag(photo, :size => '100x100') %>
+              <%= image_tag(photo) %>
             <% end %>
           <% end %>
         </li>
