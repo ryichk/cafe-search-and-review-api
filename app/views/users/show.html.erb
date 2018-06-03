@@ -18,7 +18,7 @@
             <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
             <p class="address"><%= review.place.address %></p>
             <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
-            <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", method: :delete %></p>
+            <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
             <div class="star-rating">
               <span class="rate rate<%= review.rank %>"></span>
             </div>

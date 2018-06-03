@@ -586,22 +586,37 @@ $rate5: $starFull * 5;//星5
   margin-top: 70px;
   margin-right: 5%;
   width: 95%;
-  .address, .star-rating {
-    width: 70%;
+  .address{
+    width: 60%;
+  }
+  .star-rating {
+    width: 50%;
   }
 }
 .userReviews h2 {
   margin: 8px 15px 0 25px;
 }
 .userReview {
+  background: rgba(60,80,90,0.6);
   margin: 15px 0 20px 0;
   padding: 10px 0 5px 20px;
+  .btn-good {
+    display: inline-flex;
+    margin: 0 35px;
+  }
+  small {
+    margin: 8px 0 0 7px;
+  }
+  img {
+    border-radius: 8px;
+    margin-top: 10px;
+  }
 }
 
 .btn-reviewDelete {
   float: right;
-  margin-top: 10px;
   background-color: #ddd;
+  margin-right: 20px;
 }
 .btn-reviewDelete:hover {
   background-color: #d54;
@@ -609,7 +624,7 @@ $rate5: $starFull * 5;//星5
   margin-right: -4px;
 }
 .btn-reviewEdit {
-  margin: -40px 0px 0 0;
+  margin-right: 10px;
   background-color: #ddd;
   float: right;
 }
