@@ -1,7 +1,7 @@
 <div class="Main">
   <div class="containerUserShow">
     <div class="jumbotron">
-      <h1><%= current.username %></h1>
+      <h1><%= current_user.username %></h1>
     </div>
       <% if current_user.avatar_url.present? %>
         <div class="user_image"><%= image_tag current_user.avatar_url %></div>
