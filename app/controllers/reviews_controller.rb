@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def new
     @place = Place.find(params[:place_id])
-    @review = Review.new(create_params)
+    @review = Review.new
     4.times { @review.photos.build }
   end
 
