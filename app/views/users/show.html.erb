@@ -10,7 +10,7 @@
       <% end %>
 
     <div class="userReviews">
-      <h2><%= current.username %>さんの投稿一覧</h2>
+      <h2><%= current_user.username %>さんの投稿一覧</h2>
         <% @reviews.each do |review| %>
           <% if current_user.id == review.user_id %>
           <div class="userReview">
