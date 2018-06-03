@@ -40,7 +40,7 @@
           <p class="review"><%= simple_format(review.review) %></p>
           <% unless review.photos.blank? %>
             <% review.photos.each do |photo| %>
-              <%= image_tag photo %>
+              <%= puts photo %>
             <% end %>
           <% end %>
         </li>
