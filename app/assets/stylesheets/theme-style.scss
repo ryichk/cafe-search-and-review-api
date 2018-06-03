@@ -716,6 +716,12 @@ td {
 .cafe-Photos {
   margin: 15px 0 20px 0;
   padding: 10px 0 5px 20px;
+  h2 {
+    margin-top: -40px;
+  }
+  h3 {
+    margin-top: -70px;
+  }
   .btn-good {
     display: inline-flex;
     margin: 0 35px;
@@ -726,6 +732,7 @@ td {
   img {
     border-radius: 8px;
     margin-top: 10px;
+    min-height: 200px;
   }
 }
 
