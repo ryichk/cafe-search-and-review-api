@@ -2,7 +2,7 @@
   <div class="userReviews">
     <h1>カフェ写真一覧</h1>
     <% @reviews.each do |review| %>
-      <a href="/places/<%= review.place_id %>"><div class="review-Photos">
+      <a href="/places/<%= review.place_id %>"><div class="cafe-Photos">
         <h3><%= review.place.name %></h3>
         <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
         <% unless review.photos.blank? %>
