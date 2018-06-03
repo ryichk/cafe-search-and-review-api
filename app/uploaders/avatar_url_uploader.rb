@@ -31,12 +31,12 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # ファイル名の設定（以下はランダムな１６進数文字列をファイル名の先頭に付与している例)
   def filename
-    "#{secure_token(10)}.#{file.extension}" if original_filename
+    "#{secure_token(10)}.#{file.extension}" if original_filename.present?
   end
 
     protected
 
-      def sucure_token(length=16)
+      def secure_token(length=16)
         var = :"@#{mounted_as}_secure_token"
         model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
       end
