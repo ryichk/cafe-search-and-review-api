@@ -54,7 +54,9 @@
             <%= simple_format(review.review) %>
         </div>
         <% unless review.photos.blank? %>
-          <img src="review.photos" class="img-responsive">
+          <% review.photos.each do |photo| %>
+            <img src="<%= photo %>" class="img-responsive">
+          <% end %>
         <% end %>
       </li>
       <br>
