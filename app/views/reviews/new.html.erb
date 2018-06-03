@@ -1,7 +1,9 @@
 <div class="Main">
   <div class="reviewNew">
     <div class="contents row">
-      <h1 class="review"><%= @place.name %></h1>
+      <div class="jumbotron">
+        <h1 class="review"><%= @place.name %></h1>
+      </div>
       <br>
       <img src="<%= @place.photos %>" class="cafePhoto">
       <%= form_for [@place, @review], html: { multiple: true} do |f| %>

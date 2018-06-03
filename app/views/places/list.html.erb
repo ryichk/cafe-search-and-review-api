@@ -36,13 +36,10 @@
             <div class="boxBottom"><img src="no_image.png" class="cafePhoto img-responsive"></div>
           <% end %>
         </div>
-        <% else %>
-          <% @places.each do |place| %>
-            <% if Place.exists?(:name => cafe.name) %>
-              <%= render "place_result", place: place %>
-            <% end %>
-          <% end %>
         <% end %>
+      <% end %>
+      <% @places.each do |place| %>
+          <%= render "place_result", place: place %>
       <% end %>
       </div>
     </div>
