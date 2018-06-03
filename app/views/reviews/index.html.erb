@@ -1,20 +1,17 @@
 <div class="Main">
   <div class="userReviews">
-    <h1>みんなの投稿一覧</h1>
+    <h1>カフェ写真一覧</h1>
     <% @reviews.each do |review| %>
-      <div class="userReview">
-        <h2><%= review.user.username %></h2>
+      <a href="/places/<%= review.place_id %>"><div class="review-Photos">
         <h3><%= review.place.name %></h3>
         <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
-        <p><%= review.place.address %></p>
-        <div class="star-rating">
-          <span class="rate rate<%= review.rank %>"></span>
-        </div>
-        <p class="review"><%= simple_format(review.review) %></p>
         <% unless review.photos.blank? %>
-          <img src="review.photos">
+          <% review.photos.each do |photo| %>
+            <img src="<%= photo %>" class="review-index-photo img-responsive">
+          <% end %>
         <% end %>
-      </div>
+        <h2><%= review.user.username %></h2>
+      </div></a>
     <% end %>
     <%= paginate(@reviews) %>
   </div>

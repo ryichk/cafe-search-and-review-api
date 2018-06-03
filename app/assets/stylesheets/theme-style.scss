@@ -712,6 +712,24 @@ td {
 }
 
 
+/* review index 写真一覧 */
+.cafe-Photos {
+  margin: 15px 0 20px 0;
+  padding: 10px 0 5px 20px;
+  .btn-good {
+    display: inline-flex;
+    margin: 0 35px;
+  }
+  small {
+    margin: 8px 0 0 7px;
+  }
+  img {
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+}
+
+
 /* copyright */
 .Copyright {
   height: 100px;
