@@ -39,8 +39,9 @@
           </div>
           <p class="review"><%= simple_format(review.review) %></p>
           <% unless review.photos.blank? %>
-            
-              <%= image_tag(review.photos[0]) %>
+            <% review.photos.each do |photo| %>
+              <%= attachment_image_tag photo, :image, :fill, 200, 200 %>
+            <% end %>
           <% end %>
         </li>
         <br>
