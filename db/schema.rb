@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180603095027) do
+ActiveRecord::Schema.define(version: 20180603095751) do
 
   create_table "like_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id", null: false
@@ -51,10 +51,6 @@ ActiveRecord::Schema.define(version: 20180603095027) do
     t.string "photos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "picture_file_name"
-    t.string "picture_content_type"
-    t.integer "picture_file_size"
-    t.datetime "picture_updated_at"
     t.integer "likes_count", default: 0, null: false
   end
 
@@ -91,10 +87,6 @@ ActiveRecord::Schema.define(version: 20180603095027) do
     t.string "uid"
     t.string "username"
     t.boolean "agreement"
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string "avatar_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
