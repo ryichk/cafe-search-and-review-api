@@ -38,11 +38,11 @@
             <span class="rate rate<%= review.rank %>"></span>
           </div>
           <p class="review"><%= simple_format(review.review) %></p>
-          <% unless review.photos.blank? %>
+          
             <% review.photos.each do |photo| %>
-              <%= image_tag photo %>
+              <%= image_tag photo.thumb.url if review.photos? %>
             <% end %>
-          <% end %>
+          
         </li>
         <br>
         <% end %>
