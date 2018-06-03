@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :like_places, dependent: :destroy
   # belongs_to :place
 
-
+  mount_uploader :avatar_url, AvatarUrlUploader
   before_destroy :clean_s3
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
