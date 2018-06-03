@@ -23,11 +23,11 @@
         <div class="fieldPicuture">
           <%= f.file_field :photos, :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
         </div>
-        <%= f.submit "編集する", class: "btn btn-review" %>
+        <%= f.submit "投稿する", class: "btn btn-review" %>
       <% end %>
     </div>
     <div class="showReview">
-      <h2>みんなの投稿</h2>
+      <h2>レビュー一覧</h2>
       <ul>
         <% @place.reviews.each do |review| %>
         <li>
@@ -41,7 +41,9 @@
             <%= review.review %>
           </p>
           <% unless review.photos.blank? %>
-            <img src="review.photos">
+            <% review.photos.each do |photo| %>
+              <img src="<%= photo %>">
+            <% end %>
           <% end %>
         </li>
         <br>
