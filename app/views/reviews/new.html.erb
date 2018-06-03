@@ -37,13 +37,10 @@
           <div class="star-rating">
             <span class="rate rate<%= review.rank %>"></span>
           </div>
-          <p class="review">
-            <%= review.review %>
-          </p>
+          <p class="review"><%= simple_format(review.review) %></p>
           <% unless review.photos.blank? %>
-            <% review.photos.each do |photo| %>
-              <%= image_tag(photo) %>
-            <% end %>
+            
+              <%= image_tag(review.photos) %>
           <% end %>
         </li>
         <br>
