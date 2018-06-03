@@ -4,12 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#333"><!-- Chromeのタブの色 -->
     <style>
-    html::before {
+    body::before {
       background: url(<%= asset_path "cafetable_mini.jpg" %>) 67% top/cover no-repeat;
       background-attachment: fixed;
+      position: fixed;
       width: 100%;
       height: 100vh;
-      position: fixed;
       -webkit-background-size: 67% top;
       z-index: -1;
     }
