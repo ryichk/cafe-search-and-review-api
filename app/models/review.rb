@@ -7,7 +7,7 @@ class Review < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
   mount_uploaders :photos, PhotosUploader
-  before_destroy :clean_s3
+
 
 
   # レビューにいいねをする
@@ -25,13 +25,4 @@ class Review < ApplicationRecord
     like_users.include?(user)
   end
 
-
-    private
-      def clean_s3
-        photos.remove!
-        photos.thumb.remove!
-      rescue Excon::Errors::Error => error
-        puts "エラーです。"
-        false
-      end
 end

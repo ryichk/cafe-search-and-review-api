@@ -41,7 +41,7 @@ class User < ApplicationRecord
                          avatar_url: auth.info.image
                          )
     end
-    user
+    user.skip_confirmation!
   end
 
   def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
