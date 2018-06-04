@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   belongs_to :place
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
-  mount_uploader :photos, PhotosUploader
+  mount_uploaders :photos, PhotosUploader
 
 
 
