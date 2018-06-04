@@ -1,19 +1,16 @@
 <div class="Main">
   <div class="containerUserShow">
-    <% @reviews.each do |review| %>
     <div class="jumbotron">
-      <h1><%= review.user.username %></h1>
+      <h1><%= @user.username %></h1>
     </div>
-      <% if review.user.avatar_url.present? %>
-        <div class="user_image"><%= image_tag review.user.avatar_url %></div>
-      <% else %>
-        <div class="user_image"><%= image_tag 'coffeetime_mini.jpg' %></div>
-      <% end %>
+    <% if @user.avatar_url.present? %>
+      <div class="user_image"><%= image_tag @user.avatar_url %></div>
+    <% else %>
+      <div class="user_image"><%= image_tag 'coffeetime_mini.jpg' %></div>
     <% end %>
-
     <div class="userReviews">
-      <h2><%= current_user.username %>さんの投稿一覧</h2>
-        <% @reviews.each do |review| %>
+      <h2><%= @user.username %>さんの投稿一覧</h2>
+        <% @user.reviews.each do |review| %>
           <div class="userReview">
             <h3><%= review.place.name %></h3>
             <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>

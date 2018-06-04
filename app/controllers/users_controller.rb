@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.includes(reviews: :place).find(params[:id])
     @reviews = Review.includes(:place).where(user_id: current_user.id).references(:review)
   end
 
