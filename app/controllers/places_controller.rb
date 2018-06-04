@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show]
+  before_action :set_place, only: :show
   before_action :authenticate_user!, only: :create
 
 

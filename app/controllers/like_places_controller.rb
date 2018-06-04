@@ -1,8 +1,8 @@
 class LikePlacesController < ApplicationController
   before_action :authenticate_user!
 
-  def show
-    @like_place = LikePlace.where(user_id: current_user.id)
+  def index
+    @like_place = LikePlace.includes(:place).where(user_id: current_user.id).references(:like_place)
   end
 
   def create
