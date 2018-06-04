@@ -39,7 +39,7 @@
           </div>
           <p class="review"><%= simple_format(review.review) %></p>
             <% review.photos.each do |photo| %>
-              <%= image_tag photo if review.photos? %>
+              <%= image_tag photo if review.photos?, :class=>"img-responsive" %>
             <% end %>
         </li>
         <br>
