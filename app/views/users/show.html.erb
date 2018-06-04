@@ -1,24 +1,27 @@
 <div class="Main">
   <div class="containerUserShow">
+    <% @reviews.each do |review| %>
     <div class="jumbotron">
-      <h1><%= current_user.username %></h1>
+      <h1><%= review.user.username %></h1>
     </div>
-      <% if current_user.avatar_url.present? %>
-        <div class="user_image"><%= image_tag current_user.avatar_url %></div>
+      <% if review.user.avatar_url.present? %>
+        <div class="user_image"><%= image_tag review.user.avatar_url %></div>
       <% else %>
         <div class="user_image"><%= image_tag 'coffeetime_mini.jpg' %></div>
       <% end %>
+    <% end %>
 
     <div class="userReviews">
       <h2><%= current_user.username %>さんの投稿一覧</h2>
         <% @reviews.each do |review| %>
-          <% if current_user.id == review.user_id %>
           <div class="userReview">
             <h3><%= review.place.name %></h3>
             <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
             <p class="address"><%= review.place.address %></p>
-            <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
-            <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
+            <% if review.user_id == current_user.id %>
+              <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
+              <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
+            <% end %>
             <div class="star-rating">
               <span class="rate rate<%= review.rank %>"></span>
             </div>
@@ -27,7 +30,6 @@
               <% review.photos.each do |photo| %>
                 <img src="<%= photo %>" class="img-responsive">
               <% end %>
-            <% end %>
           </div>
           <% end %>
         <% end %>
