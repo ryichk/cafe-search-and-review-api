@@ -173,7 +173,7 @@
             <li><%= link_to_unless_current 'みんなのカフェ写真', reviews_path %></li>
             <% if user_signed_in? %>
               <li><%= link_to_unless_current "My ページ", user_path(current_user.id) %></li>
-              <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places %></li>
+              <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url %></li>
               <li><%= link_to_unless_current 'ユーザーを探す', users_path %></li>
               <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
