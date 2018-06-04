@@ -1,19 +1,7 @@
-<% @like_place.each do |place| %>
-  <%= render "place_result", place: place %>
+<% @like_place.each do |likeplace| %>
+  <div class="table">
+    <a href="/places/<%= likeplace.place.id %>"><div class="cafename"><h4><%= likeplace.place.name %></h4></div>
+    <div class="topLeft Gapi"><span><%= likeplace.place.address %></span></div></a>
+    <a href="/places/<%= likeplace.place.id %>"><div class="boxBottom"><img src="<%= likeplace.place.photos %>" class="cafePhoto img-responsive"></div></a>
+  </div>
 <% end %>
-<div class="table">
-  <a href="/places/<%= place.id %>"><div class="cafename"><h4><%= place.name %></h4></div>
-  <div class="topLeft Gapi"><span><%= place.address %></span></div></a>
-  <div class="topRight"><a href="/places/<%= place.id %>/reviews/new" class="btn btn-default placeIndexBtn" >投稿する</a></div>
-  <div id="heart-<%= place.id %>" class="heartIndex">
-    <%= render "like_places/like_place", place: place %>
-  </div>
-  <div class="star-rating">
-  <% if place.reviews.present? %>
-    <span class="rate rate<%= place.review_average %>"></span>
-  <% else %>
-    <span class="rate rate0"></span>
-  <% end %>
-  </div>
-  <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto img-responsive"></div></a>
-</div>
