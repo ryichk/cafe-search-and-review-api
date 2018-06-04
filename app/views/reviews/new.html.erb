@@ -26,25 +26,10 @@
         <%= f.submit "投稿する", class: "btn btn-review" %>
       <% end %>
     </div>
-    <div class="showReview">
-      <h2>投稿一覧</h2>
-      <ul>
-        <% @place.reviews.each do |review| %>
-        <li>
-          <h3 title="<%= review.user.username %>">
-            <span><i class="icon-rate-60" title=""></i></span><%= review.user.username %>
-          </h3>
-          <div class="star-rating">
-            <span class="rate rate<%= review.rank %>"></span>
-          </div>
-          <p class="review"><%= simple_format(review.review) %></p>
-            <% review.photos.each do |photo| %>
-              <%= image_tag photo, :class=>"img-responsive" if review.photos? %>
-            <% end %>
-        </li>
-        <br>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+
+    <%= render "reviews" %>
+
+  <button type="button" class="btn pull-right btn-lg btn-default">
+    <%= link_to 'Back', root_path, data:{"turbolinks"=>false} %>
+  </button>
 </div>
