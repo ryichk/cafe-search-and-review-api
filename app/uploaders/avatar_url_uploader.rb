@@ -45,7 +45,7 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
       # リサイズの設定（要RMagick)
       # 1つだけではなく複数のversionを設定可能
       version :thumb do
-        process resize_to_fill: [50, 50]
+        process resize_to_fill: [200, 200]
       end
 
 
