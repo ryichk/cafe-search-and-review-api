@@ -79,6 +79,15 @@
   .show-review-image {
     width: 17%;
   }
+
+  /* review show */
+  .userReviews{
+    .userReview{
+      width: 46%;
+      float: left;
+      margin: 5px;
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {

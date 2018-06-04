@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     :passwords => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show] do
+    resources :like_places, :only => [:index]
+  end
   resources :reviews, :only => [:index, :destroy]
   resources :likes, :only => [:create, :destroy]
   resources :like_places, :only => [:create, :destroy]

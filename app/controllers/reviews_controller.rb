@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :move_to_users_session, except: :index
+  before_action :authenticate_user!, except: :index
 
   def index
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(10)
@@ -55,7 +55,4 @@ class ReviewsController < ApplicationController
         params.require(:review).permit(:review, :rank, {photos: []}).merge(place_id: params[:place_id], user_id: current_user.id)
       end
 
-      def move_to_users_session
-        redirect_to new_user_session_path unless user_signed_in?
-      end
 end

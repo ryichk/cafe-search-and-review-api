@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :move_to_users_session, only: [:create, :destroy]
+  before_action :authenticate_user!
 
   def create
     @review = Review.find(params[:review_id])
