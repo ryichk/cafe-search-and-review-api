@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :move_to_users_session, only: [:index, :new, :create, :destroy, :edit, :update]
+  before_action :move_to_users_session, except: :index
 
   def index
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(10)
