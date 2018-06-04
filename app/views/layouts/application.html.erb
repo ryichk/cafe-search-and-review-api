@@ -124,6 +124,10 @@
         font-size: 3.9em;
         padding: 20px;
       }
+      .jumbotron-place-index {
+        background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
+        -webkit-background-size: cover;
+      }
     }
     @media (min-width: 769px) {
       .jumbotron {
@@ -140,8 +144,11 @@
         font-size: 2.5em;
         margin-left: 23%;
       }
+      .jumbotron-place-index {
+        background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/cover no-repeat;
+        -webkit-background-size: cover;
+      }
     }
-    
     </style>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'cafeshares_favicon.png' %>
