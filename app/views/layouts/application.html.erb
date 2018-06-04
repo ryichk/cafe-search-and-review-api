@@ -181,7 +181,6 @@
             <% if user_signed_in? %>
               <li><%= link_to_unless_current "My ページ", user_path(current_user.id) %></li>
               <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url(current_user.id) %></li>
-              <li><%= link_to_unless_current 'ユーザーを探す', users_path %></li>
               <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
@@ -190,6 +189,7 @@
               <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
               <li><%= link_to " Instagramログイン", user_instagram_omniauth_authorize_path, :class => 'navbar-link fa fa-instagram' %></li>
             <% end %>
+            <li><%= link_to_unless_current 'ユーザーを探す', users_path %></li>
           </ul>
           <!-- <form class="navbar-form navbar-left">
             <input type="text" class="form-control col-lg-8" placeholder="Search">
