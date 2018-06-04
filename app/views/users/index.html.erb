@@ -1,10 +1,16 @@
 <div class="Main">
   <h1>ALL Users</h1>
-  <ul class="users">
+  <div class="users">
     <% @users.each do |user| %>
-      <li>
-        <%= link_to user.username %>
-      </li>
+      <div>
+        <a href="/users/<%= user.id %>">
+          <% if user.avatar_url.present? %>
+            <div class="user_image"><%= image_tag user.avatar_url %></div>
+          <% else %>
+            <div class="user_image"><%= image_tag 'coffeetime_mini.jpg' %></div>
+          <% end %>
+          <%= user.username %></a>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
