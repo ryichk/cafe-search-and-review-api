@@ -89,6 +89,22 @@
       margin: 5px;
     }
   }
+
+  /* review index cafe Photos */
+  .cafe-Photos {
+    width: 33%;
+    float: left;
+    h2 {
+      margin: 8px 15px 0 5px;
+    }
+    h3 {
+      margin: -110px 0 0 10px;
+      width: 24%;
+    }
+    .btn-good {
+      margin: -50px 0 0 125px;
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {
