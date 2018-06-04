@@ -2,7 +2,7 @@ class LikePlacesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @like_place = LikePlace.where(:user_id = current_user.id)
+    @like_place = LikePlace.where(user_id: current_user.id)
   end
 
   def create
