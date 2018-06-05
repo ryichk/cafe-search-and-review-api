@@ -126,8 +126,14 @@
     width: 23.5%;
     margin: 5px;
     height: 140px;
-    img {
-      height: 130px;
+    .user_image{
+      img {
+        height: 130px;
+      }
+    }
+    p {
+      font-size: 1.4em;
+      top: 380px;
     }
   }
 }
