@@ -577,7 +577,7 @@ $rate5: $starFull * 5;//星5
   width: 27%;
   margin: 10px;
   float: left;
-  height: 150px;
+  height: 120px;
   .user_image {
     width: 100%;
     img {
@@ -588,6 +588,8 @@ $rate5: $starFull * 5;//星5
   }
   p {
     font-size: 1em;
+    position: absolute;
+    top: 350px;
   }
 }
 

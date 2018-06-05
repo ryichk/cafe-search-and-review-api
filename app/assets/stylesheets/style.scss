@@ -116,6 +116,18 @@
       margin: -50px 0 0 125px;
     }
   }
+
+  /* User index */
+  .user-Photos {
+    width: 23.5%;
+    margin: 5px;
+    height: 140px;
+    .user-image {
+      img {
+        height: 130px;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 769px) {
