@@ -22,7 +22,9 @@
             <div class="star-rating">
               <span class="rate rate<%= review.rank %>"></span>
             </div>
-            <p class="review"><%= simple_format(review.review) %></p>
+            <div class="review">
+              <%= simple_format(review.review) %>
+            </div>
             <% unless review.photos.blank? %>
               <% review.photos.each do |photo| %>
                 <img src="<%= photo %>" class="img-responsive">
