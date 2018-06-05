@@ -2,15 +2,14 @@
   <h1>ALL Users</h1>
   <div class="users">
     <% @users.each do |user| %>
-      <div class="user-Photos">
-        <a href="/users/<%= user.id %>">
-          <% if user.avatar_url.present? %>
-            <div class="user_image"><%= image_tag user.avatar_url, :class => "img-responsive" %></div>
-          <% else %>
-            <div class="user_image"><%= image_tag 'coffeetime_mini.jpg', :class => "img-responsive" %></div>
-          <% end %>
-          <h3><%= user.username %></a><h3>
-      </div>
+      <a href="/users/<%= user.id %>"><div class="user-Photos">
+        <% if user.avatar_url.present? %>
+          <div class="user_image"><%= image_tag user.avatar_url, :class => "img-responsive" %></div>
+        <% else %>
+          <div class="user_image"><%= image_tag 'coffeetime_mini.jpg', :class => "img-responsive" %></div>
+        <% end %>
+        <p><%= user.username %></p>
+      </div></a>
     <% end %>
   </div>
 </div>

@@ -582,10 +582,12 @@ $rate5: $starFull * 5;//星5
     width: 100%;
   }
   img {
-    height: auto;
+    height: 100px;
+    width: 100%;
+    margin-right: 0;
   }
-  h2 {
-    font-size: 1.6em;
+  p {
+    font-size: 1.3em;
   }
 }
 
