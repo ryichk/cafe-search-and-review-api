@@ -1,5 +1,5 @@
 <% @like_place.each do |likeplace| %>
-  <% if likeplace.present? %>
+  <% if likeplace.user_id.present? %>
   <div class="table">
     <a href="/places/<%= likeplace.place.id %>"><div class="cafename"><h4><%= likeplace.place.name %></h4></div>
     <div class="topLeft Gapi"><span><%= likeplace.place.address %></span></div></a>
