@@ -10,8 +10,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_places, dependent: :destroy
   # belongs_to :place
-
-  mount_uploader :avatar_url, AvatarUrlUploader
+  if Rails.env.production?
+    mount_uploader :avatar_url, AvatarUrlUploader
+  end
   before_destroy :clean_s3
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

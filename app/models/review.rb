@@ -6,7 +6,9 @@ class Review < ApplicationRecord
   belongs_to :place
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
-  mount_uploaders :photos, PhotosUploader
+  if Rails.env.production?
+    mount_uploaders :photos, PhotosUploader
+  end
 
 
 
