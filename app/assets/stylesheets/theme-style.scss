@@ -574,14 +574,15 @@ $rate5: $starFull * 5;//星5
 
 /* User Index */
 .user-Photos {
-  width: 100%;
+  width: 30%;
   margin: 10px;
+  float: left;
+  height: 150px;
   .user_image {
-    width: 32%;
-    margin: 10px;
+    width: 100%;
   }
   img {
-    height: 200px;
+    height: auto;
   }
 }
 
