@@ -12,17 +12,17 @@
       background: none;
     }
     .contents::before {
-      content: "";
+      background: url(<%= asset_path "cafetable_mini.jpg" %>) no-repeat left top;
+      -webkit-background-size: 100% auto;
       display: block;
       position: fixed;
       top: 0;
       left: 0;
-      -webkit-transform: translate3d(0, 0, -1px);
-      transform: translate3d(0, 0, -1px);
       width: 100%;
       height: 100vh;
-      background: url(<%= asset_path "cafetable_mini.jpg" %>) 67% top/cover no-repeat fixed;
-      -webkit-background-size: cover;
+      -webkit-transform: translate3d(0, 0, -1px);
+      transform: translate3d(0, 0, -1px);
+      content: "";
       z-index: -1;
     }
     h1 {
