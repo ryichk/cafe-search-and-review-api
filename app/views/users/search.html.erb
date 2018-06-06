@@ -1,6 +1,6 @@
 <div class="Main">
   <%= form_tag search_users_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search, params[:search_user], { :class => "form-control", :required => true, :placeholder=>"ユーザーを検索する"} %>
+    <%= text_field_tag :search_user, params[:search_user], { :class => "form-control", :required => true, :placeholder=>"ユーザーを検索する"} %>
     <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
       <i class="fa fa-search">検索</i>
     <% end %>
