@@ -1,7 +1,7 @@
 <div class="form-wrapper">
   <ul class="nav navbar-nav login">
     <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
-    <li><%= link_to " Instagramログイン", user_instagram_omniauth_authorize_path, :class => 'navbar-link fa fa-instagram' %></li>
+    <li><%= link_to " Instagramログイン(Coming soon)", :class => 'navbar-link fa fa-instagram' %></li>
     <%- if controller_name != 'sessions' %>
     <li><%= link_to "ログイン", new_session_path(resource_name) %><li>
   <% end -%>
