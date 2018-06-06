@@ -21,8 +21,15 @@ Rails.application.routes.draw do
   }
   resources :users, :only => [:index, :show] do
     resources :like_places, :only => [:index]
+    collection do
+      get 'search'
+    end
   end
-  resources :reviews, :only => [:index, :destroy]
+  resources :reviews, :only => [:index, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   resources :likes, :only => [:create, :destroy]
   resources :like_places, :only => [:create, :destroy]
 

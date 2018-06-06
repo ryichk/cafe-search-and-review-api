@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(20)
   end
 
+  def search
+    @reviews = Review.includes(:user).where('username LIKE ?', "%#{params[:search_place]}%").references(:user).limit(15)
+  end
+
   def new
     @place = Place.find(params[:place_id])
     @review = Review.new
