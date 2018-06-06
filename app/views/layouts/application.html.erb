@@ -157,6 +157,7 @@
     <title>Cafe Shares カフェ・シェアーズ</title>
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -207,7 +208,6 @@
   <%= link_to_unless_current '利用規約 ', terms_index_path %>
   <%= link_to " お問い合わせ", inquiry_path, :class => 'navbar-link' %>
 </div>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script async>
     var menuHeight = $(".navbar-collapse").height();
