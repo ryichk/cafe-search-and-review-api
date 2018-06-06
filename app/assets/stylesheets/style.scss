@@ -191,6 +191,20 @@
       height: 350px;
     }
   }
+  .show-review-li{
+    width: 32%;
+  }
+  .review-user-prof{
+    width: 36%;
+  }
+  .show-review-li{
+    .star-rating{
+      width: 47%;
+    }
+    .btn-good {
+      margin: -5px 30px 0 auto;
+    }
+  }
 }
 
 @media screen and (min-width: 780px){
