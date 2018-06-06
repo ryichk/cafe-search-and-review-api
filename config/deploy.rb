@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "3.10.2"
+lock "3.11.0"
 server '149.28.18.198', port: 22, roles: [:app, :web, :db], primary:true
 set :repo_url, "git@github.com:IchikiRyo/CafeShaker.git"
 set :application, "cafeshares"

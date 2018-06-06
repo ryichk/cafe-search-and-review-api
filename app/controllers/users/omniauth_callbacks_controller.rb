@@ -49,15 +49,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
             session["devise.#{provider}_data"] = request.env['omniauth.auth']
             redirect_to new_user_registration_url
           end
-        elsif provider == "twitter"
-          @user = User.find_for_twitter_oauth(request.env['omniauth.auth'])
-          if @user.persisted? #保存済みかどうかを確認
-            flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
-            sign_in_and_redirect @user, event: :authentication
-          else
-            session["devise.#{provider}_data"] = request.env['omniauth.auth']
-            redirect_to new_user_registration_url
-          end
         elsif provider == "instagram"
           @user = User.find_for_instagram_oauth(request.env['omniauth.auth'])
           if @user.persisted? #保存済みかどうかを確認
