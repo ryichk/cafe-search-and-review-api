@@ -282,7 +282,6 @@ Devise.setup do |config|
   # API key
 
     config.omniauth :facebook, Rails.application.secrets.facebook_id, Rails.application.secrets.facebook_secret_key
-    config.omniauth :twitter, Rails.application.secrets.TW_API_KEY, Rails.application.secrets.TW_API_SECRET
     config.omniauth :instagram, Rails.application.secrets.instagram_client_id, Rails.application.secrets.instagram_client_secret
 
   # mail setting
