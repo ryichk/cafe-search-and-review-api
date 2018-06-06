@@ -1,20 +1,4 @@
-/* Fonts */
-@import
-url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 
-/* fontawesome */
-@import
-url(https://weloveiconfonts.com/api/?family=fontawesome);
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
-a {
-  text-decoration: none;
-  color: #fff;
-}
-.Cafe {
-  margin-bottom: 50px;
-}
 .placeIndex {
   position: relative;
 }
@@ -45,20 +29,11 @@ a {
 .boxBottom{
   margin-bottom: 10px;
 }
-.table:hover{
-  
-}
+
 
 
 /* place index */
 
-.jumbotron p {
-  text-align: center;
-}
-
-.Main {
-  color: #fff;
-}
 
 h2.placeIndex {
   clear: both;
