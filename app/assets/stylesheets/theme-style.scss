@@ -430,6 +430,13 @@ $rate5: $starFull * 5;//星5
 
 
 /* Place Show */
+.show-place-heart .btn-heart{
+  position: absolute;
+  right: 0;
+  margin: -50px 40px;
+  color: #fff;
+  border: none;
+}
 .show-place-h1 {
   font-size: 2.6em;
 }

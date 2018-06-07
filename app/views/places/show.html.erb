@@ -16,6 +16,10 @@
       </div>
       <a href="/places/<%= @place.id %>/reviews/new" class="btn placeShowBtn btn-default" >投稿する</a>
       <div><img src="<%= @place.photos %>" class="cafePhoto img-responsive"></div>
+      <% place = @place %>
+      <div id="heart-<%= place.id %>" class="show-place-heart">
+        <%= render "like_places/like_place", place: place %>
+      </div>
     </div>
   </div>
   <div class="map_container">
