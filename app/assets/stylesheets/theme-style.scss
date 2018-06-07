@@ -1,5 +1,32 @@
-/*---- Gmap4rails ----*/
+/* fontawesome */
+@import
+url(https://weloveiconfonts.com/api/?family=fontawesome);
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 
+/*---- Gmap4rails ----*/
+.map_container {
+  clear: both;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom:56.25%; /* Ratio 16:9 */
+}
+
+.map_container .map_canvas {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+/*----ここまでGmap4rails ----*/
+
+
+/*-----Mainコンテンツ-----*/
 .placeIndex {
   position: relative;
 }
@@ -1086,6 +1113,12 @@ td {
     .cafePhoto {
       height: 370px;
     }
+  }
+  .showReviews{
+    margin-top: 600px;
+  }
+  .show-review-li{
+    display: inline-block;
   }
   /* cafe Photos */
   .cafe-Photos{
