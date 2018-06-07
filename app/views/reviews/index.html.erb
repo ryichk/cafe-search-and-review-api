@@ -1,10 +1,12 @@
 <div class="Main">
-  <%= form_tag search_reviews_path, :role => "form", :method => :get do %>
-    <%= text_field_tag :search_place, params[:search_place], { :class => "form-control", :required => true, :placeholder=>"ユーザー名で検索"} %>
-    <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-      <i class="fa fa-search">検索</i>
+  <div class="search-box">
+    <%= form_tag search_reviews_path, :role => "form", :method => :get do %>
+      <%= text_field_tag :search_place, params[:search_place], { :class => "form-control", :required => true, :placeholder=>"ユーザー名で検索"} %>
+      <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
+        <i class="fa fa-search">検索</i>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
   <div class="userReviews">
     <h1>カフェ写真一覧</h1>
     <% @reviews.each do |review| %>

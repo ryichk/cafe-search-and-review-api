@@ -445,6 +445,7 @@ $rate5: $starFull * 5;//星5
   background-color:#0007;
   border-radius: 7px;
   padding: 1px;
+  margin-bottom: 10px;
   .star-rating{
     width: 40%;
     margin: 10px 0 0 130px;
@@ -1023,6 +1024,11 @@ td {
   }
   .review-user-prof{
     width: 36%;
+    height: 125px;
+  }
+  /* User SHow */
+  .search-box .search {
+    margin-top: -30px;
   }
 }
 
@@ -1138,5 +1144,11 @@ td {
     .user-image img{
       height: 130px;
     }
+  }
+}
+@media screen and (min-width: 1024px){
+  /* User Index */
+  .user-Photos {
+    width: 12%;
   }
 }
