@@ -1007,8 +1007,12 @@ td {
     display: inline-block;
     vertical-align: top;
     margin: 0 10px 10px 0;
+    h3 {
+      margin-left:130px;
+    }
     .star-rating{
-      width: 47%;
+      width: 32%;
+      margin: 10px 0 0 100px;
     }
     .btn-good {
       margin: -5px 30px 0 auto;
