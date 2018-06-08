@@ -89,6 +89,7 @@ gem 'puma_worker_killer'
 gem 'activerecord-session_store'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'google-analytics-rails'
 
 
 
