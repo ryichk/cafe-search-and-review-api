@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :show
   def index
-    @users = User.page(params[:page]).per(30)
+    @users = User.page(params[:page]).order("created_at DESC").per(30)
   end
 
   def search
