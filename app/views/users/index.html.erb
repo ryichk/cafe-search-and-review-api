@@ -11,7 +11,7 @@
   <div class="users">
     <% @users.each do |user| %>
       <a href="/users/<%= user.id %>"><div class="user-Photos">
-        <% if user.created_at < 1.day.ago %>
+        <% if user.created_at > 1.day.ago %>
           <span class="New-user">New!</span>
         <% end %>
         <% if user.avatar_url.present? %>
