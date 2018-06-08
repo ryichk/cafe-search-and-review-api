@@ -17,8 +17,22 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/'
   #
-     add root_path, :priority => 0.7, :changefreq => 'daily'
-  # #
+     add places_path, :priority => 0.7, :changefreq => 'daily'
+     add reviews_path, :priority => 0.7, :changefreq => 'daily'
+     add users_path, :priority => 0.7, :changefreq => 'daily'
+
+    Place.find_each do |place|
+      add place_path(place.id), :lastmod => place.updated_at
+    end
+
+    Review.find_each do |review|
+      add review_path(review.id), :lastmod => review.updated_at
+    end
+
+    User.find_each do |user|
+      add user_path(user.id), :lastmod => user.updated_at
+    end
+
   # # Add all articles:
   # #
   #   Article.find_each do |article|
