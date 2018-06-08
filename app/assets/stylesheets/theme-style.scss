@@ -587,6 +587,16 @@ $rate5: $starFull * 5;//星5
 
 
 /* User Index */
+.search-box {
+  display: block;
+  .form-control{
+    display: inline-block;
+  }
+  .search{
+    display: inline-block;
+    margin: 0;
+  }
+}
 .user-Photos {
   width: 27%;
   margin: 10px;
@@ -1035,10 +1045,6 @@ td {
   .review-user-prof{
     width: 36%;
     height: 125px;
-  }
-  /* User SHow */
-  .search-box .search {
-    margin-top: -30px;
   }
 }
 
