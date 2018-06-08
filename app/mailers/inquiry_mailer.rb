@@ -7,7 +7,7 @@ class InquiryMailer < ActionMailer::Base
 
   def sendmail_confirm(inquiry)
     # メール件名
-    mail_subject = "Cafe Shakerの問い合わせフォールから問い合わせがありました。"
+    mail_subject = "Cafe Sharesの問い合わせフォールから問い合わせがありました。"
     @inquiry = inquiry
     
   end
