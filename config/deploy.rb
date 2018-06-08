@@ -145,6 +145,7 @@ set :keep_releases, 3
     after :finishing, :compile_assets
     # before 'deploy', 'deploy:cleanup'
     after :finishing, :cleanup
+    after 'deploy:restart', 'deploy:sitemap:create'
     # after :finishing, :restart
   end
 

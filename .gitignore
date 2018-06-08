@@ -38,3 +38,6 @@ config/secrets.yml
 sendgrid.env
 sendgrid.env
 sendgrid.env
+
+public/sitemap.xml
+public/sitemap.xml.gz

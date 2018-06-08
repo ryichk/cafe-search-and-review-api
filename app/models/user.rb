@@ -22,7 +22,6 @@ class User < ApplicationRecord
                          provider: auth.provider,
                          uid: auth.uid,
                          email: auth.info.email,
-                         avatar_url: auth.info.image,
                          password: Devise.friendly_token[0,20],
                          agreement: 1
                          )
@@ -37,7 +36,6 @@ class User < ApplicationRecord
                          provider: auth.provider,
                          uid: auth.uid,
                          email: User.info.email,
-                         avatar_url: auth.info.image,
                          password: Devise.friendly_token[0,20],
                          agreement: 1
                          )
