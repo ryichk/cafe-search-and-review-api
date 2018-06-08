@@ -12,7 +12,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.password_field :password, autocomplete: "off", placeholder: "Password （#{@minimum_password_length} characters minimum）" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "パスワードを新しくする （#{@minimum_password_length} characters minimum）" %>
       <% if @minimum_password_length %>
         <br />
         <em></em>
@@ -20,11 +20,11 @@
     </div>
 
     <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認。" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password" %>
+      <%= f.password_field :current_password, autocomplete: "off", placeholder: "現在のパスワードを入力してください。" %>
     </div>
     <div class="field">
       <%= f.file_field :avatar_url, autocomplete: "avatar_url" %>
