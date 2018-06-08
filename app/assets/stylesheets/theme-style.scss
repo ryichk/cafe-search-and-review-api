@@ -89,6 +89,14 @@ h2.placeIndex {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
+  z-index: -1;
+}
+.google_logo{
+  float: right;
+  margin: -190px 5px 0 0;
+}
+.google_logo_list{
+  margin-top: -30px;
 }
 
 .topLeft {

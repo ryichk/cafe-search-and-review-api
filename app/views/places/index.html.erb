@@ -16,6 +16,7 @@
           <div id="heart-<%= place.id %>">
             <%= render "like_places/like_place", place: place %>
           </div>
+          <div class="google_logo"><%= image_tag "powered_by_google_on_non_white.png" %></div>
           <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>
           <% if place.reviews.present? %>
             <span class="rate rate<%= place.review_average %>"></span>
