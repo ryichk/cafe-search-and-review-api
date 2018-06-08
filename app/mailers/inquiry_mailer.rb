@@ -1,7 +1,7 @@
 class InquiryMailer < ActionMailer::Base
 
   # 送信元アドレス
-  default from: "cafeshares.com"
+  default from: "sendgrid.net"
   # 送信先アドレス
   default to: "ryichikio@gmail.com"
 
