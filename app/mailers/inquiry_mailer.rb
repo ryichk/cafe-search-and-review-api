@@ -1,7 +1,7 @@
 class InquiryMailer < ActionMailer::Base
 
   # 送信元アドレス
-  default from: "cafeshares@cafeshares.com"
+  default from: "cafeshares.com"
   # 送信先アドレス
   default to: "ryichikio@gmail.com"
 
