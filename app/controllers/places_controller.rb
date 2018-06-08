@@ -28,9 +28,9 @@ class PlacesController < ApplicationController
     end
   end
 
-  # def search
-  #   @places = Place.where('name LIKE ?', "%#{params[:keyword]}%").limit(15)
-  # end
+  def search
+    @places = Place.includes(:reviews).where('name LIKE ?', "%#{params[:keyword]}%").references(:place)
+  end
 
 
   def create
