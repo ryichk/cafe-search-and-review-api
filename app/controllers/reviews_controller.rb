@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    @reviews = Review.includes(:user).where('username LIKE ?', "%#{params[:search_place]}%").references(:user).limit(15)
+    @reviews = Review.includes(:place).where('name LIKE ?', "%#{params[:search_place]}%").references(:place).limit(20)
   end
 
   def new

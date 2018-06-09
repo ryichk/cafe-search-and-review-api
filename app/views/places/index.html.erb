@@ -35,6 +35,6 @@
         <%= render "place_result", place: place %>
       <% end %>
     </div>
-    <%= paginate @places %>
+    <%= paginate @places, data:{"turbolinks"=>false} %>
   </div>
 </div>

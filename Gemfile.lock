@@ -691,6 +691,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave_backgrounder (0.0.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
@@ -947,6 +948,7 @@ DEPENDENCIES
   capistrano3-puma
   capybara (~> 2.13)
   carrierwave
+  carrierwave_backgrounder
   coffee-rails (~> 4.2)
   counter_culture (~> 1.8)
   devise
