@@ -3,6 +3,7 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
     # Include RMagick or MiniMagick support:
     # リサイズしたり画像形式を変更するのに必要
     include CarrierWave::RMagick
+    include ::CarrierWave::Backgrounder::Delay
     # include CarrierWave::MiniMagick
 
     # iPhoneから画像投稿した際に、画像の向きがおかしい場合があるので

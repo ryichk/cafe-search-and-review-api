@@ -88,11 +88,11 @@ gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
 gem 'activerecord-session_store'
 gem 'carrierwave'
-gem 'carrierwave_backgrounder'
 gem 'kaminari'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
-
+gem 'sidekiq'
+gem 'carrierwave_backgrounder'
 
 
 
