@@ -6,9 +6,8 @@ class InquiryMailer < ActionMailer::Base
   # 送信先アドレス
 
   def sendmail_confirm(inquiry)
-    mail to: "tohodaiichiki@gmail.com",
-    # メール件名
-    subject: "Cafe Sharesの問い合わせフォームから問い合わせがありました。"
+    mail to: "ryichikio@gmail.com",
+         subject: "Cafe Sharesの問い合わせフォームから問い合わせがありました。"
     @inquiry = inquiry
   end
 end
