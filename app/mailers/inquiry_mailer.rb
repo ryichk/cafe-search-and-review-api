@@ -9,6 +9,6 @@ class InquiryMailer < ActionMailer::Base
     # メール件名
     mail_subject = "Cafe Sharesの問い合わせフォームから問い合わせがありました。"
     @inquiry = inquiry
-    
+    mail(:subject => mail_subject)
   end
 end
