@@ -4,6 +4,10 @@
     <%= devise_error_messages! %>
 
     <div class="field">
+      <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "アカウント名" %>
+    </div>
+
+    <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
     </div>
 

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(reviews: :place).find(params[:id])
+    @user = User.includes(reviews: :place).find(params[:id]).order("created_at DESC")
   end
 
 end
