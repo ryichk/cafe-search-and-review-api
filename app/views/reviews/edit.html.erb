@@ -24,7 +24,8 @@
         <div class="fieldPicuture">
           <p>カフェの写真を選択</p>
           <div class="btn btn-default">
-          <%= f.file_field :photos, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %></div>
+            <%= f.file_field :photos, :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
+          </div>
         </div>
         <%= f.submit "編集する", class: "btn btn-review" %>
       <% end %>
