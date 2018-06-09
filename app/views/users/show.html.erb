@@ -11,26 +11,28 @@
     <div class="userReviews">
       <h2><%= @user.username %>さんの投稿一覧</h2>
         <% @user.reviews.each do |review| %>
-          <div class="userReview">
-            <h3><%= review.place.name %></h3>
-            <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
-            <p class="address"><%= review.place.address %></p>
-            <% if review.user_id == current_user.id %>
-              <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
-              <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
-            <% end %>
-            <div class="star-rating">
-              <span class="rate rate<%= review.rank %>"></span>
-            </div>
-            <div class="review">
-              <%= simple_format(review.review) %>
-            </div>
-            <% unless review.photos.blank? %>
-              <% review.photos.each do |photo| %>
-                <img src="<%= photo %>" class="img-responsive">
+          <% cache(review) do %>
+            <div class="userReview">
+              <h3><%= review.place.name %></h3>
+              <div class="good-<%= review.id %>"><%= render "likes/like", review: review %></div>
+              <p class="address"><%= review.place.address %></p>
+              <% if review.user_id == current_user.id %>
+                <p class="btn btn-reviewEdit"><%= link_to '編集', "/places/#{review.place_id}/reviews/#{review.id}/edit", method: :get %></p>
+                <p class="btn btn-reviewDelete"><%= link_to '削除', "/reviews/#{review.id}", data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
               <% end %>
-            <% end %>
-          </div>
+              <div class="star-rating">
+                <span class="rate rate<%= review.rank %>"></span>
+              </div>
+              <div class="review">
+                <%= simple_format(review.review) %>
+              </div>
+              <% unless review.photos.blank? %>
+                <% review.photos.each do |photo| %>
+                  <img src="<%= photo %>" class="img-responsive">
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
     </div>
   </div>

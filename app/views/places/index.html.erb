@@ -12,20 +12,22 @@
   <div id="aspslide" class="SlideShow">
     <div class="star-rating-top">
       <% @ranking.each.with_index(1) do |place, i| %>
-        <div class="CafePhotos">
-          <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
-          <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
-          <div id="heart-<%= place.id %>">
-            <%= render "like_places/like_place", place: place %>
+        <% cache(place) do %>
+          <div class="CafePhotos">
+            <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
+            <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
+            <div id="heart-<%= place.id %>">
+              <%= render "like_places/like_place", place: place %>
+            </div>
+            <div class="google_logo"><%= image_tag "powered_by_google_on_non_white.png" %></div>
+            <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>
+            <% if place.reviews.present? %>
+              <span class="rate rate<%= place.review_average %>"></span>
+            <% else %>
+              <span class="rate rate0"></span>
+            <% end %>
           </div>
-          <div class="google_logo"><%= image_tag "powered_by_google_on_non_white.png" %></div>
-          <a href="/places/<%= place.id %>"><p><%= place.address %></p></a>
-          <% if place.reviews.present? %>
-            <span class="rate rate<%= place.review_average %>"></span>
-          <% else %>
-            <span class="rate rate0"></span>
-          <% end %>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -10,17 +10,19 @@
   <div class="userReviews">
     <h1>カフェ写真一覧</h1>
     <% @reviews.each do |review| %>
-      <% unless review.photos.blank? %>
-        <a href="/places/<%= review.place_id %>"><div class="cafe-Photos">
-          <% unless review.photos.blank? %>
-            <% review.photos.each do |photo| %>
-              <img src="<%= photo %>" class="review-index-photo img-responsive">
+      <% cache(review) do %>
+        <% unless review.photos.blank? %>
+          <a href="/places/<%= review.place_id %>"><div class="cafe-Photos">
+            <% unless review.photos.blank? %>
+              <% review.photos.each do |photo| %>
+                <img src="<%= photo %>" class="review-index-photo img-responsive">
+              <% end %>
             <% end %>
-          <% end %>
-          <h3><%= review.place.name %></h3>
-          <h2><%= review.user.username %></h2>
-          <span class="good-<%= review.id %>"><%= render "likes/like", review: review %></span>
-        </div></a>
+            <h3><%= review.place.name %></h3>
+            <h2><%= review.user.username %></h2>
+            <span class="good-<%= review.id %>"><%= render "likes/like", review: review %></span>
+          </div></a>
+        <% end %>
       <% end %>
     <% end %>
     <%= paginate(@reviews) %>
