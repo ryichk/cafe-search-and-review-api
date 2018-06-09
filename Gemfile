@@ -92,7 +92,7 @@ gem 'kaminari'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
 gem 'sidekiq'
-gem 'carrierwave_backgrounder'
+gem 'carrierwave_backgrounder', :github =>'lardawge/carrierwave_backgrounder'
 
 
 

@@ -7,6 +7,14 @@ GIT
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
 
+GIT
+  remote: https://github.com/lardawge/carrierwave_backgrounder.git
+  revision: 460394b0e2c0cf0c192be9c1a60bcf9dfb1f9e4d
+  specs:
+    carrierwave_backgrounder (0.4.2)
+      carrierwave (>= 0.5, < 2.0)
+      mime-types (~> 2.99)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -691,7 +699,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave_backgrounder (0.0.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.2)
@@ -789,9 +796,7 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types (2.99.3)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -957,7 +962,7 @@ DEPENDENCIES
   capistrano3-puma
   capybara (~> 2.13)
   carrierwave
-  carrierwave_backgrounder
+  carrierwave_backgrounder!
   coffee-rails (~> 4.2)
   counter_culture (~> 1.8)
   devise
