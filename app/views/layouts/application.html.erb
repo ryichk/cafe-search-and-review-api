@@ -194,19 +194,19 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to_unless_current 'HOME', root_path, data:{"turbolinks"=>false} %></li>
-            <li><%= link_to_unless_current 'みんなのカフェ写真', reviews_path %></li>
+            <li><%= link_to_unless_current 'みんなのカフェ写真', reviews_path, data:{"turbolinks"=>false} %></li>
             <% if user_signed_in? %>
-              <li><%= link_to_unless_current "My ページ", user_path(current_user.id) %></li>
-              <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url(current_user.id) %></li>
-              <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path %></li>
+              <li><%= link_to_unless_current "My ページ", user_path(current_user.id), data:{"turbolinks"=>false} %></li>
+              <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url(current_user.id), data:{"turbolinks"=>false} %></li>
+              <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path, data:{"turbolinks"=>false} %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><%= link_to_unless_current '新規ユーザー登録', new_user_registration_path %></li>
+              <li><%= link_to_unless_current '新規ユーザー登録', new_user_registration_path, data:{"turbolinks"=>false} %></li>
               <li><%= link_to_unless_current 'ログイン', new_user_session_path %></li>
               <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
               <li><%= link_to " Instagramログイン(Coming soon)", :class => 'navbar-link fa fa-instagram' %></li>
             <% end %>
-            <li><%= link_to_unless_current 'ユーザーを探す', users_path %></li>
+            <li><%= link_to_unless_current 'ユーザーを探す', users_path, data:{"turbolinks"=>false} %></li>
             <li><%= link_to " お問い合わせ", inquiry_path, :class => 'navbar-link' %></li>
           </ul>
           <!-- <form class="navbar-form navbar-left">
