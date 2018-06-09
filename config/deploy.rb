@@ -143,6 +143,8 @@ set :keep_releases, 3
     desc 'Run bundle exec sidekiq -q carrierwave'
     task :sidekiq do
       on roles(:app) do
+        execute "src/redis-server redis.conf"
+        execute "cd #{release_path}"
         execute "bundle exec sidekiq -q carrierwave"
       end
     end
