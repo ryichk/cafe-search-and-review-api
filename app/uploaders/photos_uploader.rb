@@ -1,6 +1,6 @@
 class PhotosUploader < CarrierWave::Uploader::Base
   if Rails.env == 'production'
-    include ::CarrierWave::Backgrounder::Delay
+
     # Include RMagick or MiniMagick support:
     include CarrierWave::RMagick
     # include CarrierWave::MiniMagick

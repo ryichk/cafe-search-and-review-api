@@ -12,8 +12,8 @@ class User < ApplicationRecord
   # belongs_to :place
   if Rails.env.production?
     mount_uploader :avatar_url, AvatarUrlUploader
-    process_in_background :avatar_url
-    store_in_background :avatar_url
+    # process_in_background :avatar_url
+    # store_in_background :avatar_url
   end
   before_destroy :clean_s3
 
