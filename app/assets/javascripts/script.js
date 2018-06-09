@@ -6,7 +6,7 @@
 //= require_tree .
 //Skipprの初期化
 $(function(){
-  $("document").ready("turbolinks:load",function() {
+  $("document").addEventListener(function() {
     // オプションを指定してSkipprの実行
     $(".star-rating-top").skippr({
         // スライドショーの変化 ("fade" or "slide")
