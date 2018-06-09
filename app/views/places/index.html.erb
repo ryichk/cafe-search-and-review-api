@@ -1,10 +1,12 @@
 
 <div class="Main">
   <!-- Main jumbotron -->
+  <% cache do %>
   <div class="jumbotron jumbotron-place-index animated tada">
     <h1 class="top_h1">Cafe Shares</h1>
     <p>訪れたカフェをSHAREしよう！</p>
   </div><!-- /.jumbotron -->
+  <% end %>
   <%= render "places/search_cafe" %>
   <h2 class="placeIndex">人気のカフェ</h2>
   <div id="aspslide" class="SlideShow">

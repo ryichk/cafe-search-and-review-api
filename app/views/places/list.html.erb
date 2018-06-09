@@ -1,8 +1,10 @@
 <div class="Main">
   <div class="showReview">
+    <% cache do %>
     <div class="jumbotron animated bounceIn">
     <h1>検索したお店はこちら！</h1>
     </div>
+    <% end %>
     <div class="col-md-12">
       <div class="Cafe">
       <% @cafes.each do |cafe| %>
@@ -44,7 +46,9 @@
       </div>
     </div>
   </div>
+  <% cache do %>
   <button type="button" class="btn pull-right btn-lg btn-default">
     <%= link_to 'Back', places_path, data:{"turbolinks"=>false} %>
   </button>
+  <% end %>
 </div>
