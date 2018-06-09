@@ -1,5 +1,5 @@
 <div class="form-wrapper">
-  <h1>Edit <%= resource_name.to_s.humanize %></h1>
+  <h1>プロフィールの変更</h1>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
@@ -12,7 +12,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.password_field :password, autocomplete: "off", placeholder: "パスワードを新しくする （#{@minimum_password_length} characters minimum）" %>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "パスワードを新しくする場合 （#{@minimum_password_length} characters minimum）" %>
       <% if @minimum_password_length %>
         <br />
         <em></em>
@@ -20,12 +20,14 @@
     </div>
 
     <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認。" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "新パスワード確認用" %>
     </div>
 
     <div class="field">
       <%= f.password_field :current_password, autocomplete: "off", placeholder: "現在のパスワードを入力してください。" %>
     </div>
+
+    <p>プロフィール画像</p>
     <div class="field">
       <%= f.file_field :avatar_url, autocomplete: "avatar_url" %>
     </div>
