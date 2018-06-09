@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  after_action :create_notifications, only: [:create]
+  before_action :create_notifications, only: [:create]
 
   def create
     @review = Review.find(params[:review_id])

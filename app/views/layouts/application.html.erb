@@ -205,7 +205,6 @@
             <li><%= link_to_unless_current 'HOME', root_path, data:{"turbolinks"=>false} %></li>
             <li><%= link_to_unless_current 'みんなのカフェ写真', reviews_path, data:{"turbolinks"=>false} %></li>
             <% if user_signed_in? %>
-              <%= render 'notifications/notification_dropdown' %>
               <li><%= link_to_unless_current "My ページ", user_path(current_user.id), data:{"turbolinks"=>false} %></li>
               <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url(current_user.id), data:{"turbolinks"=>false} %></li>
               <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path, data:{"turbolinks"=>false} %></li>
