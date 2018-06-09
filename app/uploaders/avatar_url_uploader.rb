@@ -19,8 +19,7 @@ class AvatarUrlUploader < CarrierWave::Uploader::Base
     # Choose what kind of storage to use for this uploader:
     # ストレージの設定（S3アップロード用にfogを指定)
     storage :fog
-    include ::CarrierWave::Backgrounder::Delay
-    
+
 
     def store_dir
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

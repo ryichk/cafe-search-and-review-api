@@ -8,6 +8,7 @@ class Review < ApplicationRecord
   has_many :like_users, through: :likes, source: :user
   if Rails.env.production?
     mount_uploaders :photos, PhotosUploader
+    process_in_background :photos
     store_in_background :photos
   end
 
