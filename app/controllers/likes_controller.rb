@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  after_action :create_notifications, only: [:create]
 
   def create
     @review = Review.find(params[:review_id])
@@ -31,4 +32,10 @@ class LikesController < ApplicationController
       redirect_to user_session_path
     end
   end
+
+    private
+      def create_notifications
+        return if @review.user.id == current_user.id
+        Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
+      end
 end
