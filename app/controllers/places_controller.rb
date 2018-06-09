@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  etag { current_user.try(:id) }
   before_action :set_place, only: :show
   before_action :authenticate_user!, only: :create
 
@@ -8,16 +9,20 @@ class PlacesController < ApplicationController
     @google_api_key = Rails.application.secrets.google_api_key
     @google_map_key = Rails.application.secrets.google_map_key
     @places = Place.order("created_at DESC").page(params[:page])
+    fresh_when(@places)
     place_ids = Review.group(:place_id).order('count_place_id DESC').limit(8).count(:place_id).keys
     @ranking = place_ids.map { |id| Place.find(id) }
+    fresh_when(@ranking)
   end
 
   def list
     @place = Place.all
     keyword = params[:search]
     @places = Place.includes(:reviews).where('name LIKE ?', "%#{keyword}%").references(:place)
+    fresh_when(@places)
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
+    fresh_when(@cafes)
   end
 
   def show
@@ -30,6 +35,7 @@ class PlacesController < ApplicationController
 
   def search
     @places = Place.includes(:reviews).where('name LIKE ?', "%#{params[:keyword]}%").references(:place)
+    fresh_when(@places)
   end
 
 
