@@ -1,7 +1,7 @@
 class InquiryMailer < ApplicationMailer
 
   # 送信元アドレス
-  default from: "cafeshares.com"
+  default from: "smtp.sendgrid.net"
   # 送信先アドレス
   default to: "ryichikio@gmail.com"
 
