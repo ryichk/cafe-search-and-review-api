@@ -1,6 +1,7 @@
 <p>ようこそ！<%= @email %>さん</p>
 <p>以下のリンクからアカウント登録を完了してください。</p>
-<p><%= link_to 'アカウント登録を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'アカウント登録を完了する', confirmation_url(@resource, confirmation_token: @token) %> 👈ここをクリックしてください。</p>
+<br>
 
 <p>Welcome <%= @email %>!</p>
 
