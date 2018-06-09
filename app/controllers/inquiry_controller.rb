@@ -22,7 +22,7 @@ class InquiryController < ApplicationController
   def thanks
     # 問い合わせ内容をChatWorkへ通知
     @inquiry = Inquiry.new(inquiry_params)
-    @mail = InquiryMailer.sendmail_confirm(@inquiry).deliver
+    @mail = InquiryMailer.sendmail_confirm(@inquiry).deliver_now
 
     # 問い合わせ完了画面を表示する
     render :action => 'thanks'
