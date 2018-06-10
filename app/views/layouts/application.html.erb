@@ -196,6 +196,7 @@
           </button>
 
           <%= link_to image_tag("cafeshareslogo.png", :class=>"CafeSharesLogo"), root_path, data:{"turbolinks"=>false}, :class=>"navbar-brand" %>
+<% end %>
           <% if user_signed_in? %>
             <%= render 'notifications/notification_dropdown' %>
           <% end %>
@@ -222,7 +223,6 @@
             <input type="text" class="form-control col-lg-8" placeholder="Search">
           </form> -->
         </div><!--/.nav-collapse -->
-        <% end %>
         <%= render "places/search_box" %>
       </div><!-- /.container -->
     </div><!-- /.navbar -->

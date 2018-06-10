@@ -15,7 +15,6 @@ class LikesController < ApplicationController
     else
       redirect_to user_session_path
     end
-    fresh_when(@review)
   end
 
   def destroy
@@ -32,12 +31,10 @@ class LikesController < ApplicationController
     else
       redirect_to user_session_path
     end
-    fresh_when(@review)
   end
 
     private
       def create_notifications
         @notification = Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
-        fresh_when(@notification)
       end
 end
