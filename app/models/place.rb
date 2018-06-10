@@ -20,7 +20,9 @@ class Place < ApplicationRecord
 
   #現在のユーザーがいいねしていたらtrueを返す
   def good?(user)
-    good_users.include?(user)
+    unless good_users.where(id: user.id).blank?
+      return true
+    end
   end
 
   def review_average
