@@ -16,7 +16,6 @@
           <div class="good-<%= review.id %>">
             <%= render "likes/like", review: review %>
           </div>
-        <% cache(review) do %>
           <div class="star-rating">
             <span class="rate rate<%= review.rank %>"></span>
           </div>
@@ -28,7 +27,6 @@
               <img src="<%= photo %>" class="img-responsive">
             <% end %>
           <% end %>
-        <% end %>
         </li>
     <% end %>
   </ul>
