@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-  etag { current_user.try(:id) }
   before_action :set_place, only: :show
   before_action :authenticate_user!, only: :create
 
@@ -42,10 +41,8 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
-    fresh_when(@place)
     @place.save
     @p = Place.where(address: @place.address)
-    fresh_when(@p)
     redirect_to new_place_review_path(@p.ids)
   end
 
