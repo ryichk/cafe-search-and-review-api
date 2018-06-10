@@ -2,6 +2,7 @@ class LikePlacesController < ApplicationController
 
   def index
     @like_place = LikePlace.includes(:place).where(user_id: current_user.id).references(:like_place)
+    fresh_when(@like_place)
   end
 
   def create
@@ -18,6 +19,7 @@ class LikePlacesController < ApplicationController
     else
       redirect_to user_session_path
     end
+    fresh_when(@place)
   end
 
   def destroy
@@ -34,5 +36,6 @@ class LikePlacesController < ApplicationController
     else
       redirect_to user_session_path
     end
+    fresh_when(@place)
   end
 end
