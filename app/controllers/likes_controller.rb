@@ -1,8 +1,8 @@
 class LikesController < ApplicationController
-  before_action :create_notifications, only: [:create]
+  after_action :create_notifications, only: [:create]
 
   def create
-    @review = Review.find(params[:review_id])
+    @review = Review.includes(:user).find(params[:review_id])
     if user_signed_in?
       unless @review.like?(current_user)
         @review.like(current_user)
