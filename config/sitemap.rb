@@ -17,6 +17,7 @@ SitemapGenerator::Sitemap.create do
   #
   # Add '/'
   #
+     add root_path
      add places_path, :priority => 0.7, :changefreq => 'daily'
      add reviews_path, :priority => 0.7, :changefreq => 'daily'
      add users_path, :priority => 0.7, :changefreq => 'daily'
