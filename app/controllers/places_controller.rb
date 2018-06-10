@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-
+  etag { current_user.try(:id) }
   before_action :set_place, only: :show
   before_action :authenticate_user!, only: :create
 
@@ -17,13 +17,13 @@ class PlacesController < ApplicationController
 
   def list
     @place = Place.all
-
+    fresh_when(@place)
     keyword = params[:search]
     @places = Place.includes(:reviews).where('name LIKE ?', "%#{keyword}%").references(:place)
-
+    fresh_when(@places)
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
-
+    fresh_when(@cafes)
   end
 
   def show
@@ -42,8 +42,10 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
+    fresh_when(@place)
     @place.save
-    @p = Place.where(name: @place.name)
+    @p = Place.where(address: @place.address)
+    fresh_when(@p)
     redirect_to new_place_review_path(@p.ids)
   end
 
