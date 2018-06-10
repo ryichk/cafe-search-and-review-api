@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-  default_scope -> { order(created_at: :desc) }
 
   validates :rank, presence: true
   validates :review, presence: true
