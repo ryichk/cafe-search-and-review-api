@@ -177,6 +177,7 @@
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
+<% end %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
       <script async src="//maps.googleapis.com/maps/api/place/textsearch/json?query=cafe+in+keyword&key=<%= ENV['GOOGLE_API_KEY'] %>" type='text/javascript'></script>
       <script src="//maps.google.com/maps/api/js?key=<%= Rails.application.secrets.MAP_KEY %>"></script>
@@ -196,7 +197,6 @@
           </button>
 
           <%= link_to image_tag("cafeshareslogo.png", :class=>"CafeSharesLogo"), root_path, data:{"turbolinks"=>false}, :class=>"navbar-brand" %>
-<% end %>
           <% if user_signed_in? %>
             <%= render 'notifications/notification_dropdown' %>
           <% end %>
