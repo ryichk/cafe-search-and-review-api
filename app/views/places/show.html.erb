@@ -14,7 +14,7 @@
         <span class="rate rate0"></span>
       <% end %>
       </div>
-      <a href="/places/<%= @place.id %>/reviews/new" class="btn placeShowBtn btn-default" >投稿する</a>
+      <%= link_to "投稿する", new_place_review_path(@place.id), data:{"turbolinks"=>false}, :class=>"btn btn-default placeIndexBtn" %>
       <div><img src="<%= @place.photos %>" class="cafePhoto img-responsive"></div>
       <% place = @place %>
       <div id="heart-<%= place.id %>" class="show-place-heart">
