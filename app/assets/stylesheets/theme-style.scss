@@ -469,6 +469,10 @@ $rate5: $starFull * 5;//星5
       margin: 10px 0;
     }
   }
+  img {
+    border-radius: 8px;
+    max-height: 300px;
+  }
 }
 .show-review-h3{
   margin-left: 160px;
@@ -488,9 +492,6 @@ $rate5: $starFull * 5;//星5
   margin: 100px 10px 0 10px;
   p {
     margin:0 0 10px 5px;
-  }
-  img {
-    border-radius: 8px;
   }
 }
 .btn-placeShow {
