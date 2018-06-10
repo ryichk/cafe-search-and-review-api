@@ -35,7 +35,6 @@ class LikesController < ApplicationController
 
     private
       def create_notifications
-        return if @review.user.id == current_user.id
         Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
       end
 end
