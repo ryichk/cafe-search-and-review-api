@@ -1,15 +1,12 @@
 class ReviewsController < ApplicationController
-  etag { current_user.try(:id) }
   before_action :authenticate_user!, except: :index
 
   def index
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(25)
-    fresh_when(@reviews)
   end
 
   def search
     @reviews = Review.includes(:place).where('name LIKE ?', "%#{params[:search_place]}%").references(:place).limit(25)
-    fresh_when(@reviews)
   end
 
   def new
