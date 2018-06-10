@@ -22,7 +22,6 @@ class PlacesController < ApplicationController
     fresh_when(@places)
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
-    fresh_when(@cafes)
   end
 
   def show
