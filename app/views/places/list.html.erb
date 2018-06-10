@@ -6,7 +6,7 @@
     <div class="col-md-12">
       <div class="Cafe">
       <% @cafes.each do |cafe| %>
-        <% cache(cafe) do %>
+        
           <% if @place.find_by(address: cafe.formatted_address) == nil %>
           <div class="table">
             <div class="cafename"><h4><%= cafe.name %></h4></div>
@@ -38,7 +38,7 @@
             <% end %>
           </div>
           <% end %>
-        <% end %>
+      
       <% end %>
       <% @places.each do |place| %>
           <%= render "place_result", place: place %>
