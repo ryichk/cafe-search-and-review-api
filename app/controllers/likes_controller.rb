@@ -4,9 +4,10 @@ class LikesController < ApplicationController
     @review = Review.includes(:user).find(params[:review_id])
     if user_signed_in?
       unless @review.like?(current_user)
+        Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
         @review.like(current_user)
         @review.reload
-        Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
+
         respond_to do |format|
           
           format.js
