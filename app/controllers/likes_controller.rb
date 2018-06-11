@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-  after_action :create_notifications, only: :create
 
   def create
     @review = Review.includes(:user).find(params[:review_id])
@@ -7,6 +6,7 @@ class LikesController < ApplicationController
       unless @review.like?(current_user)
         @review.like(current_user)
         @review.reload
+        Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
         respond_to do |format|
           
           format.js
@@ -33,8 +33,4 @@ class LikesController < ApplicationController
     end
   end
 
-    private
-      def create_notifications
-        @notification = Notification.create(user_id: @review.user.id, notified_by_id: current_user.id, review_id: @review.id, notified_type: 'いいね')
-      end
 end
