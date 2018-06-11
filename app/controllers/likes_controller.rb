@@ -8,8 +8,7 @@ class LikesController < ApplicationController
         @review.like(current_user)
         @review.reload
         respond_to do |format|
-          format.html { redirect_to request.referrer || root_url }
-          return
+          format.html { redirect_to request.referrer }
           format.js
         end
       end
