@@ -12,7 +12,7 @@
   <div id="aspslide" class="SlideShow">
     <div class="star-rating-top">
       <% @ranking.each.with_index(1) do |place, i| %>
-        <% cache(place) do %>
+        
           <div class="CafePhotos">
             <a href="/places/<%= place.id %>"><%= image_tag(place.photos, :class=>"cafePhotoTop img-responsive") %></a>
             <a href="/places/<%= place.id %>"><h3 class=name><%= place.name %></h3></a>
@@ -27,7 +27,7 @@
               <span class="rate rate0"></span>
             <% end %>
           </div>
-        <% end %>
+        
       <% end %>
     </div>
   </div>
