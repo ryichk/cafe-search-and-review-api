@@ -1387,4 +1387,13 @@ td {
       vertical-align: top;
     }
   }
+  /* Review Index*/
+  .cafe-Photos {
+    width: 16%;
+    height: 180px;
+    img{
+      max-height: 100px;
+      width: 200px;
+    }
+  }
 }
