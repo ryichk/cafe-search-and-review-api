@@ -1348,6 +1348,21 @@ td {
   }
 }
 @media screen and (min-width: 1024px){
+  /*Place Index*/
+  #search, #keyword {
+    width: 60%;
+    margin: 15px 0 0 200px;
+  }
+  .google_logo {
+    margin: 0 130px 0 0;
+  }
+  /* Place Show*/
+  .show-review-li h3 {
+    margin-left: 200px;
+  }
+  .show-review-li .star-rating {
+    margin: 10px 0 0 190px;
+  }
   /* User Index */
   .user-Photos {
     width: 12%;
