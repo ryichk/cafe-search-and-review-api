@@ -1367,4 +1367,24 @@ td {
   .user-Photos {
     width: 12%;
   }
+  /* User Show*/
+  .containerUserShow {
+    .jumbotron{
+      width: 40%;
+      height: 200px;
+      margin-left: 0;
+    }
+    .user_image{
+      width: 46%;
+      img{
+        width: 80%;
+      }
+    }
+    .userReviews .userReview {
+      width: 30%;
+      display: inline-block;
+      margin: 15px 20px;
+      vertical-align: top;
+    }
+  }
 }
