@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: [:twitter]
   validates :username, length: { in: 2..10, too_long: "最大%{count}文字までです。", too_short: "最低限%{count}文字必要です" }, presence: true
   validates :agreement, presence: true
   validates_acceptance_of :agreement, allow_nil: false, message: "＊ユーザー登録には利用規約への同意が必要です。", on: :create
@@ -18,19 +18,24 @@ class User < ApplicationRecord
   end
   before_destroy :clean_s3
 
-  def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
-
-    unless user
-      user = User.create(
-        uid: auth.uid,
-        provider: auth.provider,
-        email: User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20]
-        )
+  def self.from_omniauth(auth)
+    find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.username = auth["info"]["nickname"]
     end
-    user
   end
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"]) do |user|
+        user.attributes = params
+      end
+    else
+      super
+    end
+  end
+
 
   # def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
   #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
