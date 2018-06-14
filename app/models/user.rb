@@ -7,8 +7,8 @@ class User < ApplicationRecord
   validates :agreement, presence: true
   validates_acceptance_of :agreement, allow_nil: false, message: "＊ユーザー登録には利用規約への同意が必要です。", on: :create
   has_many :reviews
-  has_many :likes, dependent: :destroy
-  has_many :like_places, dependent: :destroy
+  has_many :likes
+  has_many :like_places
   has_many :notifications
   # belongs_to :place
   if Rails.env.production?
