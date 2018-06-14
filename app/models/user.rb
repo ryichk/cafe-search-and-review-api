@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :likes, dependent: :destroy
   has_many :like_places, dependent: :destroy
-  has_many :notifications, dependent: :destroy
+  has_many :notifications
   # belongs_to :place
   if Rails.env.production?
     mount_uploader :avatar_url, AvatarUrlUploader
