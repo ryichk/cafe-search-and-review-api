@@ -216,8 +216,8 @@
             <% else %>
               <li><%= link_to_unless_current '新規ユーザー登録', new_user_registration_path, data:{"turbolinks"=>false} %></li>
               <li><%= link_to_unless_current 'ログイン', new_user_session_path, data:{"turbolinks"=>false} %></li>
-              <li><%= link_to "Twitterログイン", user_twitter_omniauth_authorize_path, :class=>'navbar-link fa fa-twitter' %></li>
-              <li><%= link_to " Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link fa fa-facebook' %></li>
+              <li><%= link_to "Twitterログイン", user_omniauth_authorize_path(:twitter), :class=>'navbar-link fa fa-twitter' %></li>
+              <li><%= link_to " Facebookログイン", user_omniauth_authorize_path(:facebook), :class => 'navbar-link fa fa-facebook' %></li>
               <li><%= link_to " Instagramログイン(Coming soon)", :class => 'navbar-link fa fa-instagram' %></li>
             <% end %>
             <!-- <li><%= link_to_unless_current 'ユーザーを探す', users_path, data:{"turbolinks"=>false} %></li> -->
