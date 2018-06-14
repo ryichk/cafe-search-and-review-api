@@ -49,7 +49,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           redirect_to new_user_registration_url
         end
       end
-    
+
         # if provider == "facebook"
         #   @user = User.find_for_facebook_oauth(request.env['omniauth.auth'])
         #   if @user.persisted? #保存済みかどうかを確認
@@ -69,7 +69,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         #     redirect_to new_user_registration_url
         #   end
         # end
-    end
+
 
     def callback_for(provider)
       @user = User.from_omniauth(request.env["omniauth.auth"])
