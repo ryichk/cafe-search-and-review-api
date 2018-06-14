@@ -26,7 +26,7 @@ class User < ApplicationRecord
                          uid: auth.uid,
                          email: auth.extra.raw_info.email,
                          password: Devise.friendly_token[0,20],
-                         agreement: 1
+                         agreement: 1,
                          avatar_url: auth.extra.raw_info.picture
                          )
     end
