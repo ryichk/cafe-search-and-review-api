@@ -8,14 +8,14 @@ class PlacesController < ApplicationController
     @google_api_key = Rails.application.secrets.google_api_key
     @google_map_key = Rails.application.secrets.google_map_key
     @places = Place.order("created_at DESC").page(params[:page])
-    place_ids = Review.group(:place_id).order('count_place_id DESC').limit(8).count(:place_id).keys
+    place_ids = Review.where("rank >= 4").group(:place_id).order('count_place_id DESC').limit(8).count(:place_id).keys
     @ranking = place_ids.map { |id| Place.find(id) }
   end
 
   def list
     @place = Place.all
     keyword = params[:search]
-    @places = Place.includes(:reviews).where('name LIKE ?', "%#{keyword}%").references(:place)
+    @places = Place.includes(:reviews).where('name LIKE ? and address LIKE ?', "%#{keyword}%", "%#{keyword}%").references(:place)
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
   end

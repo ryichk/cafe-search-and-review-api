@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609154722) do
+ActiveRecord::Schema.define(version: 20180613230541) do
 
   create_table "like_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id", null: false
@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 20180609154722) do
     t.datetime "updated_at", null: false
     t.integer "likes_count", default: 0, null: false
     t.string "photos_tmp"
+    t.integer "smoke"
+    t.integer "wifi"
+    t.integer "elec"
+    t.integer "menu"
+    t.integer "coffee"
+    t.integer "cost"
   end
 
   create_table "sessions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

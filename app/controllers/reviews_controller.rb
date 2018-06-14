@@ -56,7 +56,7 @@ class ReviewsController < ApplicationController
 
     private
       def create_params
-        params.require(:review).permit(:review, :rank, {photos: []}).merge(place_id: params[:place_id], user_id: current_user.id)
+        params.require(:review).permit(:review, :smoke, :menu, :coffee, :wifi, :elec, :cost, :rank, {photos: []}).merge(place_id: params[:place_id], user_id: current_user.id)
       end
 
 end

@@ -8,6 +8,77 @@
       <h2 class="review"><%= @place.name %></h2>
       <br>
       <img src="<%= @place.photos %>" class="cafePhoto">
+        <label class="menu_label">メニューの種類</label>
+        <div class="evaluation">
+          <%= f.radio_button 'menu', 5 %>
+          <label for="review_menu_5"><span class="text">豊富</span>★</label>
+          <%= f.radio_button 'menu', 4 %>
+          <label for="review_menu_4"><span class="text">まあまあ多い</span>★</label>
+          <%= f.radio_button 'menu', 3 %>
+          <label for="review_menu_3"><span class="text">普通</span>★</label>
+          <%= f.radio_button 'menu', 2 %>
+          <label for="review_menu_2"><span class="text">ちょっと少ない</span>★</label>
+          <%= f.radio_button 'menu', 1 %>
+          <label for="review_menu_1"><span class="text">少ない</span>★</label>
+        </div>
+        <label>値段</label>
+        <div class="evaluation">
+          <%= f.radio_button 'cost', 5 %>
+          <label for="review_cost_5"><span class="text">安い</span>★</label>
+          <%= f.radio_button 'cost', 4 %>
+          <label for="review_cost_4"><span class="text">まあまあ安い</span>★</label>
+          <%= f.radio_button 'cost', 3 %>
+          <label for="review_cost_3"><span class="text">妥当</span>★</label>
+          <%= f.radio_button 'cost', 2 %>
+          <label for="review_cost_2"><span class="text">少し高い</span>★</label>
+          <%= f.radio_button 'cost', 1 %>
+          <label for="review_cost_1"><span class="text">高い</span>★</label>
+        </div>
+        <label>コーヒーの美味しさ</label>
+        <div class="evaluation">
+          <%= f.radio_button 'coffee', 5 %>
+          <label for="review_coffee_5"><span class="text">最高</span>★</label>
+          <%= f.radio_button 'coffee', 4 %>
+          <label for="review_coffee_4"><span class="text">良い</span>★</label>
+          <%= f.radio_button 'coffee', 3 %>
+          <label for="review_coffee_3"><span class="text">普通</span>★</label>
+          <%= f.radio_button 'coffee', 2 %>
+          <label for="review_coffee_2"><span class="text">悪い</span>★</label>
+          <%= f.radio_button 'coffee', 1 %>
+          <label for="review_coffee_1"><span class="text">最低</span>★</label>
+        </div>
+        <label>Wifiは？</label>
+        <div class="evaluation">
+          <%= f.radio_button 'wifi', 5 %>
+          <label for="review_wifi_5"><span class="text">最高に使える</span>★</label>
+          <%= f.radio_button 'wifi', 4 %>
+          <label for="review_wifi_4"><span class="text">まあまあ使える</span>★</label>
+          <%= f.radio_button 'wifi', 3 %>
+          <label for="review_wifi_3"><span class="text">使えるけど微妙</span>★</label>
+          <%= f.radio_button 'wifi', 2 %>
+          <label for="review_wifi_2"><span class="text">課金が必要</span>★</label>
+          <%= f.radio_button 'wifi', 1 %>
+          <label for="review_wifi_1"><span class="text">使えない</span>★</label>
+        </div>
+        <label>電源は？</label>
+        <div class="evaluation">
+          <%= f.radio_button 'elec', 5 %>
+          <label for="review_elec_5"><span class="text">ある</span>●</label>
+          <%= f.radio_button 'elec', 4 %>
+          <label for="review_elec_4"><span class="text">ない</span>●</label>
+        </div>
+        <label>タバコは？</label>
+        <div class="evaluation">
+          <%= f.radio_button 'smoke', 5 %>
+          <label for="review_smoke_5"><span class="text">きちっと分煙</span>★</label>
+          <%= f.radio_button 'smoke', 4 %>
+          <label for="review_smoke_4"><span class="text">形だけの分煙</span>★</label>
+          <%= f.radio_button 'smoke', 3 %>
+          <label for="review_smoke_3"><span class="text">分煙なし</span>★</label>
+          <%= f.radio_button 'smoke', 2 %>
+          <label for="review_smoke_2"><span class="text">禁煙</span>★</label>
+        </div>
+        <label>総合的に</label>
         <div class="evaluation">
           <%= f.radio_button 'rank', 5 %>
           <label for="review_rank_5"><span class="text">最高</span>★</label>
@@ -20,8 +91,8 @@
           <%= f.radio_button 'rank', 1 %>
           <label for="review_rank_1"><span class="text">最低</span>★</label>
         </div>
-        <%= f.text_area :review, placeholder: 'レビューを書く', style: 'width: 100%;height: 200px;color: #000;' %>
-        <div class="fieldPicuture">
+        <label>おすすめポイントは？</label>
+        <%= f.text_area :review, placeholder: 'あなたがこのカフェをおすすめするポイントは？', style: 'width: 100%;height: 200px;' %>
           <p>カフェの写真を選択</p>
           <div class="btn btn-default">
             <%= f.file_field :photos, :multiple => true, accept: 'image/jpg,image/jpeg,image/png,image/gif,image/JPG,image/JPEG,image/PNG,image/GIF' %>
