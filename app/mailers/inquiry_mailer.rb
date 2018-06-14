@@ -8,6 +8,6 @@ class InquiryMailer < ApplicationMailer
   def sendmail_confirm(inquiry)
     @inquiry = inquiry
     # メール件名
-    mail(:subject => 'Cafe Sharesの問い合わせフォームから問い合わせがありました。')
+    
   end
 end
