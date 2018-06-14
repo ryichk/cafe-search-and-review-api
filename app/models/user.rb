@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: [:twitter]
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
   validates :username, length: { in: 2..10, too_long: "最大%{count}文字までです。", too_short: "最低限%{count}文字必要です" }, presence: true
   validates :agreement, presence: true
   validates_acceptance_of :agreement, allow_nil: false, message: "＊ユーザー登録には利用規約への同意が必要です。", on: :create
@@ -18,59 +18,54 @@ class User < ApplicationRecord
   end
   before_destroy :clean_s3
 
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(username: auth.extra.raw_info.name,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: auth.info.email,
+                         password: Devise.friendly_token[0,20],
+                         agreement: 1
+                         )
+    end
+    user
+  end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid=>auth.uid).first
+    unless user
+      user = User.create(username: auth.info.nickname,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: User.create_unique_email,
+                         password: Devise.friendly_token[0,20],
+                         agreement: 1,
+                         avatar_url: auth.image)
+    end
+    user.skip_confirmation!
+  end
+
+  def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(username: auth.info.name,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: User.info.email,
+                         password: Devise.friendly_token[0,20],
+                         agreement: 1
+                         )
+    end
+    user
+  end
+
   def self.from_omniauth(auth)
-    find_or_create_by(provider: auth["provider"], uid: auth["uid"]) do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.username = auth["info"]["nickname"]
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
     end
   end
-
-  def self.new_with_session(params, session)
-    if session["devise.user_attributes"]
-      new(session["devise.user_attributes"]) do |user|
-        user.attributes = params
-      end
-    else
-      super
-    end
-  end
-
-
-  # def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-  #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
-  #   unless user
-  #     user = User.create(username: auth.extra.raw_info.name,
-  #                        provider: auth.provider,
-  #                        uid: auth.uid,
-  #                        email: auth.info.email,
-  #                        password: Devise.friendly_token[0,20],
-  #                        agreement: 1
-  #                        )
-  #   end
-  #   user
-  # end
-
-  # def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
-  #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
-  #   unless user
-  #     user = User.create(username: auth.info.name,
-  #                        provider: auth.provider,
-  #                        uid: auth.uid,
-  #                        email: User.info.email,
-  #                        password: Devise.friendly_token[0,20],
-  #                        agreement: 1
-  #                        )
-  #   end
-  #   user
-  # end
-
-  # def self.from_omniauth(auth)
-  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  #     user.email = auth.info.email
-  #     user.password = Devise.friendly_token[0,20]
-  #   end
-  # end
 
     private
     # 通常サインアップ時のuid用、Twitter OAuth認証時のemail用にuuidな文字列を生成
