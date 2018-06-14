@@ -42,9 +42,10 @@ class User < ApplicationRecord
                          email: User.create_unique_email,
                          password: Devise.friendly_token[0,20],
                          agreement: 1,
-                         avatar_url: auth.image)
+                         avatar_url: auth.info.image)
+      user.skip_confirmation!
     end
-    user.skip_confirmation!
+    user
   end
 
   def self.find_for_instagram_for_oauth(auth, signed_in_resource=nil)
@@ -59,13 +60,6 @@ class User < ApplicationRecord
                          )
     end
     user
-  end
-
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
-    end
   end
 
     private

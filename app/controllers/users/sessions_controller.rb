@@ -7,6 +7,10 @@ class Users::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
+  def new
+    session.delete('devise.omniauth_data')
+    super
+  end
 
   # POST /resource/sign_in
   # def create
