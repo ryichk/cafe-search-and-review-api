@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
   def index
     @google_api_key = Rails.application.secrets.google_api_key
     @google_map_key = Rails.application.secrets.google_map_key
-    @places = Place.order("created_at DESC").page(params[:page])
+    @places = Place.order("created_at DESC")
     place_ids = Review.where("rank >= 4").group(:place_id).order('count_place_id DESC').limit(8).count(:place_id).keys
     @ranking = place_ids.map { |id| Place.find(id) }
   end
