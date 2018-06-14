@@ -32,6 +32,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_from :twitter
   end
 
+  def google_oauth2
+    callback_from :google
+  end
+
   def instagram
     callback_from :instagram
   end
@@ -51,6 +55,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           end
         elsif provider == "twitter"
           @user = User.find_for_twitter_oauth(request.env['omniauth.auth'])
+          if @user.persisted?
+            flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+            sign_in_and_redirect @user, event: :authentication
+          else
+            session["devise.#{provider}_data"] = request.env['omniauth.auth']
+            redirect_to new_user_registration_url
+          end
+        elsif google_oauth2
+          @user = User.find_for_google_oauth(request.env['omniauth.auth'])
           if @user.persisted?
             flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
             sign_in_and_redirect @user, event: :authentication
