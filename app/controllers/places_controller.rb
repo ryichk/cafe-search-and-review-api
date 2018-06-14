@@ -29,7 +29,7 @@ class PlacesController < ApplicationController
   end
 
   def search
-    @places = Place.includes(:reviews).where('name LIKE ?', "%#{params[:keyword]}%").references(:place)
+    @places = Place.includes(:reviews).where('name LIKE ? or address LIKE ?', "%#{params[:keyword]}%", "%#{params[:keyword]}%").references(:place)
   end
 
 
