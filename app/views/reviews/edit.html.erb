@@ -8,6 +8,7 @@
       <h2 class="review"><%= @place.name %></h2>
       <br>
       <img src="<%= @place.photos %>" class="cafePhoto">
+      <div class="review_edit">
         <label class="menu_label">メニューの種類</label>
         <div class="evaluation">
           <%= f.radio_button 'menu', 5 %>
