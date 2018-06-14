@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
   def list
     @place = Place.all
     keyword = params[:search]
-    @places = Place.includes(:reviews).where('name LIKE ? and address LIKE ?', "%#{keyword}%", "%#{keyword}%").references(:place)
+    @places = Place.includes(:reviews).where('name LIKE ? or address LIKE ?', "%#{keyword}%", "%#{keyword}%").references(:place)
     @client = GooglePlaces::Client.new( Rails.application.secrets.google_api_key )
     @cafes = @client.spots_by_query( keyword, :types => 'cafe', :language=>'ja')
   end
