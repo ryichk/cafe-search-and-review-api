@@ -44,9 +44,9 @@
           <%= f.radio_button 'coffee', 3 %>
           <label for="review_coffee_3"><span class="text">普通</span>★</label>
           <%= f.radio_button 'coffee', 2 %>
-          <label for="review_coffee_2"><span class="text">悪い</span>★</label>
+          <label for="review_coffee_2"><span class="text">微妙</span>★</label>
           <%= f.radio_button 'coffee', 1 %>
-          <label for="review_coffee_1"><span class="text">最低</span>★</label>
+          <label for="review_coffee_1"><span class="text">不味い</span>★</label>
         </div>
         <label>Wifiは？</label>
         <div class="evaluation">
@@ -63,21 +63,19 @@
         </div>
         <label>電源は？</label>
         <div class="evaluation">
-          <%= f.radio_button 'elec', 5 %>
+          <%= f.radio_button 'elec', 2 %>
           <label for="review_elec_5"><span class="text">ある</span>●</label>
-          <%= f.radio_button 'elec', 4 %>
+          <%= f.radio_button 'elec', 1 %>
           <label for="review_elec_4"><span class="text">ない</span>●</label>
         </div>
         <label>タバコは？</label>
         <div class="evaluation">
-          <%= f.radio_button 'smoke', 5 %>
-          <label for="review_smoke_5"><span class="text">きちっと分煙</span>★</label>
-          <%= f.radio_button 'smoke', 4 %>
-          <label for="review_smoke_4"><span class="text">形だけの分煙</span>★</label>
           <%= f.radio_button 'smoke', 3 %>
-          <label for="review_smoke_3"><span class="text">分煙なし</span>★</label>
+          <label for="review_smoke_5"><span class="text">分煙</span>★</label>
           <%= f.radio_button 'smoke', 2 %>
-          <label for="review_smoke_2"><span class="text">禁煙</span>★</label>
+          <label for="review_smoke_4"><span class="text">禁煙</span>★</label>
+          <%= f.radio_button 'smoke', 1 %>
+          <label for="review_smoke_3"><span class="text">分煙なし</span>★</label>
         </div>
         <label>総合的に</label>
         <div class="evaluation">
