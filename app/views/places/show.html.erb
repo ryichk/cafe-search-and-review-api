@@ -73,6 +73,7 @@
         <% end %>
       <% else %>
         <span class="rate rate0"></span>
+        <p>投稿なし</p>
       <% end %>
     </div>
     <div class="review_coffee some_review">
@@ -92,6 +93,7 @@
         <% end %>
       <% else %>
         <span class="rate rate0"></span>
+        <p>投稿なし</p>
       <% end %>
     </div>
     <div class="review_wifi some_review">
@@ -111,6 +113,7 @@
         <% end %>
       <% else %>
         <span class="rate rate0"></span>
+        <p>投稿なし</p>
       <% end %>
     </div>
     <div class="review_elec some_review">
@@ -121,6 +124,8 @@
         <% elsif @place.review_average_elec == 1 %>
           <p>なし</p>
         <% end %>
+      <% else %>
+        <p>投稿なし</p>
       <% end %>
     </div>
     <div class="review_smoke some_review">
@@ -133,6 +138,8 @@
         <% elsif @place.review_average_smoke == 1 %>
           <p>分煙なし</p>
         <% end %>
+      <% else %>
+        <p>投稿なし</p>
       <% end %>
     </div>
   </div>
