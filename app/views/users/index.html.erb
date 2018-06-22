@@ -18,7 +18,7 @@
           <% if user.avatar_url.present? %>
             <div class="user_image"><%= image_tag user.avatar_url, :class => "img-responsive" %></div>
           <% else %>
-            <div class="user_image"><%= image_tag 'coffeetime_mini.jpg', :class => "img-responsive" %></div>
+            <div class="user_image"><%= image_tag 'no_image.png', :class => "img-responsive" %></div>
           <% end %>
           <p><%= user.username %></p>
         </div></a>

@@ -35,6 +35,113 @@
         });
       </script>
   </div>
+  <div class="review_anything">
+    <div class="review_menu some_review">
+      <p>メニュー</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_menu %>"></span>
+        <% if @place.review_average_menu == 5 %>
+          <p>豊富</p>
+        <% elsif @place.review_average_menu == 4 %>
+          <p>まあまあ多い</p>
+        <% elsif @place.review_average_menu == 3 %>
+          <p>普通</p>
+        <% elsif @place.review_average_menu == 2 %>
+          <p>ちょっと少ない</p>
+        <% elsif @place.review_average_menu == 1 %>
+          <p>少ない</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+        <p>投稿なし</p>
+      <% end %>
+    </div>
+    <div class="review_cost some_review">
+      <p>料金</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_cost %>"></span>
+        <% if @place.review_average_cost == 5 %>
+          <p>安い</p>
+        <% elsif @place.review_average_cost == 4 %>
+          <p>まあまあ安い</p>
+        <% elsif @place.review_average_cost == 3 %>
+          <p>妥当</p>
+        <% elsif @place.review_average_cost == 2 %>
+          <p>少し高い</p>
+        <% elsif @place.review_average_cost == 1 %>
+          <p>高い</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+    <div class="review_coffee some_review">
+      <p>コーヒー</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_coffee %>"></span>
+        <% if @place.review_average_coffee == 5 %>
+          <p>最高</p>
+        <% elsif @place.review_average_coffee == 4 %>
+          <p>良い</p>
+        <% elsif @place.review_average_coffee == 3 %>
+          <p>普通</p>
+        <% elsif @place.review_average_coffee == 2 %>
+          <p>微妙</p>
+        <% elsif @place.review_average_coffee == 1 %>
+          <p>不味い</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+    <div class="review_smoke some_review">
+      <p>タバコ</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_smoke %>"></span>
+        <% if @place.review_average_smoke == 3 %>
+          <p>分煙</p>
+        <% elsif @place.review_average_smoke == 2 %>
+          <p>禁煙</p>
+        <% elsif @place.review_average_smoke == 1 %>
+          <p>分煙なし</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+    <div class="review_wifi some_review">
+      <p>Wifi</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_wifi %>"></span>
+        <% if @place.review_average_wifi == 5 %>
+          <p>最高に使える</p>
+        <% elsif @place.review_average_wifi == 4 %>
+          <p>まあまあ使える</p>
+        <% elsif @place.review_average_wifi == 3 %>
+          <p>使えるけど微妙</p>
+        <% elsif @place.review_average_wifi == 2 %>
+          <p>課金が必要</p>
+        <% elsif @place.review_average_wifi == 1 %>
+          <p>使えない</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+    <div class="review_elec some_review">
+      <p>電源</p>
+      <% if @place.reviews.present? %>
+        <span class="rate rate<%= @place.review_average_elec %>"></span>
+        <% if @place.review_average_elec == 2 %>
+          <p>あり</p>
+        <% elsif @place.review_average_elec == 1 %>
+          <p>なし</p>
+        <% end %>
+      <% else %>
+        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+  </div>
   <%= render "reviews/reviews" %>
   <%= render 'button' %>
 </div>

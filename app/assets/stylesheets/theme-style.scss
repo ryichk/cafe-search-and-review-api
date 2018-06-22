@@ -693,6 +693,22 @@ $rate5: $starFull * 5;//星5
 .tableShow .cafePhoto{
   height: 210px;
 }
+.review_anything{
+  background-color: rgba(30,10,40,0.6);
+  color: white;
+  padding: 10px;
+  font-size: 1.3em;
+  text-align: center;
+  .some_review{
+    width: 46%;
+    display: inline-block;
+    margin: 4px;
+    p:nth-child(1){
+      font-size: 1.4em;
+      text-align: left;
+    }
+  }
+}
 
 
 

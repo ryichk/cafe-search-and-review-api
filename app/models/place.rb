@@ -49,4 +49,90 @@ class Place < ApplicationRecord
       average = 5
     end
   end
+  def review_average_menu
+    average = self.reviews.average(:menu)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.4
+      average = 2
+    elsif average > 2.4 && average <= 3.4
+      average = 3
+    elsif average > 3.4 && average <= 4.4
+      average = 4
+    elsif average > 4.4 && average <= 5
+      average = 5
+    end
+  end
+  def review_average_cost
+    average = self.reviews.average(:cost)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.4
+      average = 2
+    elsif average > 2.4 && average <= 3.4
+      average = 3
+    elsif average > 3.4 && average <= 4.4
+      average = 4
+    elsif average > 4.4 && average <= 5
+      average = 5
+    end
+  end
+  def review_average_coffee
+    average = self.reviews.average(:coffee)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.4
+      average = 2
+    elsif average > 2.4 && average <= 3.4
+      average = 3
+    elsif average > 3.4 && average <= 4.4
+      average = 4
+    elsif average > 4.4 && average <= 5
+      average = 5
+    end
+  end
+  def review_average_smoke
+    average = self.reviews.average(:smoke)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.4
+      average = 2
+    elsif average > 2.4 && average <= 3.0
+      average = 3
+    end
+  end
+  def review_average_wifi
+    average = self.reviews.average(:wifi)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.4
+      average = 2
+    elsif average > 2.4 && average <= 3.4
+      average = 3
+    elsif average > 3.4 && average <= 4.4
+      average = 4
+    elsif average > 4.4 && average <= 5
+      average = 5
+    end
+  end
+  def review_average_elec
+    average = self.reviews.average(:elec)
+    if average == 0 || average == nil
+      average = 0
+    elsif average > 0 && average <= 1.4
+      average = 1
+    elsif average > 1.4 && average <= 2.0
+      average = 2
+    end
+  end
 end
