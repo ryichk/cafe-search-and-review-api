@@ -94,21 +94,6 @@
         <span class="rate rate0"></span>
       <% end %>
     </div>
-    <div class="review_smoke some_review">
-      <p>タバコ</p>
-      <% if @place.reviews.present? %>
-        <span class="rate rate<%= @place.review_average_smoke %>"></span>
-        <% if @place.review_average_smoke == 3 %>
-          <p>分煙</p>
-        <% elsif @place.review_average_smoke == 2 %>
-          <p>禁煙</p>
-        <% elsif @place.review_average_smoke == 1 %>
-          <p>分煙なし</p>
-        <% end %>
-      <% else %>
-        <span class="rate rate0"></span>
-      <% end %>
-    </div>
     <div class="review_wifi some_review">
       <p>Wifi</p>
       <% if @place.reviews.present? %>
@@ -131,14 +116,23 @@
     <div class="review_elec some_review">
       <p>電源</p>
       <% if @place.reviews.present? %>
-        <span class="rate rate<%= @place.review_average_elec %>"></span>
         <% if @place.review_average_elec == 2 %>
           <p>あり</p>
         <% elsif @place.review_average_elec == 1 %>
           <p>なし</p>
         <% end %>
-      <% else %>
-        <span class="rate rate0"></span>
+      <% end %>
+    </div>
+    <div class="review_smoke some_review">
+      <p>タバコ</p>
+      <% if @place.reviews.present? %>
+        <% if @place.review_average_smoke == 3 %>
+          <p>分煙</p>
+        <% elsif @place.review_average_smoke == 2 %>
+          <p>禁煙</p>
+        <% elsif @place.review_average_smoke == 1 %>
+          <p>分煙なし</p>
+        <% end %>
       <% end %>
     </div>
   </div>
