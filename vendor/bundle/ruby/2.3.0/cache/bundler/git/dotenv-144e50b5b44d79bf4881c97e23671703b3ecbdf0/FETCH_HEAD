@@ -1,0 +1,40 @@
+4d3224523a671bafc3e20dea60cd336e860be8f7		branch 'bom' of git://github.com/bkeepers/dotenv
+388604955414f7a797d254db876a4e565ff67926		branch 'config' of git://github.com/bkeepers/dotenv
+369da8c7ea16778552bf329425f8fac81656e51c		branch 'configuration' of git://github.com/bkeepers/dotenv
+f1d181a46e170486fe1e8fd21e274a4830a359ae		branch 'disable-jruby-head' of git://github.com/bkeepers/dotenv
+06bb9692389c4fced430462f22d68fc1f01140c5		branch 'drop-old-rubies' of git://github.com/bkeepers/dotenv
+4927ad10a7b735a24f4b969ea831fe9b73b0fb92		branch 'leading-space' of git://github.com/bkeepers/dotenv
+ef7e7e86c9ef25632e7256fa88493ffb17bd518c		branch 'lock-rubocop' of git://github.com/bkeepers/dotenv
+879af5e04fd09e450153b63bc443b1be043f2d56		branch 'master' of git://github.com/bkeepers/dotenv
+b39207cf7d7cbb509cc5dadcc7050d455cf62d6a		branch 'prerelease' of git://github.com/bkeepers/dotenv
+3bad8eeb7d3788379540e832315ab98f53572517		branch 'release-2.0.2' of git://github.com/bkeepers/dotenv
+73aa61a43cf0a26b97dd74deb0a8082a1ce0c967		branch 'seamusabshere-dotenv-dash-f-option' of git://github.com/bkeepers/dotenv
+3264c61c54dacaa115be35b5bd591020bf740299	not-for-merge	tag 'v0.1.0' of git://github.com/bkeepers/dotenv
+e3594ce3b900118445588eb9269e5d83a9771542	not-for-merge	tag 'v0.1.1' of git://github.com/bkeepers/dotenv
+4cd9ab8c2694d5e300cc49b832bca624f83e9914	not-for-merge	tag 'v0.10.0' of git://github.com/bkeepers/dotenv
+de134904448abafef3e69d1b1c929af74f4d1f98	not-for-merge	tag 'v0.11.0' of git://github.com/bkeepers/dotenv
+6952df4ef01565d57b8ed703de45dcc4c5d5c313	not-for-merge	tag 'v0.11.1' of git://github.com/bkeepers/dotenv
+eb9d7c27867832ac490bcc4fc70f1a2433ea3b50	not-for-merge	tag 'v0.2.0' of git://github.com/bkeepers/dotenv
+1a6dc41aec30c156ad2d3277cac6c2bf3ca8c589	not-for-merge	tag 'v0.3.0' of git://github.com/bkeepers/dotenv
+cc2ee41d2a58b2809f59a22ec24e0b651b895c90	not-for-merge	tag 'v0.4.0' of git://github.com/bkeepers/dotenv
+4e566f3d6ffb2cf650692a7e2e0b48106448a3fb	not-for-merge	tag 'v0.5.0' of git://github.com/bkeepers/dotenv
+febb12daa021168d18fee94fde7c0f7846a9ba52	not-for-merge	tag 'v0.6.0' of git://github.com/bkeepers/dotenv
+b56237a9d677bc052e3759de52d6ccfd609d25d2	not-for-merge	tag 'v0.7.0' of git://github.com/bkeepers/dotenv
+df4e8fa952b8a0eb9ec7192d03e4bc3247cb6598	not-for-merge	tag 'v0.8.0' of git://github.com/bkeepers/dotenv
+ac588a781e92e34be97abf28281e4d03ac9630cb	not-for-merge	tag 'v0.9.0' of git://github.com/bkeepers/dotenv
+038ba7b56fdf8582940ad4183a039c55c090ad29	not-for-merge	tag 'v1.0.0' of git://github.com/bkeepers/dotenv
+ec26179426da69948a9e63cb1a80570b892e6973	not-for-merge	tag 'v1.0.1' of git://github.com/bkeepers/dotenv
+4d09253b7e2400f03f4772f872a0c9943e142f63	not-for-merge	tag 'v1.0.2' of git://github.com/bkeepers/dotenv
+a6b4e87a8f97fe4176a9968f9f99dfcc3a1b9a32	not-for-merge	tag 'v2.0.0' of git://github.com/bkeepers/dotenv
+a732cd88e7e1b0982fe06ccabd202030b31fbab4	not-for-merge	tag 'v2.0.0.beta' of git://github.com/bkeepers/dotenv
+d358810b049d9b6126162c9802e3571fdebbd9a7	not-for-merge	tag 'v2.0.1' of git://github.com/bkeepers/dotenv
+6df3a9c23cde2961ed763255618d3f5e5ebfebd2	not-for-merge	tag 'v2.0.2' of git://github.com/bkeepers/dotenv
+e3bd377ad518e6198478c3bb563b4e71ee398cdd	not-for-merge	tag 'v2.1.0' of git://github.com/bkeepers/dotenv
+ad68d23f38a93f7f9cd94b496bacc67affbf38d9	not-for-merge	tag 'v2.1.1' of git://github.com/bkeepers/dotenv
+0dd5eb4c909d28c6a97d7e789f6aa8c151a6509e	not-for-merge	tag 'v2.1.2' of git://github.com/bkeepers/dotenv
+110ff1760c275450caa78fcc0c0af91721e43659	not-for-merge	tag 'v2.2.0' of git://github.com/bkeepers/dotenv
+fb3a961e0d4b9775d6e8420b1fba393cd0a3bb50	not-for-merge	tag 'v2.2.1' of git://github.com/bkeepers/dotenv
+03726943e088237243df0dd0ceda572612e86858	not-for-merge	tag 'v2.2.2' of git://github.com/bkeepers/dotenv
+dc51472f1d367709ecfe1413cb56aec1d223ab19	not-for-merge	tag 'v2.3.0' of git://github.com/bkeepers/dotenv
+ee1cbf8ffd1a4433af75cc5a5afa390dcee0c4a1	not-for-merge	tag 'v2.4.0' of git://github.com/bkeepers/dotenv
+0916d26ee98ddce55d00a99ffd59a10009ccde9e	not-for-merge	tag 'v2.5.0' of git://github.com/bkeepers/dotenv

@@ -1,0 +1,18 @@
+current directory: /Users/ichiki/projects/cafeshaker/vendor/bundle/ruby/2.3.0/gems/mini_racer-0.2.3/ext/mini_racer_extension
+/Users/ichiki/.rvm/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20180930-22981-1owau0p.rb extconf.rb
+checking for main() in -lpthread... yes
+checking for main() in -lobjc... yes
+creating Makefile
+
+current directory: /Users/ichiki/projects/cafeshaker/vendor/bundle/ruby/2.3.0/gems/mini_racer-0.2.3/ext/mini_racer_extension
+make "DESTDIR=" clean
+
+current directory: /Users/ichiki/projects/cafeshaker/vendor/bundle/ruby/2.3.0/gems/mini_racer-0.2.3/ext/mini_racer_extension
+make "DESTDIR="
+compiling mini_racer_extension.cc
+clang: warning: argument unused during compilation: '-rdynamic' [-Wunused-command-line-argument]
+linking shared-object mini_racer_extension.bundle
+
+current directory: /Users/ichiki/projects/cafeshaker/vendor/bundle/ruby/2.3.0/gems/mini_racer-0.2.3/ext/mini_racer_extension
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 mini_racer_extension.bundle ./.gem.20180930-22981-10wg4lu
