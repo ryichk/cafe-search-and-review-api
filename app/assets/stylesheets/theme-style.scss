@@ -1016,6 +1016,10 @@ td {
 }
 
 /** 広告 **/
+.top-ad {
+  width: 320px;
+  height: 50px;
+}
 .ad {
   margin: 10px;
   display: inline-block;
@@ -1053,6 +1057,10 @@ td {
 /*---- media クエリ ----*/
 
 @media (min-width: 415px) and (max-width: 768px){
+  .top-ad {
+    width: 468px;
+    height: 60px;
+  }
   .SlideShow {
     height: 450px;
     p {
