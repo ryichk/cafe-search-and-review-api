@@ -92,6 +92,7 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
+gem 'webpacker'
 
 
 

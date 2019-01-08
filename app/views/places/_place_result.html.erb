@@ -14,7 +14,7 @@
     <% end %>
     </div>
 <% cache(place) do %>
-    <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto img-responsive"></div></a>
+    <a href="/places/<%= place.id %>"><div class="boxBottom"><img src="<%= place.photos %>" class="cafePhoto img-responsive lazy"></div></a>
     <div class="google_logo_list"><%= image_tag "powered_by_google_on_non_white.png" %></div>
   </div>
 <% end %>
