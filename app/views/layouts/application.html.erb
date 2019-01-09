@@ -177,7 +177,7 @@
   <% end %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'cafeshares_favicon.png' %>
-    <title>Cafe Shares カフェ・シェアーズ</title>
+    <title><%= content_for?(:html_title) ? yield(:html_title) : "Cafe Shares | カフェ・シェアーズ" %></title>
     <%= stylesheet_link_tag "bootstrap", media: "all", "data-turbolinks-track": 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">

@@ -1,6 +1,6 @@
 gem 'dotenv-rails', :github => "bkeepers/dotenv", :require => 'dotenv/rails-now'
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.6.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -93,7 +93,6 @@ gem 'kaminari'
 gem 'google-analytics-rails'
 gem 'sitemap_generator'
 gem 'webpacker'
-
 
 
 

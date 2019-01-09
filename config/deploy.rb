@@ -25,7 +25,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :rbenv_type, :system
-set :rbenv_ruby, '2.3.1'
+set :rbenv_ruby, '2.6.0'
 
 # It's skip migration if files in db/migrate not modified
 set :conditonally_migrate, true

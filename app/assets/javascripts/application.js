@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require underscore.min
+//= require lazyload.min
 //= require gmaps/google
 //= require rails-ujs
 //= require turbolinks

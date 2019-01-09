@@ -5,7 +5,7 @@ f1d181a46e170486fe1e8fd21e274a4830a359ae		branch 'disable-jruby-head' of git://g
 06bb9692389c4fced430462f22d68fc1f01140c5		branch 'drop-old-rubies' of git://github.com/bkeepers/dotenv
 4927ad10a7b735a24f4b969ea831fe9b73b0fb92		branch 'leading-space' of git://github.com/bkeepers/dotenv
 ef7e7e86c9ef25632e7256fa88493ffb17bd518c		branch 'lock-rubocop' of git://github.com/bkeepers/dotenv
-879af5e04fd09e450153b63bc443b1be043f2d56		branch 'master' of git://github.com/bkeepers/dotenv
+6fbf71fdbf44ba509486ccf0a8892b49d65f59f8		branch 'master' of git://github.com/bkeepers/dotenv
 b39207cf7d7cbb509cc5dadcc7050d455cf62d6a		branch 'prerelease' of git://github.com/bkeepers/dotenv
 3bad8eeb7d3788379540e832315ab98f53572517		branch 'release-2.0.2' of git://github.com/bkeepers/dotenv
 73aa61a43cf0a26b97dd74deb0a8082a1ce0c967		branch 'seamusabshere-dotenv-dash-f-option' of git://github.com/bkeepers/dotenv
