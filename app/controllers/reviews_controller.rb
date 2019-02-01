@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  before_action :authenticate_user!, except: :index
   def index
     @reviews = Review.includes(:user).order("created_at DESC").page(params[:page]).per(25)
   end

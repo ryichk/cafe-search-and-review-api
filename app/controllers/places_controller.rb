@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: :show
-
+  before_action :authenticate_user!, only: :create
 
   def index
     @google_api_key = Rails.application.secrets.google_api_key
