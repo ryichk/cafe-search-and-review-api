@@ -239,7 +239,7 @@
 
 h2.placeIndex {
   clear: both;
-  margin-top: 180px;
+  margin-top: 50px;
   color: #fff;
 }
 
@@ -627,10 +627,10 @@ $rate5: $starFull * 5;//星5
 }
 .show-review-ul {
   list-style: none;
-  margin-left: -30px;
+  margin-left: -44px;
 }
 .show-review-li {
-  background-color:#0007;
+  background-color:#efefefbb;
   border-radius: 7px;
   padding: 1px;
   margin-bottom: 10px;
@@ -653,7 +653,8 @@ $rate5: $starFull * 5;//星5
   }
 }
 .show-review-h3{
-  margin-left: 160px;
+  margin-left: 130px;
+  color: #333;
 }
 .show-review-image {
   width: 35%;
@@ -662,14 +663,16 @@ $rate5: $starFull * 5;//星5
   position: absolute;
 }
 .review-user-prof {
-  width: 100%;
   border-radius: 10px;
-  height: 95px;
+  height: 75px;
 }
 .review {
-  margin: 100px 10px 0 10px;
+  margin: 52px 10px 0 10px;
   p {
-    margin:0 0 10px 5px;
+    margin:0 0 10px 0;
+    color: #222;
+    font-size: 16px;
+    line-height: 25px;
   }
 }
 .btn-placeShow {
@@ -904,10 +907,6 @@ $rate5: $starFull * 5;//星5
 /* 利用規約とプライバシーポリシー */
 .hh7 {
   mrgin-top: 0 auto;
-}
-
-.col-md-12 {
-  margin-top: 150px;
 }
 
 .terms, .policy {
