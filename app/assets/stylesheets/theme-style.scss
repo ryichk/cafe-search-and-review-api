@@ -1,5 +1,3 @@
-
-
 /*---- Gmap4rails ----*/
 .map_container {
   clear: both;
@@ -8,7 +6,6 @@
   margin-bottom: 20px;
   padding-bottom:56.25%; /* Ratio 16:9 */
 }
-
 .map_container .map_canvas {
   position: absolute;
   top: 15px;
@@ -18,8 +15,8 @@
   margin: 0;
   padding: 0;
 }
-/*----ここまでGmap4rails ----*/
 
+/*----ここまでGmap4rails ----*/
 /*----Skippr----*/
 .skippr {
   width:100%;
@@ -71,7 +68,6 @@
   border-radius: 50%;
   margin:0 4px;
 }
-
 .skippr-nav-element-block {
   width:30px;
   height:10px;
@@ -107,8 +103,8 @@
   border-bottom:2px solid white;
   border-right:2px solid white;
 }
-/*----ここまでSkippr----*/
 
+/*----ここまでSkippr----*/
 /*----Animation----*/
 .animated {
   -webkit-animation-duration: 1s;

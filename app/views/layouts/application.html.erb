@@ -60,10 +60,10 @@
       border-radius:20px;
       color:#f1faf1;
       z-index: 1;
+      overflow: hidden;
     }
-    .jumbotron-place-index {
-      background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/contain no-repeat;
-      -webkit-background-size: contain;
+    .jumbotron img{
+      width:100%;
     }
     .jumbotron .top_h1 {
       position: absolute;
@@ -148,10 +148,6 @@
         font-size: 3.9em;
         padding: 20px;
       }
-      .jumbotron-place-index {
-        background: url(<%= asset_path "coffeebreak_mini.jpg" %>) center center/contain no-repeat;
-        -webkit-background-size: contain;
-      }
     }
     @media (min-width: 769px) {
       .jumbotron {
@@ -170,8 +166,6 @@
       }
       .jumbotron-place-index {
         height: 400px;
-        background: url(<%= asset_path "coffeebreak_mini2.jpg" %>) center center/cover no-repeat;
-        -webkit-background-size: cover;
       }
     }
     </style>
