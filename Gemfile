@@ -19,7 +19,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'mini_racer', platforms: :ruby
+# gem 'mini_racer', platforms: :ruby
 gem 'rails_12factor', group: :production
 
 # Use CoffeeScript for .coffee assets and views
@@ -67,32 +67,32 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'google_places'
-gem 'gmaps4rails'
-gem 'bootstrap-sass'
+gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
-gem 'jquery-rails'
-gem 'jquery-turbolinks'
+gem 'aws-sdk-v1'
+gem 'aws-sdk'
+gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'counter_culture', '~>1.8'
+gem 'devise'
 gem 'font-awesome-rails'
 gem 'geocoder'
-gem 'devise'
+gem 'gmaps4rails'
+gem 'google_places'
+gem 'google-analytics-rails'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'kaminari'
+gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-gem 'rack-cors', :require => 'rack/cors'
-gem 'aws-sdk-v1'
-gem 'aws-sdk'
-gem 'counter_culture', '~>1.8'
 gem 'puma_worker_killer'
-gem 'activerecord-session_store'
-gem 'carrierwave'
-gem 'kaminari'
-gem 'google-analytics-rails'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'sitemap_generator'
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 

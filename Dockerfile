@@ -1,19 +1,17 @@
-From ruby:2.6.0
-ENV LANG C.UTF-8
+FROM ruby:2.6.0
 
-RUN apt-get update -qq && apt-get install -y \
-    build-essential \
-    nodejs \
-  && rm -rf /var/lib/apt/lists/*
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs
+RUN apt-get update && apt-get install -y mysql-client --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev imagemagick
+
+RUN mkdir /cafeshares
+
+WORKDIR /cafeshares
+
+ADD Gemfile /cafeshares/Gemfile
+ADD Gemfile.lock /cafeshares/Gemfile.lock
 
 RUN gem install bundler
-
-WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
 RUN bundle install
 
-ENV APP_HOME /myapp
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+ADD . /cafeshares

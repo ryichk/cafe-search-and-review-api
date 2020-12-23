@@ -55,7 +55,7 @@
         <i class="icon-crown"></i>投稿ランキング
       </h4>
       <ul class="listview">
-        <% @ranking.each.with_index(1) do |place, i| %>
+        <!-- <% @ranking.each.with_index(1) do |place, i| %>
           <li>
             <a href="/places/<%= place.id %>">
               <%= i %>
@@ -63,7 +63,7 @@
               <img src="<%= place.photos %>" alt="">
             </a>
           </li>
-        <% end %>
+        <% end %> -->
       </ul>
       <% if (notice) %>
         <div class="alert alert-info alert-dismissible" role="alert">

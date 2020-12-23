@@ -1,11 +1,11 @@
 GIT
-  remote: git://github.com/bkeepers/dotenv.git
-  revision: f796d366444d454e12a65cf1db81781dc0ce2c7b
+  remote: https://github.com/bkeepers/dotenv.git
+  revision: 9e101a5190a33afc8680e7a0cc0db0183c861879
   specs:
-    dotenv (2.7.2)
-    dotenv-rails (2.7.2)
-      dotenv (= 2.7.2)
-      railties (>= 3.2, < 6.1)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -824,7 +824,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.7)
     counter_culture (1.12.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -873,7 +873,7 @@ GEM
     httparty (0.17.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    i18n (1.6.0)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
     jbuilder (2.8.0)
@@ -901,7 +901,6 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    libv8 (6.7.288.46.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -915,11 +914,10 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
+    mini_magick (4.11.0)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
-    mini_racer (0.2.4)
-      libv8 (>= 6.3)
-    minitest (5.11.3)
+    minitest (5.14.2)
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -1025,8 +1023,7 @@ GEM
       rubyzip (~> 1.2, >= 1.2.2)
     sitemap_generator (6.0.2)
       builder (~> 3.0)
-    spring (2.0.2)
-      activesupport (>= 4.2)
+    spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -1046,7 +1043,7 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.8)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
@@ -1065,6 +1062,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   activerecord-session_store
@@ -1099,7 +1097,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   listen (>= 3.0.5, < 3.2)
-  mini_racer
+  mini_magick
   mysql2 (>= 0.3.18, < 0.5)
   omniauth
   omniauth-facebook
@@ -1126,4 +1124,4 @@ RUBY VERSION
    ruby 2.6.0p0
 
 BUNDLED WITH
-   2.0.1
+   2.2.2

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # 例外処理
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404
-  rescue_from Exception, with: :render_500
+  # rescue_from Exception, with: :render_500
 
 
   def after_sign_out_path_for(resource)
@@ -30,8 +30,4 @@ class ApplicationController < ActionController::Base
       def  detect_locate
         I18n.locale = request.headers['Accept-Language'].scan(/\A[a-z]{2}/).first
       end
-
-
-
-
 end
