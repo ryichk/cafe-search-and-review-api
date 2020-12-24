@@ -55,7 +55,6 @@ gem 'mini_magick'
 gem 'puma_worker_killer'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'sitemap_generator'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'aws-sdk-s3'
