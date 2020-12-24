@@ -1,7 +1,7 @@
 class AddAttachmentPictureToReviews < ActiveRecord::Migration[5.1]
   def self.up
     change_table :reviews do |t|
-      t.attachment :picture
+      t.string :picture
     end
   end
 
