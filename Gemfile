@@ -35,17 +35,31 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'activerecord-session_store'
+gem 'autoprefixer-rails'
+gem 'aws-sdk-v1'
+gem 'aws-sdk'
+gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'counter_culture', '~>1.8'
+gem 'devise'
+gem 'font-awesome-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'google_places'
+gem 'google-analytics-rails'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'kaminari'
+gem 'mini_magick'
+gem 'puma_worker_killer'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'sitemap_generator'
+
 group :production do
   gem 'aws-sdk-s3'
   gem 'rmagick'
   gem 'fog-aws'
-end
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -66,30 +80,10 @@ group :development do
   gem 'capistrano-faster-assets'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'activerecord-session_store'
-gem 'autoprefixer-rails'
-gem 'aws-sdk-v1'
-gem 'aws-sdk'
-gem 'bootstrap-sass'
-gem 'carrierwave'
-gem 'counter_culture', '~>1.8'
-gem 'devise'
-gem 'font-awesome-rails'
-gem 'geocoder'
-gem 'gmaps4rails'
-gem 'google_places'
-gem 'google-analytics-rails'
-gem 'jquery-rails'
-gem 'jquery-turbolinks'
-gem 'kaminari'
-gem 'mini_magick'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-instagram'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
-gem 'puma_worker_killer'
-gem 'rack-cors', :require => 'rack/cors'
-gem 'sitemap_generator'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  # Adds support for Capybara system testing and selenium driver
+end

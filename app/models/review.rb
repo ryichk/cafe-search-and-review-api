@@ -14,8 +14,6 @@ class Review < ApplicationRecord
     # store_in_background :photos
   end
 
-
-
   # レビューにいいねをする
   def like(user)
     likes.create(user_id: user.id)
