@@ -1,8 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable
   validates :username, length: { in: 2..10, too_long: "最大%{count}文字までです。", too_short: "最低限%{count}文字必要です" }, presence: true
   validates :agreement, presence: true
   validates_acceptance_of :agreement, allow_nil: false, message: "＊ユーザー登録には利用規約への同意が必要です。", on: :create

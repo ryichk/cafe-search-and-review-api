@@ -8,7 +8,6 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
   def new
-    session.delete('devise.omniauth_data')
     super
   end
 

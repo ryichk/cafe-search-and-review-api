@@ -36,8 +36,6 @@
             <% else %>
               <li><%= link_to 'サインアップ', new_user_registration_path %></li>
               <li><%= link_to 'ログイン', new_user_session_path %></li>
-              <li><%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Twitterログイン", user_twitter_omniauth_authorize_path, :class => 'navbar-link' %></li>
             <% end %>
             <li><a href="terms/index">About</a></li>
             <li><%= link_to "Contact", inquiry_path, :class => 'navbar-link' %></li>
