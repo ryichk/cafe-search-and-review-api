@@ -1,7 +1,7 @@
 # CafeShares
 
 * Ruby version
-2.3.1
+2.6.0
 
 * Set up Docker
 
@@ -37,4 +37,3 @@
 * Deployment instructions
 
 * ...
-
