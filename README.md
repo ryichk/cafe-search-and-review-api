@@ -28,6 +28,10 @@
 
 * How to run the test suite
 
+```bash
+ docker-compose run --rm web bundle exec rspec
+```
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
