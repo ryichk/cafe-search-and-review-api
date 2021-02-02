@@ -1,4 +1,4 @@
-# cafe-search-and-review-api
+# cafe-search-and-review-app-api
 
 * Ruby version
 2.6.0
