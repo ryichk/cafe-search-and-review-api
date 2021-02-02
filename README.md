@@ -1,4 +1,4 @@
-# CafeShares
+# cafe-search-and-review-api
 
 * Ruby version
 2.6.0
