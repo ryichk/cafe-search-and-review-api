@@ -9,7 +9,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.5'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
@@ -40,7 +40,7 @@ gem 'autoprefixer-rails'
 gem 'aws-sdk-v1'
 gem 'aws-sdk'
 gem 'bootstrap-sass'
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'counter_culture', '~>1.8'
 gem 'devise'
 gem 'font-awesome-rails'
