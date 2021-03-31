@@ -6,15 +6,15 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Cafeshares
+module CafeShares
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.load_defaults 5.1
     config.i18n.default_locale = :ja
     config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
     config.assets.initialize_on_precompile = false
     config.generators do |g|
+      g.assets false
       g.test_framework :rspec,
                        view_specs: false,
                        helper_specs: false,

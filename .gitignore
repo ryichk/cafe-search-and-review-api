@@ -12,10 +12,13 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/log/*.log
 
-/vendor
 /node_modules
 /yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
 .env
 .byebug_history
 .bash_profile
@@ -25,8 +28,6 @@
 /config/database.yml.example
 /vendor/bundler/
 /vendor/bundle
-/log/*.log
-/tmp
 /uploads/tmp/
 /config/settings.local.yml
 /config/settings/*.local.yml
@@ -35,11 +36,11 @@
 
 .pryrc
 .DS_Store
-config/secrets.yml
 sendgrid.env
 
 public/sitemap.xml
 public/sitemap.xml.gz/public/packs
 /public/packs-test
-yarn-debug.log*
-.yarn-integrity
+
+/public/packs
+/public/packs-test
