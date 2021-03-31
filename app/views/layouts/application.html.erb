@@ -8,61 +8,9 @@
     <meta name="keywords" content="Cafe Shares, カフェ, Cafe, cafe, カフェシェアーズ, cafeshares, カフェレビュー, カフェ検索, カフェレビューサイト, お気に入りのカフェ, オススメのカフェ">
   <% end %>
     <%= csrf_meta_tags %>
-    <%= favicon_link_tag 'cafeshares_favicon.png' %>
     <title><%= content_for?(:html_title) ? yield(:html_title) : "Cafe Shares | カフェ・シェアーズ" %></title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: 'async' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_pack_tag 'application' %>
-    <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <%= link_to image_tag("cafeshareslogo.png", :class=>"CafeSharesLogo"), root_path, data:{"turbolinks"=>false}, :class=>"navbar-brand" %>
-          <% if user_signed_in? %>
-            <%= render 'notifications/notification_dropdown' %>
-          <% end %>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to_unless_current 'HOME', root_path, data:{"turbolinks"=>false} %></li>
-            <li><%= link_to_unless_current 'みんなのカフェ写真', reviews_path, data:{"turbolinks"=>false} %></li>
-            <% if user_signed_in? %>
-              <li><%= link_to_unless_current "My ページ", user_path(current_user.id), data:{"turbolinks"=>false} %></li>
-              <li><%= link_to_unless_current 'お気に入りのカフェ', user_like_places_url(current_user.id), data:{"turbolinks"=>false} %></li>
-              <li><%= link_to_unless_current 'プロフィール変更', edit_user_registration_path, data:{"turbolinks"=>false} %></li>
-              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to_unless_current '新規ユーザー登録', new_user_registration_path, data:{"turbolinks"=>false} %></li>
-              <li><%= link_to_unless_current 'ログイン', new_user_session_path, data:{"turbolinks"=>false} %></li>
-            <% end %>
-            <li><%= link_to_unless_current 'ユーザーを探す', users_path, data:{"turbolinks"=>false} %></li>
-            <li><%= link_to " お問い合わせ", inquiry_path, :class => 'navbar-link' %></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!-- /.container -->
-    </div><!-- /.navbar -->
-    <div class="contents">
-      <div class="message">
-        <span class="notice"><%# notice %></span>
-        <span class="alert"><%# alert %></span>
-      </div>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
-<div class="Copyright">
-  <%= link_to_unless_current '利用規約 ', terms_index_path %>
-  <%= link_to_unless_current ' プライバシーポリシー', policy_index_path %>
-  <p>&copy; 2018-<span id="thisYear"></span> Ichiki Ryo</p>
-</div>
 </html>
