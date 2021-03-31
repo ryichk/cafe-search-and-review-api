@@ -21,7 +21,7 @@ import App from './components/App';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App />,
+    <App title='React on Rails' />,
     document.getElementById('root')
   )
 })

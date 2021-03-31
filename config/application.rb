@@ -10,7 +10,6 @@ module CafeShares
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.react.server_renderer_extensions = ["jsx", "js", "tsx", "ts"]
     config.i18n.default_locale = :ja
     config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
     config.assets.initialize_on_precompile = false

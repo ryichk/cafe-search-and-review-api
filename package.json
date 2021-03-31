@@ -17,6 +17,7 @@
     "typescript": "^4.2.3"
   },
   "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "^6.2.0",
     "webpack-dev-server": "^3.11.2"
   }
 }
