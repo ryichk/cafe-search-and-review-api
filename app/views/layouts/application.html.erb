@@ -13,6 +13,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="icon" href="/assets/images/cafeshareslogo.png" sizes="192x192">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: 'async' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= analytics_init if Rails.env.production? %>
   </head>
   <body>
