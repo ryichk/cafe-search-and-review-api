@@ -42,12 +42,6 @@ GEM
       activemodel (= 5.2.5)
       activesupport (= 5.2.5)
       arel (>= 9.0)
-    activerecord-session_store (2.0.0)
-      actionpack (>= 5.2.4.1)
-      activerecord (>= 5.2.4.1)
-      multi_json (~> 1.11, >= 1.11.2)
-      rack (>= 2.0.8, < 3)
-      railties (>= 5.2.4.1)
     activestorage (5.2.5)
       actionpack (= 5.2.5)
       activerecord (= 5.2.5)
@@ -1362,7 +1356,6 @@ PLATFORMS
   aarch64-linux
 
 DEPENDENCIES
-  activerecord-session_store
   autoprefixer-rails
   aws-sdk
   aws-sdk-s3

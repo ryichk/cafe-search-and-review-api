@@ -30,11 +30,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
 gem 'aws-sdk-v1'
 gem 'aws-sdk'
-# gem 'carrierwave'
 gem 'counter_culture', '~>1.8'
 gem 'devise'
 gem 'font-awesome-rails'
