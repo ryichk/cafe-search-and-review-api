@@ -6,8 +6,7 @@
 * Set up Docker
 
 ```bash
- docker-compose up --build
- docker-compose run --rm web bundle install
+ docker-compose up
 ```
 
 * System dependencies
@@ -17,19 +16,19 @@
 * Database creation
 
 ```bash
- docker-compose run --rm web bundle exec rails db:create
+ docker-compose run --rm api bundle exec rails db:create
 ```
 
 * Database initialization
 
 ```bash
- docker-compose run --rm web bundle exec rails db:migrate
+ docker-compose run --rm api bundle exec rails db:migrate
 ```
 
 * How to run the test suite
 
 ```bash
- docker-compose run --rm web bundle exec rspec
+ docker-compose run --rm api bundle exec rspec
 ```
 
 * Services (job queues, cache servers, search engines, etc.)
