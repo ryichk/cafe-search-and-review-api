@@ -9,23 +9,33 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql-db:/var/lib/mysql
     container_name: cafe-shares-db
-  web:
+  api:
     tty: true         #コンテナ上でbinding.pryするために必要
     stdin_open: true  #コンテナ上でbinding.pryするために必要
-    build: .
+    build:
+      context: ./backend-api/
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/cafe-shares  #ローカルのディレクトリをコンテナ上にマウント
-      - bundle:/usr/local/bundle  #bundle installした後にbuildし直さなくてよくなる
+      - ./backend-api:/cafe-shares-api  #ローカルのディレクトリをコンテナ上にマウント
     links:
       - db
     depends_on:
       - db
-    container_name: cafe-shares-web
+    container_name: cafe-shares-api
+  client:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/frontend
+    command: "yarn dev"
+    ports:
+      - "8000:3000"
+    container_name: cafe-shares-client
 volumes:
-  bundle:  #bundle installした後にbuildし直さなくてよくなる
-  mysql_data:
+  mysql-db:
