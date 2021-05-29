@@ -4,54 +4,25 @@
 .DS_Store
 
 # Ignore bundler config.
-/backend-api/.bundle
+.bundle
 
 # Ignore all logfiles and tempfiles.
-/backend-api/log/*
-/backend-api/tmp/*
-/backend-api/!/log/.keep
-/backend-api/!/tmp/.keep
-/backend-api/log/*.log
+log/*
+tmp/*
+!/log/.keep
+!/tmp/.keep
+log/*.log
 
-/backend-api/.env
-/backend-api/sendgrid.env
-/backend-api/.byebug_history
-/backend-api/.bash_profile
+.env
+sendgrid.env
+.byebug_history
+.bash_profile
 
-/backend-api/.envconfig/database.yml
-/backend-api/config/database.yml
-/backend-api/config/database.yml.example
-/backend-api/vendor/bundler/
-/backend-api/vendor/bundle
-/backend-api/uploads/tmp/
-/backend-api/config/settings.local.yml
-/backend-api/config/settings/*.local.yml
-/backend-api/config/environments/*.local.yml
-/backend-api/config/secrets.yml
-
-# dependencies
-/frontend/node_modules
-/frontend/.pnp
-/frontend/.pnp.js
-
-# testing
-/frontend/coverage
-
-# next.js
-/frontend/.next/
-/frontend/out/
-
-# production
-/frontend/build
-
-
-# debug
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
-
-# local env files
-/frontend/.env*
-
-# vercel
-/frontend/.vercel
+.envconfig/database.yml
+vendor/bundler/
+vendor/bundle
+uploads/tmp/
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+config/secrets.yml
