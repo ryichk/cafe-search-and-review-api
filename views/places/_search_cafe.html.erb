@@ -1,6 +1,0 @@
-<%= form_tag search_places_path, :role => "form", :method => :get do %>
-  <%= text_field_tag :keyword, params[:keyword], { :class => "form-control", :required => true, :placeholder=>"Cafe Sharesのカフェを探す"} %>
-  <%= button_tag( {:type => "submit", :name => nil, :class => "btn btn-default search" } ) do %>
-    <i class="fa fa-search">検索</i>
-  <% end %>
-<% end %>
